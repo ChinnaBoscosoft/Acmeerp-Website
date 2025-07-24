@@ -233,7 +233,7 @@ const Footer = () => {
               { label: 'School Management Software', url: 'https://www.smartschoolonline.com/' },
               { label: 'College Management Software', url: 'https://higrade.live/' },
               { label: 'Church Management Software', url: 'https://cristoerp.com/' },
-              { label: 'Accounting Management Software', url: null },
+              // { label: 'Accounting Management Software', url: null },
               { label: 'Web Design & App Development', url: 'https://www.boscosofttech.com/services/web-development' },
               { label: 'Mobile App Development and Modularization', url: 'https://www.boscosofttech.com/services/mobile-app' }
             ].map((item, index) => (

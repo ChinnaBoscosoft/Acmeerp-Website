@@ -74,11 +74,11 @@ const BlogPost = () => {
           <p className="recent-text mb-1">recent blog post</p>
           <h2 className="section-subtitle m-0">View Our Latest Blog Insights</h2>
         </div>
-        <div className="view-all-wrapper mt-3 mt-md-0">
+        {/* <div className="view-all-wrapper mt-3 mt-md-0">
           <button className="btn btn-outline-primary view-all-btn" onClick={handleViewAll}>
             VIEW ALL POSTS
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="blog-slider d-flex align-items-center justify-content-center">
