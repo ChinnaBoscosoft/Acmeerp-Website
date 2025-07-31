@@ -118,7 +118,7 @@ const Review = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             viewport={{ once: true }}
                         >
-                            Customers Review
+                            Customer Review
                         </motion.p>
                         <motion.h2
                             className="display-5 fw-bold text-dark mb-5 fade-in-up"

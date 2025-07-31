@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter  as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Header from './components/Header.jsx';
@@ -28,7 +28,8 @@ import Chatbot from './components/Chatbot.jsx';
 import MapIndia from '../src/components/MapIndia.jsx';
 import MapDashboard from './components/MapDashboard.jsx';
 import AntiInspect from './components/AntiInspect.jsx';
-
+import NotFound from './page/NotFound.jsx';
+import { Outlet } from 'react-router-dom';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -36,6 +37,7 @@ const fadeInUp = {
   transition: { duration: 0.8 },
   viewport: { once: true, amount: 0.3 },
 };
+
 const Home = () => {
   return (
     <>
@@ -45,93 +47,81 @@ const Home = () => {
           <Hero />
         </motion.div>
       </div>
-
       <div id="data">
         <motion.div {...fadeInUp}>
           <Data />
         </motion.div>
       </div>
-
       <div id="cards">
         <motion.div {...fadeInUp}>
           <Cards />
         </motion.div>
       </div>
-
       <div id="about">
-          <About />
+        <About />
       </div>
-
       <div id="review">
         <motion.div {...fadeInUp}>
           <Review />
         </motion.div>
       </div>
-
       <div id="map">
         <motion.div {...fadeInUp}>
           <MapDashboard />
         </motion.div>
       </div>
-
       <div id="Functional">
-        {/* <motion.div {...fadeInUp}> */}
-          <Functional />
-        {/* </motion.div> */}
+        <Functional />
       </div>
-
       <div id="plan">
-        {/* <motion.div {...fadeInUp}> */}
-          <Plan />
-        {/* </motion.div> */}
+        <Plan />
       </div>
-
       <div id="question">
-      
-          <Question />
-      
+        <Question />
       </div>
-
       <div id="streamlines">
-      
-          <Streamlines />
-       
+        <Streamlines />
       </div>
-
       <div id="blogpost">
         <motion.div {...fadeInUp}>
           <BlogPost />
         </motion.div>
       </div>
-
-
     </>
   );
 };
 
-const App = () => {
-  return (
-    <Router>
-       <AntiInspect />
-      <Chatbot />
-      <CustomCursor />
-      <ScrollToTop />
+// MainLayout component for all main pages
+const MainLayout = () => (
+  <>
+    <AntiInspect />
+    <Chatbot />
+    <CustomCursor />
+    <ScrollToTop />
+    <Header />
+    <Navbar />
+    <Outlet />
+    <Footer />
+  </>
+);
 
-      <Header />
-      <Navbar />
-      <Routes>
+const App = () => (
+  <Router>
+    <Routes>
+      <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/accounting" element={<Accounting />} />
         <Route path="/finance" element={<Finance />} />
         <Route path="/finance2" element={<Finance2 />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Termscondition" element={<Tearmsconditions />} />
-        <Route path='/Privacy-Policy' element={<Privacy />} />
-        <Route path='/map' element={<MapIndia/>}/>
-      </Routes>
-      <Footer />
-    </Router>
-  );
-};
+        <Route path="/Privacy-Policy" element={<Privacy />} />
+        <Route path="/map" element={<MapIndia />} />
+        {/* Add more main routes here if needed */}
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Router>
+);
 
 export default App;

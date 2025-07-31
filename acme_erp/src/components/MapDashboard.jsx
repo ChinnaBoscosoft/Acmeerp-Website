@@ -1439,7 +1439,7 @@ const MapDashboard = () => {
         <div className={`map-container ${activeMap}-map`}>
            <h2 className="map-heading">{activeMap === "india" ? "India " : "World "}</h2> 
           <svg
-            key={activeMap}  // Important: force remount between maps
+            key={activeMap} 
             className="map-svg"
             viewBox={activeMap === "india" ? "0 0 800 800" : "0 0 2000 900"}
             xmlns="http://www.w3.org/2000/svg"
@@ -1463,7 +1463,7 @@ const MapDashboard = () => {
                         r="0"
                         onClick={() => handleClick(r.id)}
                         onTouchStart={() => handleClick(r.id)}
-                        style={{ pointerEvents: 'auto' }} // ensure it's interactable
+                        style={{ pointerEvents: 'auto' }} 
                       />
                       <circle
                         className="glow-dot"
