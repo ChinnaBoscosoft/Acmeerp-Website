@@ -71,7 +71,7 @@ const BlogPost = () => {
     <div className="blog-section container py-5">
       <div className="section-header d-flex justify-content-between align-items-center flex-wrap mb-4">
         <div className="section-text">
-          <p className="recent-text mb-1">recent blog post</p>
+          <p className="mb-1 welcome-tag">Recent blog post</p>
           <h2 className="section-subtitle m-0">View Our Latest Blog Insights</h2>
         </div>
         {/* <div className="view-all-wrapper mt-3 mt-md-0">

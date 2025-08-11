@@ -27,7 +27,7 @@ const Plan = () => {
           </button>
 
           <div className="text-center mb-5">
-            <div className="section-title">PRICING PLAN</div>
+            <div style={{ color: '#fff' }}className="welcome-tag">Pricing Plan</div>
             <h1 className="main-title">Choose Our Plan</h1>
           </div>
 

@@ -38,7 +38,7 @@ const Streamlines = () => {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className="streamline-section text-white text-center py-5"
     >
-      <p className="top-tagline">Everything You Need, All in One System</p>
+      <p style={{ color: '#fff' }} className="welcome-tag">Everything You Need, All in One System</p>
       <h2 className="fw-bold mb-5">
         Acme.erp streamlines your daily operations<br />with essential tools
       </h2>

@@ -113,12 +113,12 @@ const About = () => {
           {/* Right side - Content */}
           <div className="content-side">
             <div className="content-section">
-              <h6 className='abouttext'>About Our Acme.erp</h6>
-              <h1>
+              <h6 className='welcome-tag'>About Our Acme.erp</h6>
+              <h2 className='about-title'>
                 Empowering Smarter<br />
                 Decisions for Faith-Based &<br />
                 Nonprofit Organizations
-              </h1>
+              </h2>
 
               <p className="subtitle">
                 Acme.erp is an ERP Solution uniquely designed for Religious and Not-for-Profit Organisations

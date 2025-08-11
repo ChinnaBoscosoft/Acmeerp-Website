@@ -29,11 +29,11 @@
   line-height: 1.0;
   color: #1e293b;
   margin-bottom: 1.5rem;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .hero-description {
-  font-size: 0.95rem !important;
+  font-size: 1rem !important;
   line-height: 1.7;
   color: #64748b;
   max-width: 600px;

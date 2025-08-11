@@ -27,7 +27,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                Welcome to Acme.erp
+                Simplify Accounting for Purpose-Driven Organizations
               </motion.div>
 
               <motion.h1
@@ -36,11 +36,9 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.7 }}
               >
-                Simplify Accounting for
+                Built for <span style={{ color: "#004867" }}>impact</span>
                 <br />
-                <span style={{ color: "#004867" }}>Purpose-Driven</span>
-                <br />
-                Organizations
+                Designed for <span style={{ color: "#004867" }}>clarity</span>
               </motion.h1>
 
               <motion.p
@@ -49,8 +47,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.7 }}
               >
-                Acme.erp is an easy-to-use accounting software built for NGOs, non-profits, and religious
-                institutions. Manage your finances clearly, save time, and stay focused on your mission.
+                Acme.erp simplifies accounting for NGOs, non-profits, and religious institutions. Stay organized, save time, and focus on your mission with confidence.
               </motion.p>
 
               <motion.div

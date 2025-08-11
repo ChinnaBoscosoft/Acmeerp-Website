@@ -12,32 +12,32 @@ import Service3 from '../assets/img/icon/service_1_3.svg';
 const cardData = [
   {
     icon: <img src={Service1} className="icon-svg" />,
-    title: 'Easy to Use',
-    text: `It is Created for users who have not formal Accounting Training, so anyone who has basic computing skills can use the solution and be an expert.`,
+    title: 'User-Friendly by Design',
+    text: `No accounting degree? No problem. Acme.erp is built for everyday users with basic computer skills. Get started quickly and become confident in managing your finances—without the complexity.`,
   },
   {
     icon: <img src={Service2} className="icon-svg" />,
-    title: 'Ease of Reporting',
-    text: `The ability to Generate Reports as they are needed, enables you to better manage the income and expenses of your organization.`,
+    title: 'Instant, Insightful Reporting',
+    text: `Generate real-time reports with just a few clicks. Track income, expenses, and fund allocations effortlessly—so you can make informed decisions and stay accountable to your stakeholders.`,
   },
   {
     icon: <img src={Service3} className="icon-svg" />,
-    title: 'Save your Time',
-    text: `Accounting need no longer take up large amount of Valuable time. This is especially important to the NPO members who must allot time for each of the many responsibilities they have.`,
+    title: 'Save Time, Focus on Impact',
+    text: `Say goodbye to hours lost in spreadsheets. Acme.erp streamlines your financial tasks, freeing up valuable time for what truly matters—serving your community and fulfilling your mission.`,
   },
   {
     icon: <img src={Service1} className="icon-svg" />,
-    title: 'Highly Secure',
-    text: `Secure data management and retrieval. Data can only be accessed by authorized personnel using a unique id and encrypted password.`,
+    title: 'Enterprise-Grade Security',
+    text: `Your data is safe with us. Acme.erp uses encrypted passwords and unique user IDs to ensure that only authorized personnel can access sensitive financial information.`,
   },
   {
     icon: <img src={Service2} className="icon-svg" />,
-    title: 'Affordable Pricing',
-    text: `Acme.erp offers one of the lowest Total Cost of Ownership (TCO) and highest Return on Investment (ROI) for enterprise software in the financial sector. Our solutions and services will be affordable for colleges of any magnitude.`,
+    title: 'Affordable, Scalable Pricing',
+    text: `Get powerful features without the hefty price tag. Acme.erp offers one of the lowest Total Cost of Ownership (TCO) and highest ROI in the sector—making it ideal for organizations of any size, including colleges and small institutions.`,
   }, {
     icon: <img src={Service3} className="icon-svg" />,
-    title: 'Customer Support',
-    text: `We offer 24/7 customer support to its clients. An expert team of professionals are always on call to solve all your problems as they arise.`,
+    title: '24/7 Expert Support',
+    text: `We’re with you every step of the way. Our dedicated support team is available around the clock to resolve issues, answer questions, and ensure your operations run smoothly.`,
   },
 ];
 
@@ -69,8 +69,10 @@ const Cards = () => {
   return (
     <div className="container py-5 cards-container">
       <div className="text-center mb-5">
-        <p style={{ color: "#004868" }} className=" fw-semibold">Key Benefits of Using Acme.erp</p>
-        <h2 className="fw-bold">Why Choose Acme.erp</h2>
+        <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Choose Acme.erp</p>
+        <h2 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for <br />
+        Purpose-Driven </span>Organizations</h2>        
+        <p class="benifit-subtitle">Acme.erp is more than just software—it’s a partner in your mission. <br />Whether you're running an NGO, a non-profit, or a faith-based institution, here’s how Acme.erp empowers your team:</p>
       </div>
       <div className="cards-scroll-wrapper" ref={scrollRef}>
         {cardData.map((card, idx) => (

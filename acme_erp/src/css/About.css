@@ -232,6 +232,10 @@
   font-weight: 800;
   text-align: center;
 }
+.about-title{
+  font-size: 2.5rem;
+  font-weight: 600;
+}
 
 /* Animations */
 @keyframes floatHorizontal {
@@ -359,6 +363,7 @@
   
   .subtitle {
     font-size: 1rem;
+    
   }
   
   .image-container {

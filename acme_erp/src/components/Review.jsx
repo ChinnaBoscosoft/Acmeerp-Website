@@ -111,8 +111,8 @@ const Review = () => {
                 <div className="container">
                     <div className="text-center mb-5">
                         <motion.p
-                            className="text-primary fw-semibold mb-2 fade-in-up"
-                            style={{ fontSize: '1rem', letterSpacing: '0.5px' }}
+                            className="fw-semibold mb-2 fade-in-up welcome-tag"
+                            style={{ letterSpacing: '0.5px' }}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
@@ -121,7 +121,7 @@ const Review = () => {
                             Customer Review
                         </motion.p>
                         <motion.h2
-                            className="display-5 fw-bold text-dark mb-5 fade-in-up"
+                            className="display-5 fw-bold text-dark mb-5 fade-in-up hero-title"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}

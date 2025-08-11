@@ -55,7 +55,7 @@ const Question = () => {
         {/* Right FAQ */}
         <div className="col-md-6 faq-container">
           <div style={{ textAlign: 'center' }}>
-            <h6 style={{ color: '#004868' }}>Frequently Asked Questions</h6>
+            <h6 style={{ color: '#004868' }} className="welcome-tag">Frequently Asked Questions</h6>
             <h2 className="fw-bold" style={{ color: '#141D3' }}>
               Make Acme.erp Your Partner for Purpose-Driven Success
             </h2>
