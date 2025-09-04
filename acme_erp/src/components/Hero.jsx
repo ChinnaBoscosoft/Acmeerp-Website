@@ -78,7 +78,8 @@ const Hero = () => {
                   >
                     <FaPlay size={12} />
                   </motion.div>
-                  Watch Demo Video
+                  {/* Watch Demo Video */}
+                  Guided Tour
                 </motion.button>
               </motion.div>
             </motion.div>
