@@ -21,7 +21,7 @@ const features = [
   { id: 11, title: "Budgeting", description: "Budgeting and Cost Centers are Made Easier to keep the finance in control and to track in depth", icon: FaBriefcase },
   { id: 12, title: "Alerts", description: "Alerts and reminders are given for any schedules like Data Submission, Correction, Investment Renewal, etc...", icon: FaExclamationTriangle },
   { id: 13, title: "Policy Implementation", description: "Helps Head Offices to Implement Policies easily across the Multiple Branches", icon: FaRegFileAlt },
-  { id: 14, title: "Customization", description: "We customize modules based on your specific needs.", icon: FaCogs }
+  { id: 14, title: "Customization", description: "We customize modules based on your specific needs", icon: FaCogs }
 ];
 
 // Animation variants for the icon

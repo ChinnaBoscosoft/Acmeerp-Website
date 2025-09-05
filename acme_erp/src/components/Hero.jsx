@@ -64,7 +64,7 @@ const Hero = () => {
                 >
                   Free Trial
                 </motion.button>
-                <motion.button
+                {/* <motion.button
                   className="btn btn-demo d-flex"
                   whileHover={{ scale: 1.07 }}
                   whileTap={{ scale: 0.97 }}
@@ -77,10 +77,9 @@ const Hero = () => {
                     transition={{ repeat: Infinity, duration: 1.2 }}
                   >
                     <FaPlay size={12} />
-                  </motion.div>
-                  {/* Watch Demo Video */}
+                  </motion.div>                  
                   Guided Tour
-                </motion.button>
+                </motion.button> */}
               </motion.div>
             </motion.div>
           </div>

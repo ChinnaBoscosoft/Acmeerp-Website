@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import {
+  FaClock, FaLock, FaDollarSign, FaUsers,
+  FaChartLine, FaCloud, FaCogs, FaHeadset
+} from 'react-icons/fa';
 import '../css/Cards.css';
 
 import Service1 from '../assets/img/icon/service_1_1.svg';
@@ -10,12 +13,12 @@ const cardData = [
   {
     icon: <img src={Service1} className="icon-svg" />,
     title: 'User-Friendly by Design',
-    text: `No accounting degree? No problem. Acme.erp is built for everyday users with basic computer skills. Get started quickly and become confident in managing your finances—and without the complexity.`,
+    text: `No accounting degree? No problem. Acme.erp is built for everyday users with basic computer skills. Get started quickly and become confident in managing your finances—without the complexity.`,
   },
   {
     icon: <img src={Service2} className="icon-svg" />,
     title: 'Instant and Insightful Reporting',
-    text: `Generate real-time reports with just a few clicks. Track income and expenses and fund allocations effortlessly—so you can make informed decisions and stay accountable to your stakeholders.`,
+    text: `Generate real-time reports with just a few clicks. Track income, expenses, and fund allocations effortlessly—so you can make informed decisions and stay accountable to your stakeholders.`,
   },
   {
     icon: <img src={Service3} className="icon-svg" />,
@@ -30,12 +33,11 @@ const cardData = [
   {
     icon: <img src={Service2} className="icon-svg" />,
     title: 'Affordable and Scalable Pricing',
-    text: `Get powerful features without the hefty price tag. Acme.erp offers one of the lowest Total Cost of Ownership (TCO) and highest ROI in the sector—making it ideal for organizations of any size and including colleges and small institutions.`,
-  },
-  {
+    text: `Get powerful features without the hefty price tag. Acme.erp offers one of the lowest Total Cost of Ownership (TCO) and highest ROI in the sector—making it ideal for organizations of any size, including colleges and small institutions.`,
+  }, {
     icon: <img src={Service3} className="icon-svg" />,
     title: '24/7 Expert Support',
-    text: `We’re with you every step of the way. Our dedicated support team is available around the clock to resolve issues and answer questions and ensure your operations run smoothly.`,
+    text: `We’re with you every step of the way. Our dedicated support team is available around the clock to resolve issues, answer questions, and ensure your operations run smoothly.`,
   },
 ];
 
@@ -64,33 +66,14 @@ const Cards = () => {
     }
   };
 
-  const handlePrev = () => {
-    const newIndex = (currentIndex - 1 + cardData.length) % cardData.length;
-    setCurrentIndex(newIndex);
-    scrollToCard(newIndex);
-  };
-
-  const handleNext = () => {
-    const newIndex = (currentIndex + 1) % cardData.length;
-    setCurrentIndex(newIndex);
-    scrollToCard(newIndex);
-  };
-
   return (
-    <div className="container py-5 cards-container relative">
+    <div className="container py-5 cards-container">
       <div className="text-center mb-5">
         <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Choose Acme.erp</p>
         <h2 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for <br />
         Purpose-Driven </span>Organizations</h2>        
-        <p className="benifit-subtitle">Acme.erp is more than just software—it’s a partner in your mission. <br />
-        Whether you're running an NGO, a non-profit or a faith-based institution, here’s how Acme.erp empowers your team:</p>
+        <p class="benifit-subtitle">Acme.erp is more than just software—it’s a partner in your mission. <br />Whether you're running an NGO, a non-profit, or a faith-based institution, here’s how Acme.erp empowers your team:</p>
       </div>
-
-      {/* Arrow Right */}
-      <button className="arrow-btn left" onClick={handleNext}>
-        <FaArrowRight />
-      </button>
-
       <div className="cards-scroll-wrapper" ref={scrollRef}>
         {cardData.map((card, idx) => (
           <div key={idx} className="card text-center card-hover">
@@ -104,11 +87,6 @@ const Cards = () => {
           </div>
         ))}
       </div>
-
-      {/* Arrow Left */}
-      <button className="arrow-btn right" onClick={handlePrev}>
-        <FaArrowLeft />
-      </button>
     </div>
   );
 };

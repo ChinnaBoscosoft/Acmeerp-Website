@@ -4,9 +4,9 @@ import { useInView } from 'react-intersection-observer';
 import '../css/Data.css';
 
 const stats = [
-  { id: 1, value: 25, suffix: '+', label: 'Years of Experience.' },
+  { id: 1, value: 25, suffix: '+', label: 'Years of Experience' },
   { id: 2, value: 200, suffix: '+', label: 'Skill Experts' },
-  { id: 3, value: 1800, suffix: 'K+', label: 'Customers' },
+  { id: 3, value: 1800, suffix: '+', label: 'Customers' },
   { id: 4, value: 24, suffix: '/7', label: 'Support' },
 ];
 

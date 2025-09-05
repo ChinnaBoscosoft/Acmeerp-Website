@@ -22,13 +22,12 @@ const Plan = () => {
     <>
       <div style={{ backgroundImage: `url(${bg})` }} className="pricing-container">
         <div className="container">
-          <button className="yearly-toggle">
+          <div className="text-center mb-5">
+            <div style={{ color: '#fff' }}className="welcome-tag">Pricing</div>
+            <h1 className="main-title">Choose Our Plan</h1>
+            <button className="yearly-toggle">
             Yearly
           </button>
-
-          <div className="text-center mb-5">
-            <div style={{ color: '#fff' }}className="welcome-tag">Pricing Plan</div>
-            <h1 className="main-title">Choose Our Plan</h1>
           </div>
 
           <motion.div
@@ -54,7 +53,7 @@ const Plan = () => {
                 </div>
                 <div className="price">₹0</div>
                 <p className="price-description">
-                  A free plan grants you access to some cool features of Spend.In.
+                  Essential features to help NGOs and institutions get started with accounting and expense tracking.
                 </p>
                 <ul className="feature-list">
                   <li className="feature-item">
@@ -101,11 +100,11 @@ const Plan = () => {
                 {/* <FaGem className="card-icon" /> */}
                 <div className="plan-head">
                   <h3 className="plan-title mt-3">Acmeplus Customer</h3>
-                  <p className="plan-subtitle">Best suits for great company!</p>
+                  <p className="plan-subtitle">Best suited for NGOs and Non-Profit Organizations</p>
                 </div>
                 <div className="price">₹15,000</div>
                 <p className="price-description">
-                  If you a finance manager at big company, this plan is a perfect match.
+                  Advanced tools for growing NGOs and non-profits to manage finances, donors, and reporting.
                 </p>
                 <ul className="feature-list">
                   <li className="feature-item">
@@ -151,7 +150,7 @@ const Plan = () => {
                 </div>
                 <div className="price">₹18,000</div>
                 <p className="price-description">
-                  For professional only! Start arranging your expenses with our ERP Solutions
+                  Complete ERP for NGOs and institutions to manage accounts, donations, and expenses with ease.
                 </p>
                 <ul className="feature-list">
                   <li className="feature-item">

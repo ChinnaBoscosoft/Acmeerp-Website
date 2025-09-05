@@ -291,7 +291,7 @@ const MapIndia = () => {
             We proudly serve clients across{" "}
             <strong>{activeStates.length}</strong> Indian states,
             delivering trusted solutions to over{" "}
-            <strong className="clients__highlight">{totalClients}+</strong>{" "}
+            <strong className="clients__highlight">{totalClients}</strong>{" "}
             organizations.
           </p>
           <p className="clients__active">

@@ -1437,7 +1437,7 @@ const MapDashboard = () => {
     >
       <div className="map-grid">
         <div className={`map-container ${activeMap}-map`}>
-           <h2 className="map-heading">{activeMap === "india" ? "India " : "World "}</h2> 
+           {/* <h2 className="map-heading">{activeMap === "india" ? "India " : "World "}</h2>  */}
           <svg
             key={activeMap} 
             className="map-svg"
@@ -1499,7 +1499,7 @@ const MapDashboard = () => {
         <div className="client-deprecation-box">
           <h2 className="info-head">Our Reach & Presence</h2>
           <p className="info-deprection">
-            With a strong presence in <strong>{activeRegions.length}</strong> {activeMap === "india" ? "Indian states" : "countries"}, we have established a trusted footprint across the region, empowering over <strong>{totalClients}+</strong> branch offices with our proven solutions.
+            With a strong presence in <strong>{activeRegions.length}</strong> {activeMap === "india" ? "Indian states" : "countries"}, we have established a trusted footprint across the region, empowering over <strong>{totalClients}</strong> branch offices with our proven solutions.
           </p>
           <p className="client-highlight">
             {displayRegion

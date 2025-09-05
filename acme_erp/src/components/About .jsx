@@ -113,7 +113,7 @@ const About = () => {
           {/* Right side - Content */}
           <div className="content-side">
             <div className="content-section">
-              <h6 className='welcome-tag'>About Our Acme.erp</h6>
+              <h6 className='welcome-tag'>About Acme.erp</h6>
               <h2 className='about-title'>
                 Empowering Smarter<br />
                 Decisions for Faith-Based &<br />
@@ -222,7 +222,10 @@ const About = () => {
 
       {/* Partner Organizations Marquee */}
       <div className="marquee-section">
-        <h2 className="marquee-title">Our Customers</h2>
+        {/* <h2 className="marquee-title">Our Customers</h2> */}
+       <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customer</p>
+        <h2 className="hero-title"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</h2>  
+
         <div className="marquee-container">
           <div className="marquee">
             {[...organizations, ...organizations, ...organizations].map((org, index) => (

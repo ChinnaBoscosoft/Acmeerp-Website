@@ -20,10 +20,6 @@ const Header = () => {
           <div className="col-md-8">
             <div className="d-flex flex-wrap align-items-center contact-info">
               <div className="d-flex align-items-center me-4 mb-1">
-                <FaMapMarkerAlt className="me-2" />
-                <span className="contact-text">Yelagiri Hills, Tirupattur</span>
-              </div>
-              <div className="d-flex align-items-center me-4 mb-1">
                 <FaPhone className="me-2" />
                 <span className="contact-text">+91 96 26 800 800</span>
               </div>

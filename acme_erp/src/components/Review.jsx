@@ -20,7 +20,7 @@ const Review = () => {
     const reviews = [
         {
             id: 1,
-            name: " Fr. Edwin Vasanth, Economer,",
+            name: " Fr. Edwin Vasanth, Economer",
             title: "",
             position: "Salesians of Don Bosco, Chennai Province",
             review: "The Best ERP, that helped us to bring our accounts in braches under control",
@@ -29,34 +29,34 @@ const Review = () => {
         },
         {
             id: 2,
-            name: " Sr. Bridgit Joseph,Sisters of Charity Hyderabad",
+            name: " Sr. Bridgit Joseph, Sisters of Charity Hyderabad",
             title: "",
             position: "Provincial Treasurer",
-            review: "ACME ERP is one of the best accounting software, very easy and simple to use and get the desirable reports",
+            review: "Acem.erp is one of the best accounting software, very easy and simple to use and get the desirable reports",
             icon: charity,
             color: "#004868"
         },
         {
             id: 3,
-            name: "Sr.Theresa ,SAT Mumbai,",
+            name: "Sr.Theresa, SAT Mumbai",
             title: "",
-            position: "Provincial Teasurer",
+            position: "Provincial Treasurer",
             review: "I appreciate all of your help, enthusiasm, and attention to detail with your duties. This ERP is better off with you. We feel that the matters and details are sufficient under your direction",
             icon: annai,
             color: "#004868"
         },
         {
             id: 4,
-            name: "Sr.T.Agnes SAT Trichy,",
+            name: "Sr.T. Agnes SAT Trichy",
             title: "",
-            position: "Provincial Teasurer",
+            position: "Provincial Treasurer",
             review: "Acme.erp software helps all Institutions and organizations to make efficient use of their system",
             icon: congregation,
             color: "#004868"
         },
         {
             id: 5,
-            name: "Bro. Michael Mathew,",
+            name: "Bro. Michael Mathew",
             title: "",
             position: "Asst. General Bursar, Montfort Brothers of St. Gabriel",
             review: "Acme.erp is the Accounting Software that any Not-Profit Organization can use efficiently to manage their Accounts",
@@ -118,7 +118,7 @@ const Review = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             viewport={{ once: true }}
                         >
-                            Customer Review
+                            Customer Testimonials
                         </motion.p>
                         <motion.h2
                             className="display-5 fw-bold text-dark mb-5 fade-in-up hero-title"
