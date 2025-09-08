@@ -224,8 +224,9 @@ const About = () => {
       <div className="marquee-section">
         {/* <h2 className="marquee-title">Our Customers</h2> */}
        <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customer</p>
-        <h2 className="hero-title"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</h2>  
 
+       <div>
+        <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</p> </div>
         <div className="marquee-container">
           <div className="marquee">
             {[...organizations, ...organizations, ...organizations].map((org, index) => (

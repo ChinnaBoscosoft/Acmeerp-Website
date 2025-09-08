@@ -155,8 +155,9 @@ a
                 <h3 className="contact-title">Our Office Address</h3>
                 <div className="contact-info">
                   <strong>Bosco Soft Technologies Pvt.Ltd.</strong><br />
-                  231/77, SHC Complex, Vaniyambadi Road, Tirupattur<br />
-                  Tirupattur Dist - 635 601, Tamil Nadu, India.
+                  No. 231/77, S.H.C,<br />
+                  Vaniyambadi Road, Tirupathur,<br />
+                  635 601 TN.
                 </div>
               </div>
             </div>
@@ -166,7 +167,7 @@ a
                 <div className="contact-icon"><i className="fas fa-phone"></i></div>
                 <h3 className="contact-title">Call Us Anytime</h3>
                 <div className="contact-info">
-                  <strong>Ph.: +91 96 26 800 800</strong>
+                  <strong>+91 96 26 800 800</strong>
                 </div>
               </div>
             </div>
@@ -176,6 +177,7 @@ a
                 <div className="contact-icon"><i className="fas fa-envelope"></i></div>
                 <h3 className="contact-title">Send An Email</h3>
                 <div className="contact-info">
+                  <strong>binfo@boscosofttech.com</strong> <br />
                   <strong>acmeerp@boscosofttech.com</strong>
                 </div>
               </div>
@@ -184,7 +186,7 @@ a
 
           {/* Contact Form */}
           <div className="row contact-bg">
-            <div className="col-lg-8">
+            <div className="col-lg-8" id="contactForm">
               <div className="trial-section position-relative">
                 <h2 className="trial-title">Join now for a free trial</h2>
                 <form onSubmit={handleSubmit} noValidate>

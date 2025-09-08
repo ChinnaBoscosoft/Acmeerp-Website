@@ -68,12 +68,13 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="blog-section container py-5">
-      <div className="section-header d-flex justify-content-between align-items-center flex-wrap mb-4">
-        <div className="section-text">
+    <div className="blog-section container py-4">
+      <div className="section-text d-flex justify-content-center align-items-center">
           <p className="mb-1 welcome-tag">Recent blog post</p>
           <h2 className="section-subtitle m-0">View Our Latest Blog Insights</h2>
         </div>
+      <div className="section-header d-flex justify-content-between align-items-center flex-wrap mb-4">
+        
         {/* <div className="view-all-wrapper mt-3 mt-md-0">
           <button className="btn btn-outline-primary view-all-btn" onClick={handleViewAll}>
             VIEW ALL POSTS

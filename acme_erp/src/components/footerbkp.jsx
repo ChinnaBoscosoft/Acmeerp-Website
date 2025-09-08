@@ -1,41 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
-import { FaYoutube, FaWhatsapp, FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { Mail, Facebook, Twitter, Linkedin, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { FaYoutube, FaWhatsapp } from 'react-icons/fa';
+
 import '../css/Footer.css';
 import companylogo from '../assets/img/0_Boscsoft.png';
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ✅ Scroll when coming from another page with scrollTo state
-  useEffect(() => {
-    if (location.pathname === '/' && location.state?.scrollTo) {
-      const sectionId = location.state.scrollTo;
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const offset = element.getBoundingClientRect().top + window.scrollY - 80;
-        setTimeout(() => {
-          window.scrollTo({ top: offset, behavior: 'smooth' });
-        }, 200);
-      }
-      // clear state so it doesn’t trigger again
-      navigate(location.pathname, { replace: true });
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
-  }, [location, navigate]);
+  };
 
   const handleNavClick = (sectionId) => {
     if (sectionId.startsWith('/')) {
-      // Direct page route
       navigate(sectionId);
     } else if (location.pathname !== '/') {
-      // Not on home → navigate to home with scroll target
       navigate('/', { state: { scrollTo: sectionId } });
     } else {
-      // Already on home → scroll directly
       const element = document.getElementById(sectionId);
       if (element) {
         const offset = element.getBoundingClientRect().top + window.scrollY - 80;
@@ -95,6 +89,21 @@ const Footer = () => {
     }
   };
 
+  const buttonVariants = {
+    hover: {
+      scale: 1.02,
+      y: -2,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10
+      }
+    },
+    tap: {
+      scale: 0.98
+    }
+  };
+
   return (
     <motion.footer
       className="footer-wrapper"
@@ -103,7 +112,6 @@ const Footer = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
     >
-      {/* Newsletter */}
       <motion.div
         className="newsletter-section newsletter-container"
         variants={itemVariants}
@@ -128,40 +136,25 @@ const Footer = () => {
               required
             />
           </motion.div>
-          <motion.button type="submit" className="newsletter-button">
+          <motion.button
+            type="submit"
+            className="newsletter-button"
+          >
             Subscribe Now
           </motion.button>
         </motion.form>
+
       </motion.div>
 
-      {/* Footer Main */}
       <motion.div
         className="footer-main footer-grid footer-container"
         variants={containerVariants}
       >
-        {/* About */}
         <motion.div variants={itemVariants}>
           <h3>About Company</h3>
           <p>
             Our strength lies in our innovative approach, user friendliness and staunch customer support with a focus on mobile access and AI Integration.
           </p>
-          <motion.div
-            className="company-logo"
-            whileHover={{ scale: 1.05, rotate: 2 }}
-            transition={{ type: "spring", stiffness: 300, damping: 10 }}
-          >
-            <a
-              href="https://www.boscosofttech.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={companylogo}
-                alt="Boscosoft Logo"
-                className="company-logo-img"
-              />
-            </a>
-          </motion.div>
           <div className="footer-social-icons" style={{ display: 'flex', gap: '10px' }}>
             {[
               { Icon: FaFacebookF, color: '#1877F2', link: 'https://www.facebook.com/acme.erp.boscsoft/' },
@@ -187,10 +180,25 @@ const Footer = () => {
               </motion.a>
             ))}
           </div>
-          
+          <motion.div
+            className="company-logo"
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+          >
+            <a
+              href="https://www.boscosofttech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={companylogo}
+                alt="Boscosoft Logo"
+                className="company-logo-img"
+              />
+            </a>
+          </motion.div>
         </motion.div>
 
-        {/* Quick Links */}
         <motion.div variants={itemVariants}>
           <h3>Quick Links</h3>
           <ul>
@@ -198,7 +206,7 @@ const Footer = () => {
               { label: 'About Us', id: 'about' },
               { label: 'Module', id: 'cards' },
               { label: 'Customer', id: 'review' },
-              { label: 'Contact', id: '/contact' }, // page route
+              { label: 'Contact', id: '/contact' },
               { label: 'Blog', id: 'blogpost' }
             ].map((item, index) => (
               <motion.li
@@ -218,7 +226,6 @@ const Footer = () => {
           </ul>
         </motion.div>
 
-        {/* Other Products */}
         <motion.div variants={itemVariants}>
           <h3>Other Products & Services</h3>
           <ul>
@@ -226,6 +233,7 @@ const Footer = () => {
               { label: 'School Management Software', url: 'https://www.smartschoolonline.com/' },
               { label: 'College Management Software', url: 'https://higrade.live/' },
               { label: 'Church Management Software', url: 'https://cristoerp.com/' },
+              // { label: 'Accounting Management Software', url: null },
               { label: 'Web Design & App Development', url: 'https://www.boscosofttech.com/services/web-development' },
               { label: 'Mobile App Development and Modularization', url: 'https://www.boscosofttech.com/services/mobile-app' }
             ].map((item, index) => (
@@ -248,16 +256,29 @@ const Footer = () => {
           </ul>
         </motion.div>
 
-        {/* Address */}
         <motion.div variants={itemVariants}>
           <h3>Address</h3>
-          <motion.p initial={{ opacity: 0.7 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-            Bosco Soft Technologies Pvt Ltd.<br />
-             No. 231/77, S.H.C,<br />
-             Vaniyambadi Road, Tirupathur,<br />
-            635 601 TN.
+          <motion.p
+            initial={{ opacity: 0.7 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            Bosco Soft Technologies Pvt Ltd.
           </motion.p>
-          <motion.p whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300, damping: 10 }}>
+          <motion.p
+            initial={{ opacity: 0.7 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            No. 231/77, S.H.C Complex<br />
+            Tirupattur, Tirupattur District<br />
+            Tamil Nadu, India<br />
+            635 601
+          </motion.p>
+          <motion.p
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+          >
             +91 9626 800 800
           </motion.p>
           <motion.a
@@ -270,12 +291,15 @@ const Footer = () => {
         </motion.div>
       </motion.div>
 
-      {/* Footer Bottom */}
       <motion.div
         className="footer-bottom footer-container"
         variants={itemVariants}
       >
-        <motion.div initial={{ opacity: 0.8 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.3 }}>
+        <motion.div
+          initial={{ opacity: 0.8 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
           Copyright © 2025{' '}
           <motion.a
             href="https://boscosofttech.com/"
@@ -285,7 +309,7 @@ const Footer = () => {
             whileHover={{ color: '#0f5a7a' }}
             transition={{ duration: 0.3 }}
           >
-            Bosco Soft Technologies Pvt.Ltd
+            Boscosoft
           </motion.a>
           . All Rights Reserved.
         </motion.div>

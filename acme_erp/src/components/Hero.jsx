@@ -60,7 +60,7 @@ const Hero = () => {
                   className="btn btn-primary btn-trial"
                   whileHover={{ scale: 1.07 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate("/contact", { state: { scrollTo: "contactForm" } })}
                 >
                   Free Trial
                 </motion.button>
