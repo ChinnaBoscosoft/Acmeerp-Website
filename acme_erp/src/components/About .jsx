@@ -223,7 +223,7 @@ const About = () => {
       {/* Partner Organizations Marquee */}
       <div className="marquee-section">
         {/* <h2 className="marquee-title">Our Customers</h2> */}
-       <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customer</p>
+       <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customers</p>
 
        <div>
         <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</p> </div>

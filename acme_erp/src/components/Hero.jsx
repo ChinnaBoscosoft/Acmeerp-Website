@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaPlay } from 'react-icons/fa';
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 import hero from '../assets/img/hero/acount1.png';
 import { useNavigate } from 'react-router-dom';
@@ -57,13 +58,14 @@ const Hero = () => {
                 transition={{ delay: 0.9, duration: 0.5 }}
               >
                 <motion.button
-                  className="btn btn-primary btn-trial"
-                  whileHover={{ scale: 1.07 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={() => navigate("/contact", { state: { scrollTo: "contactForm" } })}
-                >
-                  Free Trial
-                </motion.button>
+                className="btn btn-primary btn-trial flex items-center gap-2"
+                whileHover={{ scale: 1.07 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => navigate("/contact", { state: { scrollTo: "contactForm" } })}
+              >
+                <span>Free Trial</span>
+                <FaArrowLeftLong className="arrow-btn-herosec text-lg" />
+              </motion.button>
                 {/* <motion.button
                   className="btn btn-demo d-flex"
                   whileHover={{ scale: 1.07 }}

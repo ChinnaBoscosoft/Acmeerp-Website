@@ -57,7 +57,7 @@ const Functional = () => {
         <div className="acme-container">
           <motion.div className="acme-header" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="welcome-tag">Functional Suite</p>
-            <h1 className="acme-title">Acme.erp Features</h1>
+            <h1 className="acme-title">Acme.erp Modules</h1>
           </motion.div>
 
           <div className="acme-grid">

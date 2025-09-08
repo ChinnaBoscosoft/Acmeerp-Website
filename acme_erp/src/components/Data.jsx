@@ -32,7 +32,7 @@ const Data = () => {
                 start={0}
                 end={stat.value}
                 duration={2}
-                separator=","
+                separator=""
                 suffix={stat.suffix}
                 key={inView ? 'countup-in' : 'countup-out'}
               />

@@ -77,10 +77,10 @@ const scrollToSection = (id) => {
               <button className="nav-link btn btn-link" onClick={() => handleNavClick('about')}>About Us</button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn btn-link" onClick={() => handleNavClick('cards')}>Modules</button>
+              <button className="nav-link btn btn-link" onClick={() => handleNavClick('Functional')}>Modules</button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn btn-link" onClick={() => handleNavClick('review')}>Customer</button>
+              <button className="nav-link btn btn-link" onClick={() => handleNavClick('review')}>Customers</button>
             </li>
             <li className="nav-item">
                 <Link to="/contact" className="nav-link btn btn-link">Contact</Link>

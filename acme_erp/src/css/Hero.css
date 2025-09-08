@@ -376,3 +376,7 @@
     max-width: 250px;
   }
 }
+.arrow-btn-herosec{
+    transform: rotate(180deg);
+    margin-left: 10px;
+}

@@ -196,7 +196,7 @@ const Footer = () => {
           <ul>
             {[
               { label: 'About Us', id: 'about' },
-              { label: 'Module', id: 'cards' },
+              { label: 'Module', id: 'Functional' },
               { label: 'Customer', id: 'review' },
               { label: 'Contact', id: '/contact' }, // page route
               { label: 'Blog', id: 'blogpost' }
