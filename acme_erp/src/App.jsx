@@ -25,7 +25,7 @@ import Privacy from './page/privacy.jsx';
 import Functional from './components/Functional .jsx';
 import CustomCursor from './components/CustomCursor.jsx';
 import Chatbot from './components/Chatbot.jsx';
-import MapIndia from '../src/components/MapIndia.jsx';
+// import MapIndia from '../src/components/MapIndia.jsx';
 import MapDashboard from './components/MapDashboard.jsx';
 import AntiInspect from './components/AntiInspect.jsx';
 import NotFound from './page/NotFound.jsx';
@@ -116,7 +116,7 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/Termscondition" element={<Tearmsconditions />} />
         <Route path="/Privacy-Policy" element={<Privacy />} />
-        <Route path="/map" element={<MapIndia />} />
+        {/* <Route path="/map" element={<MapIndia />} /> */}
         {/* Add more main routes here if needed */}
       </Route>
       <Route path="*" element={<NotFound />} />

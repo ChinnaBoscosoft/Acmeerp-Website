@@ -23,11 +23,11 @@ const Plan = () => {
       <div style={{ backgroundImage: `url(${bg})` }} className="pricing-container">
         <div className="container">
           <div className="text-center mb-5">
-            <div style={{ color: '#fff' }}className="welcome-tag">Pricing</div>
+            <div style={{ color: '#fff' }} className="welcome-tag">Pricing</div>
             <h1 className="main-title">Choose Our Plan</h1>
             <button className="yearly-toggle">
-            Yearly
-          </button>
+              Yearly
+            </button>
           </div>
 
           <motion.div
@@ -77,9 +77,15 @@ const Plan = () => {
                     Free Online Support*
                   </li>
                 </ul>
-                <Link to="/contact" className="btn btn-primary btn-get-plan">
+                <Link
+                  to="/contact#contactForm"
+                  state={{ from: 'plan' }}
+                  className="btn btn-primary btn-get-plan"
+                  style={{ marginTop: 20 }}
+                >
                   Get Your Free Plan
                 </Link>
+
               </div>
             </motion.div>
 
@@ -128,7 +134,11 @@ const Plan = () => {
                     Free Online Support*
                   </li>
                 </ul>
-                 <Link to="/contact"  className="btn btn-primary btn-get-plan">
+                <Link
+                  to="/contact#contactForm"
+                  state={{ from: 'plan' }}
+                  className="btn btn-primary btn-get-plan"
+                >
                   Get Your Free Plan
                 </Link>
               </div>
@@ -174,7 +184,12 @@ const Plan = () => {
                     Free Online Support*
                   </li>
                 </ul>
-                  <Link to="/contact"  className="btn btn-primary btn-get-plan">
+                <Link
+                  to="/contact#contactForm"
+                  state={{ from: 'plan' }}
+                  className="btn btn-primary btn-get-plan"
+                  style={{ marginTop: 20 }}
+                >
                   Get Your Free Plan
                 </Link>
               </div>

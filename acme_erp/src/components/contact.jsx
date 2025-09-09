@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../css/Contact.css';
+import { useLocation, useNavigate } from 'react-router-dom';
+
 
 const EMAIL_TIMEOUT_MS = 60 * 60 * 1000; 
 
@@ -40,9 +42,32 @@ const Contact = () => {
     phone: '',
     message: ''
   });
+  const location = useLocation();
+  const navigate = useNavigate();
 
+
+ useEffect(() => {
+  document.body.classList.remove('from-hero', 'from-plan');
+  if (location.state?.from === 'plan') document.body.classList.add('from-plan');
+  if (location.state?.from === 'hero') document.body.classList.add('from-hero');
+
+  if (location.hash === '#contactForm') {
+    const el = document.getElementById('contactForm');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (location.state?.from === 'plan') {
+        setTimeout(() => window.scrollBy({ top: 24, left: 0 }), 350);
+      }
+    }
+    navigate(location.pathname, { replace: true, state: location.state });
+    setTimeout(() => {
+      document.body.classList.remove('from-hero', 'from-plan');
+    }, 800);
+  }
+}, [location, navigate]); 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
 
   const validateName = (name) => name.trim() !== '';
   const validateOrganization = (org) => org.trim() !== '';

@@ -5,7 +5,7 @@
   overflow: hidden;
   min-height: 100vh;
 }
-
+/* body.from-hero #contactForm { scroll-margin-top: 230px; } */
 .hero-content {
   padding: 2rem 0;
   position: relative;
