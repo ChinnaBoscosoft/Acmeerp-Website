@@ -30,6 +30,7 @@ import MapDashboard from './components/MapDashboard.jsx';
 import AntiInspect from './components/AntiInspect.jsx';
 import NotFound from './page/NotFound.jsx';
 import { Outlet } from 'react-router-dom';
+import Login from './components/Login.jsx';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -116,6 +117,7 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/Termscondition" element={<Tearmsconditions />} />
         <Route path="/Privacy-Policy" element={<Privacy />} />
+        <Route path="/Login.html" element={<Login />} />
         {/* <Route path="/map" element={<MapIndia />} /> */}
         {/* Add more main routes here if needed */}
       </Route>

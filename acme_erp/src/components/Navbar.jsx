@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import '../css/Navbar.css';
 import Acme_logo from '../assets/acme_logo.svg';
-import { Link,useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { color } from 'framer-motion';
 
 
@@ -11,26 +11,26 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
-    const [isHovered, setIsHovered] = useState(false); 
+  const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-const scrollToSection = (id) => {
-  const element = document.getElementById(id);
-  if (element) {
-    const headerOffset = 80; 
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  }
-};
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
 
 
@@ -83,22 +83,23 @@ const scrollToSection = (id) => {
               <button className="nav-link btn btn-link" onClick={() => handleNavClick('review')}>Customers</button>
             </li>
             <li className="nav-item">
-                <Link to="/contact" className="nav-link btn btn-link">Contact</Link>
+              <Link to="/contact" className="nav-link btn btn-link">Contact</Link>
             </li>
             <li className="nav-item">
               <button className="nav-link btn btn-link" onClick={() => handleNavClick('blogpost')}>Blog</button>
             </li>
           </ul>
           <div className="navbar-nav">
-          <button
-      className={`login-button ${isHovered ? 'hovered' : ''}`}
-      onClick={() => window.location.href = 'https://staging.acmeerp.org/login.html'}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <FaUser className="login-icon" size={16} />
-      Login
-    </button>
+            <button
+              className={`login-button ${isHovered ? "hovered" : ""}`}
+              onClick={() => navigate("/Login.html")}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              type="button"
+            >
+              <FaUser className="login-icon" size={16} />
+              Login
+            </button>
           </div>
         </div>
       </div>
