@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="navbar-nav">
             <button
               className={`login-button ${isHovered ? "hovered" : ""}`}
-              onClick={() => navigate("/Login.html")}
+              onClick={() => navigate("/login")}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               type="button"

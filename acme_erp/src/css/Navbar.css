@@ -140,6 +140,38 @@
     gap: 0.5rem;
   }
 }
+/* ------- 1200 and below (tablet / small desktop) ------- */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  /* Slightly smaller logo */
+  .logo-svg {
+    width: 110px;
+    height: 72px;
+  }
+
+  /* Reduce nav link font size & horizontal padding */
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    padding: 4px 14px !important;
+    margin: 0 2px;
+  }
+
+  /* Tighten spacing between items on wider tablets */
+  .navbar-nav {
+    gap: 0.25rem;
+  }
+
+  /* Smaller login button */
+  .login-button {
+    font-size: 16px;
+    padding: 8px 18px;
+    height: 42px;
+  }
+}
+
 
 /* Medium devices (tablets, 991.98px and down) */
 @media (max-width: 991.98px) {

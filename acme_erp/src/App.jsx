@@ -38,7 +38,11 @@ const fadeInUp = {
   transition: { duration: 0.8 },
   viewport: { once: true, amount: 0.3 },
 };
-
+function LegacyLoginRedirect() {
+  const location = useLocation();
+  // Redirect /login.html?msg=3 -> /login?msg=3
+  return <Navigate to={`/login${location.search || ""}`} replace />;
+}
 const Home = () => {
   return (
     <>
@@ -96,7 +100,7 @@ const Home = () => {
 const MainLayout = () => (
   <>
     <AntiInspect />
-    <Chatbot />
+    {/* <Chatbot /> */}
     <CustomCursor />
     <ScrollToTop />
     <Header />
@@ -117,9 +121,7 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/Termscondition" element={<Tearmsconditions />} />
         <Route path="/Privacy-Policy" element={<Privacy />} />
-        <Route path="/Login.html" element={<Login />} />
-        {/* <Route path="/map" element={<MapIndia />} /> */}
-        {/* Add more main routes here if needed */}
+         <Route path="/login" element={<Login />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
