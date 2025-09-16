@@ -240,7 +240,7 @@
   .acme-cards__arrow { display: none; }
 }
 /* Hide arrows up to and including 1100px */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .acme-cards .acme-cards__arrow {
     display: none !important;
   }

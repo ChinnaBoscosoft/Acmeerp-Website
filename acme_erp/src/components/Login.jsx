@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom"; 
+import { useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 import "../css/login.css";
 import Acme_logo from "../assets/icon.png";
 
@@ -10,16 +12,37 @@ const MESSAGE_MAP = {
   "4": "Server is under maintenance.",
 };
 
+const ICON_MAP = {
+  "1": "warning",
+  "2": "success",
+  "3": "error",
+  "4": "info",
+};
+
+function showToast(title, icon = "info") {
+  Swal.fire({
+    toast: true,
+    position: "top-end",
+    icon,
+    title,
+    showConfirmButton: false,
+    timer: 3500,
+    timerProgressBar: true,
+    didOpen: (toastEl) => {
+      toastEl.addEventListener("mouseenter", Swal.stopTimer);
+      toastEl.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+}
+
 export default function Login() {
   const [message, setMessage] = useState("");
-  const location = useLocation(); 
+  const location = useLocation();
 
   useEffect(() => {
-  
     const params = new URLSearchParams(location.search || "");
     let msg = params.get("msg");
 
-  
     if (!msg) {
       const hash = window.location.hash || "";
       const qIndex = hash.indexOf("?");
@@ -30,11 +53,16 @@ export default function Login() {
     }
 
     if (msg && MESSAGE_MAP[msg]) {
-      setMessage(MESSAGE_MAP[msg]);
+      const text = MESSAGE_MAP[msg];
+      setMessage(text);
+      const icon = ICON_MAP[msg] || "info";
+      console.log(text, icon);
+      showToast(text, icon);
     } else {
       setMessage("");
     }
-  }, [location.search]);
+    // include full location so changes to hash/search re-run effect
+  }, [location]);
 
   return (
     <div className="acme-login-page">
@@ -79,16 +107,7 @@ export default function Login() {
               Sign in
             </button>
 
-            {message && (
-              <div
-                id="divmessage"
-                className="acme-login-alert"
-                role="status"
-                aria-live="polite"
-              >
-                {message}
-              </div>
-            )}
+            {/* Inline message removed: toast will handle notifications */}
           </form>
         </div>
 

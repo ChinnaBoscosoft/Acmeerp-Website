@@ -99,8 +99,8 @@ const Home = () => {
 // MainLayout component for all main pages
 const MainLayout = () => (
   <>
-    <AntiInspect />
-    {/* <Chatbot /> */}
+    {/* <AntiInspect /> */}
+    <Chatbot />
     <CustomCursor />
     <ScrollToTop />
     <Header />

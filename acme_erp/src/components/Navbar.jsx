@@ -58,10 +58,9 @@ const Navbar = () => {
     <nav className={`navbar navbar-expand-lg navbar-light shadow-sm ${scrolled ? 'scrolled' : ''}`}>
       <div className="container-fluid px-3 px-md-4">
         <div className="navbar-brand d-flex align-items-center">
-          <div className="logo-container">
+          <div className="logo-container" onClick={() => handleNavClick('hero')} style={{ cursor: "pointer" }}>
             <img src={Acme_logo} alt="ACME Logo" className="logo-svg" />
           </div>
-          {/* <div className='logo-text'> Acme.erp</div> */}
         </div>
 
         <button className="navbar-toggler border-0 p-0" onClick={toggleMenu}>

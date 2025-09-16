@@ -25,6 +25,7 @@
     "react-simple-maps": "^1.0.0",
     "react-toastify": "^11.0.5",
     "react-tooltip": "^5.29.1",
+    "sweetalert2": "^11.23.0",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
