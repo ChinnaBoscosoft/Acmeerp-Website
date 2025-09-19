@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../css/Contact.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const EMAIL_TIMEOUT_MS = 60 * 60 * 1000;
@@ -42,10 +42,8 @@ const Contact = () => {
     phone: '',
     message: ''
   });
-  const location = useLocation();
-  const navigate = useNavigate();
-
-
+  // const location = useLocation();
+  // const navigate = useNavigate();
   // useEffect(() => {
   //   document.body.classList.remove('from-hero', 'from-plan');
   //   if (location.state?.from === 'plan') document.body.classList.add('from-plan');
@@ -126,9 +124,6 @@ const Contact = () => {
       },
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
-
-
-    a
       .then(() => {
         toast.success(' Thank you! Your message has been sent.', {
           position: "top-center",
@@ -313,7 +308,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
+    <>
           {/* Contact Form
           <div className="row contact-bg">
             <div className="col-lg-8" id="contactForm">
@@ -410,6 +405,7 @@ const Contact = () => {
               </div>
             </div>
           </div> */}
+        </>
 
           {/* Map */}
           <div className="map-container mt-5">
