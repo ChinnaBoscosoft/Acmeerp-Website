@@ -78,7 +78,7 @@ const Plan = () => {
                   </li>
                 </ul>
                 <Link
-                  to="/contact#contactForm"
+                  to="/contact"
                   state={{ from: 'plan' }}
                   className="btn btn-primary btn-get-plan"
                   style={{ marginTop: 20 }}
@@ -135,7 +135,7 @@ const Plan = () => {
                   </li>
                 </ul>
                 <Link
-                  to="/contact#contactForm"
+                  to="/contact"
                   state={{ from: 'plan' }}
                   className="btn btn-primary btn-get-plan"
                 >
@@ -185,7 +185,7 @@ const Plan = () => {
                   </li>
                 </ul>
                 <Link
-                  to="/contact#contactForm"
+                  to="/contact"
                   state={{ from: 'plan' }}
                   className="btn btn-primary btn-get-plan"
                   style={{ marginTop: 20 }}

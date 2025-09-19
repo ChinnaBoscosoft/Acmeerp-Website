@@ -137,13 +137,21 @@
     font-size: 14px;
   }
 
-  .contact-bg {
+   .contact-bg {
     /* background-image: url('../assets/img/bg/contact_bg_1.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin-right: -150px;
+    margin-top: 100px!important;
+     justify-content: center;
   }
+  #contactForm {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+}
+
 
   .map-container {
     border-radius: 20px;

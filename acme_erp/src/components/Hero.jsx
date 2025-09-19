@@ -60,8 +60,7 @@ const Hero = () => {
               >
                 <motion.div whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}>
                   <Link
-                    to="/contact#contactForm"
-                    state={{ from: 'hero' }}
+                    to="/contact"
                     className="btn btn-primary btn-trial flex items-center gap-2"
                   >
                     <span>Free Trial</span>

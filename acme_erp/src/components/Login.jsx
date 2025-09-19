@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import "../css/login.css";
 import Acme_logo from "../assets/icon.png";
+import login_bg from "../assets/img/bg/loginbg3.jpg";
 
 const MESSAGE_MAP = {
   "1": "Session Expired. Please Login again.",
@@ -65,13 +66,20 @@ export default function Login() {
   }, [location]);
 
   return (
-    <div className="acme-login-page">
+    <div
+      className="acme-login-page"
+      // style={{
+      //   backgroundImage: `url(${login_bg})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      //   minHeight: "100vh",
+      // }}
+    >
       <div className="acme-login-wrap">
         <h1 className="acme-login-title">Sign in to continue to Acme.erp Portal</h1>
-
         <div className="acme-login-card">
           <img className="acme-login-logo" src={Acme_logo} alt="Acme.erp" />
-
           <form
             className="acme-login-form"
             method="post"
@@ -106,11 +114,9 @@ export default function Login() {
             <button className="acme-submit-btn" type="submit">
               Sign in
             </button>
-
             {/* Inline message removed: toast will handle notifications */}
           </form>
         </div>
-
         <footer className="acme-login-footer">
           <p>
             Powered By{" "}

@@ -28,7 +28,7 @@ const blogPosts = [
     date: '16, 2024',
     title: 'Transform Your Finances with Acme.erp: A Simple Path to Success',
     category: 'FINANCE',
-    link: '/finance2'
+    link: '/FMS-blog'
   },
   // {
   //   image: image4,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Header from './components/Header.jsx';
@@ -38,11 +38,11 @@ const fadeInUp = {
   transition: { duration: 0.8 },
   viewport: { once: true, amount: 0.3 },
 };
-function LegacyLoginRedirect() {
-  const location = useLocation();
-  // Redirect /login.html?msg=3 -> /login?msg=3
-  return <Navigate to={`/login${location.search || ""}`} replace />;
-}
+// function LegacyLoginRedirect() {
+//   const location = useLocation();
+//   // Redirect /login.html?msg=3 -> /login?msg=3
+//   return <Navigate to={`/login${location.search || ""}`} replace />;
+// }
 const Home = () => {
   return (
     <>
@@ -99,7 +99,7 @@ const Home = () => {
 // MainLayout component for all main pages
 const MainLayout = () => (
   <>
-    {/* <AntiInspect /> */}
+    <AntiInspect />
     <Chatbot />
     <CustomCursor />
     <ScrollToTop />
@@ -117,7 +117,7 @@ const App = () => (
         <Route path="/" element={<Home />} />
         <Route path="/accounting" element={<Accounting />} />
         <Route path="/finance" element={<Finance />} />
-        <Route path="/finance2" element={<Finance2 />} />
+        <Route path="/FMS-blog" element={<Finance2 />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Termscondition" element={<Tearmsconditions />} />
         <Route path="/Privacy-Policy" element={<Privacy />} />
