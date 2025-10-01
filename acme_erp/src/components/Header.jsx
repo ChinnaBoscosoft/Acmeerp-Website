@@ -10,6 +10,7 @@ import {
   FaYoutube,
   FaWhatsapp
 } from 'react-icons/fa';
+import { motion } from "framer-motion";
 import '../css/Header.css';
 const Header = () => {
   return (
@@ -25,14 +26,14 @@ const Header = () => {
               </div>
               <div className="d-flex align-items-center mb-1">
                 <FaEnvelope className="me-2" />
-                <a href="mailto:binfo@boscosofttech.com"
+                <motion.a
+                  href="mailto:binfo@boscosofttech.com"
                   className="contact-text"
                   whileHover={{ scale: 1.05, color: "#ffffff" }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
                 >
                   binfo@boscosofttech.com
-                </a>
-
+                </motion.a>
               </div>
             </div>
           </div>

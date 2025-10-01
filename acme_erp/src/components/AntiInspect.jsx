@@ -57,7 +57,7 @@ const AntiInspect = () => {
         // but many still evaluate getters when displaying objects.
         // This is a "best-effort" check.
         // eslint-disable-next-line no-console
-        console.log("%c", probe);
+        // console.log("%c", probe);
       } catch (err) {
         // ignore
       }

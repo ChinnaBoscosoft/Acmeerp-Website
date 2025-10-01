@@ -274,7 +274,7 @@ const Footer = () => {
           Copyright © 2025{' '}
           <motion.a
             href="https://boscosofttech.com/"
-            style={{ color: '#1e5e7e', textDecoration: 'none' }}
+            style={{ color: '#06B8DF', textDecoration: 'none' }}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ color: '#0f5a7a' }}
