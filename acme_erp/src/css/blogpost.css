@@ -150,37 +150,36 @@
   transform: translateX(3px);
 }
 
-/* Arrow buttons (desktop only) */
-.arrow-btn, .arrow-btn2 {
-  display: none;
-  left: 100%;
-}
 
 @media (min-width: 992px) {
-  .arrow-btn, .arrow-btn2 {
+   .blog-slider { position: relative; }
+  .blog-arrow {
     display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: #fff;
     color: #004868;
     border: none;
     border-radius: 50%;
-    width: 90px;
-    height: 45px;
+    width: 56px;
+    height: 56px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    z-index: 2;
   }
 
-  .arrow-btn {
-    transform: rotate(180deg);
-  }
+  .blog-arrow--prev { left: -65px; }   /* tweak these offsets as needed */
+  .blog-arrow--next { right: -65px; }
 
-  .arrow-btn:hover, .arrow-btn2:hover {
+  .blog-arrow:hover {
     background: #004868;
     color: #fff;
+    box-shadow: 0 6px 14px rgba(0, 72, 104, 0.25);
   }
-}
 
 /* 📱 Responsive Fixes */
 @media (max-width: 767.98px) {
@@ -241,4 +240,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}}
+@media (max-width: 1100px) {
+  .blog-arrow {
+    display: none !important;
+  }
 }

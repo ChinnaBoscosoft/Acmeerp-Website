@@ -11,7 +11,6 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ✅ Scroll when coming from another page with scrollTo state
   useEffect(() => {
     if (location.pathname === '/' && location.state?.scrollTo) {
       const sectionId = location.state.scrollTo;
@@ -22,20 +21,16 @@ const Footer = () => {
           window.scrollTo({ top: offset, behavior: 'smooth' });
         }, 200);
       }
-      // clear state so it doesn’t trigger again
       navigate(location.pathname, { replace: true });
     }
   }, [location, navigate]);
 
   const handleNavClick = (sectionId) => {
     if (sectionId.startsWith('/')) {
-      // Direct page route
       navigate(sectionId);
     } else if (location.pathname !== '/') {
-      // Not on home → navigate to home with scroll target
       navigate('/', { state: { scrollTo: sectionId } });
-    } else {
-      // Already on home → scroll directly
+    } else { 
       const element = document.getElementById(sectionId);
       if (element) {
         const offset = element.getBoundingClientRect().top + window.scrollY - 80;
@@ -197,8 +192,8 @@ const Footer = () => {
             {[
               { label: 'About Us', id: 'about' },
               { label: 'Module', id: 'Functional' },
-              { label: 'Customer', id: 'review' },
-              { label: 'Contact', id: '/contact' }, // page route
+              { label: 'Customers', id: 'review' },
+              { label: 'Contact', id: '/contact' }, 
               { label: 'Blog', id: 'blogpost' }
             ].map((item, index) => (
               <motion.li
@@ -279,7 +274,7 @@ const Footer = () => {
           Copyright © 2025{' '}
           <motion.a
             href="https://boscosofttech.com/"
-            style={{ color: '#1e5e7e', textDecoration: 'none' }}
+            style={{ color: '#06B8DF', textDecoration: 'none' }}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ color: '#0f5a7a' }}

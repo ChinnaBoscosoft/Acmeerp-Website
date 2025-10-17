@@ -14,7 +14,6 @@ import org4 from "../assets/img/client/chengelpet.jpg";
 import org5 from "../assets/img/client/claretian.jpg";
 import org6 from "../assets/img/client/congregation-of sister.jpg";
 
-// Hook to get window width
 const useWindowWidth = () => {
   const [width, setWidth] = useState(window.innerWidth);
 

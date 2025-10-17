@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import Header from './components/Header.jsx';
@@ -14,7 +14,7 @@ import Plan from './components/Plan.jsx';
 import Question from './components/Question.jsx';
 import Review from './components/Review.jsx';
 import Streamlines from './components/Streamlines.jsx';
-import Finance from './page/finance.jsx';
+import Finance from './page/Finance.jsx';
 import Finance2 from './components/Finance2.jsx';
 import Contact from './components/contact.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
@@ -25,11 +25,12 @@ import Privacy from './page/privacy.jsx';
 import Functional from './components/Functional .jsx';
 import CustomCursor from './components/CustomCursor.jsx';
 import Chatbot from './components/Chatbot.jsx';
-import MapIndia from '../src/components/MapIndia.jsx';
+// import MapIndia from '../src/components/MapIndia.jsx';
 import MapDashboard from './components/MapDashboard.jsx';
 import AntiInspect from './components/AntiInspect.jsx';
 import NotFound from './page/NotFound.jsx';
 import { Outlet } from 'react-router-dom';
+import Login from './components/Login.jsx';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -37,7 +38,11 @@ const fadeInUp = {
   transition: { duration: 0.8 },
   viewport: { once: true, amount: 0.3 },
 };
-
+// function LegacyLoginRedirect() {
+//   const location = useLocation();
+//   // Redirect /login.html?msg=3 -> /login?msg=3
+//   return <Navigate to={`/login${location.search || ""}`} replace />;
+// }
 const Home = () => {
   return (
     <>
@@ -112,12 +117,11 @@ const App = () => (
         <Route path="/" element={<Home />} />
         <Route path="/accounting" element={<Accounting />} />
         <Route path="/finance" element={<Finance />} />
-        <Route path="/finance2" element={<Finance2 />} />
+        <Route path="/FMS-blog" element={<Finance2 />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Termscondition" element={<Tearmsconditions />} />
         <Route path="/Privacy-Policy" element={<Privacy />} />
-        <Route path="/map" element={<MapIndia />} />
-        {/* Add more main routes here if needed */}
+         <Route path="/login" element={<Login />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

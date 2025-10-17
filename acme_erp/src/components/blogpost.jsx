@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../css/BlogPost.css';
+import '../css/blogpost.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaCalendar } from "react-icons/fa";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import image1 from '../assets/img/blog/accounting.jpg';
 import image2 from '../assets/img/blog/finance.jpg';
 import image3 from '../assets/img/blog/finance01.jpg';
@@ -28,7 +28,7 @@ const blogPosts = [
     date: '16, 2024',
     title: 'Transform Your Finances with Acme.erp: A Simple Path to Success',
     category: 'FINANCE',
-    link: '/finance2'
+    link: '/FMS-blog'
   },
   // {
   //   image: image4,
@@ -70,11 +70,11 @@ const BlogPost = () => {
   return (
     <div className="blog-section container py-4">
       <div className="section-text d-flex justify-content-center align-items-center">
-          <p className="mb-1 welcome-tag">Recent blog post</p>
-          <h2 className="section-subtitle m-0">View Our Latest Blog Insights</h2>
-        </div>
+        <p className="mb-1 welcome-tag">Recent blog post</p>
+        <h2 className="section-subtitle m-0">View Our Latest Blog Insights</h2>
+      </div>
       <div className="section-header d-flex justify-content-between align-items-center flex-wrap mb-4">
-        
+
         {/* <div className="view-all-wrapper mt-3 mt-md-0">
           <button className="btn btn-outline-primary view-all-btn" onClick={handleViewAll}>
             VIEW ALL POSTS
@@ -83,7 +83,9 @@ const BlogPost = () => {
       </div>
 
       <div className="blog-slider d-flex align-items-center justify-content-center">
-        <div className="arrow-btn2" onClick={handlePrev}><FaArrowLeftLong /></div>
+        <div className="blog-arrow blog-arrow--prev" onClick={handlePrev} aria-label="Previous">
+          <FaArrowLeftLong />
+        </div>
         <div className="row flex-nowrap overflow-hidden">
           {visiblePosts.map((post, index) => (
             <div className="col-md-4 mb-4" key={index}>
@@ -105,7 +107,9 @@ const BlogPost = () => {
             </div>
           ))}
         </div>
-        <div className="arrow-btn" onClick={handleNext}><FaArrowLeftLong /></div>
+        <div className="blog-arrow blog-arrow--next" onClick={handleNext} aria-label="Next">
+          <FaArrowRightLong />
+        </div>
       </div>
     </div>
   );

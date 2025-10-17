@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import hero from '../assets/img/hero/acount1.png';
 import { useNavigate } from 'react-router-dom';
 import '../css/Hero.css';
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -57,15 +58,15 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
               >
-                <motion.button
-                className="btn btn-primary btn-trial flex items-center gap-2"
-                whileHover={{ scale: 1.07 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => navigate("/contact", { state: { scrollTo: "contactForm" } })}
-              >
-                <span>Free Trial</span>
-                <FaArrowLeftLong className="arrow-btn-herosec text-lg" />
-              </motion.button>
+                <motion.div whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}>
+                  <Link
+                    to="/contact"
+                    className="btn btn-primary btn-trial flex items-center gap-2"
+                  >
+                    <span>Free Trial</span>
+                    <FaArrowLeftLong className="arrow-btn-herosec text-lg" />
+                  </Link>
+                </motion.div>
                 {/* <motion.button
                   className="btn btn-demo d-flex"
                   whileHover={{ scale: 1.07 }}

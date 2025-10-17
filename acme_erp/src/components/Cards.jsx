@@ -81,34 +81,36 @@ const Cards = () => {
       <div className="text-center mb-5">
         <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Choose Acme.erp</p>
         <h2 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for <br />
-        Purpose-Driven </span>Organizations</h2>        
+          Purpose-Driven </span>Organizations</h2>
         <p className="benifit-subtitle">Acme.erp is more than just software—it’s a partner in your mission. <br />
-        Whether you're running an NGO, a non-profit or a faith-based institution, here’s how Acme.erp empowers your team:</p>
+          Whether you're running an NGO, a non-profit or a faith-based institution, here’s how Acme.erp empowers your team:</p>
       </div>
 
       {/* Arrow Right */}
-      <button className="arrow-btn left" onClick={handleNext}>
-        <FaArrowRight />
-      </button>
+      <div className="acme-cards">
+        <button className="acme-cards__arrow acme-cards__arrow--prev" onClick={handlePrev} aria-label="Previous">
+          <FaArrowLeft />
+        </button>
 
-      <div className="cards-scroll-wrapper" ref={scrollRef}>
-        {cardData.map((card, idx) => (
-          <div key={idx} className="card text-center card-hover">
-            <div className="card-body">
-              <span className="card-icon">
-                <span className="icon-inner">{card.icon}</span>
-              </span>
-              <h5 className="card-title fw-semibold"><span>{card.title}</span></h5>
-              <p className="card-text">{card.text}</p>
+        <div className="cards-scroll-wrapper" ref={scrollRef}>
+          {cardData.map((card, idx) => (
+            <div key={idx} className="card text-center card-hover">
+              <div className="card-body">
+                <span className="card-icon">
+                  <span className="icon-inner">{card.icon}</span>
+                </span>
+                <h5 className="card-title fw-semibold"><span>{card.title}</span></h5>
+                <p className="card-text">{card.text}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Arrow Left */}
-      <button className="arrow-btn right" onClick={handlePrev}>
-        <FaArrowLeft />
-      </button>
+        {/* Arrow Left */}
+        <button className="acme-cards__arrow acme-cards__arrow--next" onClick={handleNext} aria-label="Next">
+          <FaArrowRight />
+        </button>
+      </div>
     </div>
   );
 };

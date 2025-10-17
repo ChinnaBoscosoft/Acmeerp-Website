@@ -24,8 +24,6 @@ const features = [
   { id: 14, title: "Customization", description: "We customize modules based on your specific needs", icon: FaCogs }
 ];
 
-// Animation variants for the icon
-// Pulsing effect (continuous)
 const iconPulseVariants = {
   animate: {
     scale: [1, 1.12, 1],
@@ -37,7 +35,6 @@ const iconPulseVariants = {
   }
 };
 
-// Rotate on hover only
 const iconRotateVariants = {
   hover: {
     rotate: 360,

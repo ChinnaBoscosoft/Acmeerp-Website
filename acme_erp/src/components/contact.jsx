@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../css/Contact.css';
+import '../css/contact.css';
+// import { useLocation, useNavigate } from 'react-router-dom';
 
-const EMAIL_TIMEOUT_MS = 60 * 60 * 1000; 
+
+const EMAIL_TIMEOUT_MS = 60 * 60 * 1000;
 
 
 const getSubmittedEmails = () => {
   const stored = localStorage.getItem('submittedEmails');
   return stored ? JSON.parse(stored) : [];
 };
-
+  
 const cleanupOldEmails = () => {
   const now = Date.now();
   const validEmails = getSubmittedEmails().filter(
@@ -43,6 +45,7 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const validateName = (name) => name.trim() !== '';
   const validateOrganization = (org) => org.trim() !== '';
@@ -86,24 +89,21 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
- emailjs.send(
-  import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  {
-    to_email: 'acmeerp@boscosofttech.com',
-    cc_email: 'Alex@boscosofttech.com',
-    bcc_email: 'joeni@boscosofttech.com,chinna@boscosofttech.com,bharathwaj050@gmail.com',
-    name: formData.name,
-    organization: formData.organization,
-    email: formData.email,
-    phone: formData.phone,
-    message: formData.message
-  },
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-)
-
-
-a
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        to_email: 'acmeerp@boscosofttech.com',
+        cc_email: 'Alex@boscosofttech.com',
+        bcc_email: 'joeni@boscosofttech.com,chinna@boscosofttech.com,bharathwaj050@gmail.com',
+        name: formData.name,
+        organization: formData.organization,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
       .then(() => {
         toast.success(' Thank you! Your message has been sent.', {
           position: "top-center",
@@ -141,6 +141,111 @@ a
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         rel="stylesheet"
       />
+
+
+      {/* Contact Form */}
+      <div className="row contact-bg">
+        <div className="floating-elements">
+          <span className="floating-shape shape-1"></span>
+          <span className="floating-shape shape-2"></span>
+          <span className="floating-shape shape-3"></span>
+        </div>
+        <div className="col-lg-8 mx-auto" id="contactForm">
+          <div  >  
+            {/* className="trial-section position-relative" */}
+            <h2 className="trial-title">Join now for a free trial</h2>
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-user"></i></span>
+                    <input
+                      type="text"
+                      className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                      placeholder="Your Name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                    />
+                    {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+                  </div>
+                </div>
+                <div className="col-md-6 mb-3">
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-building"></i></span>
+                    <input
+                      type="text"
+                      className={`form-control ${errors.organization ? 'is-invalid' : ''}`}
+                      placeholder="Organization Name"
+                      name="organization"
+                      value={formData.organization}
+                      onChange={handleInputChange}
+                      required
+                    />
+                    {errors.organization && <div className="invalid-feedback">{errors.organization}</div>}
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-envelope"></i></span>
+                    <input
+                      type="email"
+                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                      placeholder="Email Address"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                    />
+                    {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                  </div>
+                </div>
+                <div className="col-md-6 mb-3">
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-phone"></i></span>
+                    <input
+                      type="tel"
+                      className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
+                      placeholder="Phone Number"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                    />
+                    {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <div className="input-group">
+                  <span className="input-group-text"><i className="fas fa-comment"></i></span>
+                  <textarea
+                    className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+                    rows="4"
+                    placeholder="Your Message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                  ></textarea>
+                  {errors.message && <div className="invalid-feedback">{errors.message}</div>}
+                </div>
+              </div>
+
+              <button type="submit" className="btn btn-send" disabled={isSubmitting}>
+                <i className="fas fa-paper-plane me-2"></i>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
 
       <div className="container-fluid py-5" style={{ minHeight: '100vh' }}>
         <div className="container">
@@ -183,104 +288,7 @@ a
               </div>
             </div>
           </div>
-
-          {/* Contact Form */}
-          <div className="row contact-bg">
-            <div className="col-lg-8" id="contactForm">
-              <div className="trial-section position-relative">
-                <h2 className="trial-title">Join now for a free trial</h2>
-                <form onSubmit={handleSubmit} noValidate>
-                  <div className="row">
-                    <div className="col-md-6 mb-3">
-                      <div className="input-group">
-                        <span className="input-group-text"><i className="fas fa-user"></i></span>
-                        <input
-                          type="text"
-                          className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                          placeholder="Your Name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        {errors.name && <div className="invalid-feedback">{errors.name}</div>}
-                      </div>
-                    </div>
-                    <div className="col-md-6 mb-3">
-                      <div className="input-group">
-                        <span className="input-group-text"><i className="fas fa-building"></i></span>
-                        <input
-                          type="text"
-                          className={`form-control ${errors.organization ? 'is-invalid' : ''}`}
-                          placeholder="Organization Name"
-                          name="organization"
-                          value={formData.organization}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        {errors.organization && <div className="invalid-feedback">{errors.organization}</div>}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-md-6 mb-3">
-                      <div className="input-group">
-                        <span className="input-group-text"><i className="fas fa-envelope"></i></span>
-                        <input
-                          type="email"
-                          className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                          placeholder="Email Address"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        {errors.email && <div className="invalid-feedback">{errors.email}</div>}
-                      </div>
-                    </div>
-                    <div className="col-md-6 mb-3">
-                      <div className="input-group">
-                        <span className="input-group-text"><i className="fas fa-phone"></i></span>
-                        <input
-                          type="tel"
-                          className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-                          placeholder="Phone Number"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          required
-                        />
-                        {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <div className="input-group">
-                      <span className="input-group-text"><i className="fas fa-comment"></i></span>
-                      <textarea
-                        className={`form-control ${errors.message ? 'is-invalid' : ''}`}
-                        rows="4"
-                        placeholder="Your Message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                      ></textarea>
-                      {errors.message && <div className="invalid-feedback">{errors.message}</div>}
-                    </div>
-                  </div>
-
-                  <button type="submit" className="btn btn-send" disabled={isSubmitting}>
-                    <i className="fas fa-paper-plane me-2"></i>
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-
+          
           {/* Map */}
           <div className="map-container mt-5">
             <iframe
