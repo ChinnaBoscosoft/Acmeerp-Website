@@ -44,18 +44,20 @@ const Navbar = () => {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = document.getElementById('hero')?.offsetHeight || 100;
-      setScrolled(window.scrollY > heroHeight - 80);
-    };
+ useEffect(() => {
+  const handleScroll = () => {
+    const heroHeight = document.getElementById('hero')?.offsetHeight || 0;
+    const threshold = Math.max(heroHeight - 80, 0);
+    setScrolled(window.scrollY > threshold);
+  };
+  handleScroll();
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-light shadow-sm ${scrolled ? 'scrolled' : ''}`}>
+    <nav  className={`navbar navbar-expand-lg navbar-light shadow-sm ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container-fluid px-3 px-md-4">
         <div className="navbar-brand d-flex align-items-center">
           <div className="logo-container" onClick={() => handleNavClick('hero')} style={{ cursor: "pointer" }}>

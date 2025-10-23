@@ -4,8 +4,8 @@
   width: 100%;
   transition: all 0.4s ease-in-out;
   padding: 12px 0;
-  background-color: #EFF6F9 !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  background-color: transparent;          
+  box-shadow: none; 
   z-index: 100;
 }
 .login-button {
@@ -46,13 +46,30 @@
   left: 40px;
 }
 .navbar.scrolled {
-  position: fixed;
+  position: fixed;           /* sticks to top after crossing hero */
   top: 0;
-  background-color: #EFF6F9 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeSlideDown 0.3s ease-in-out;
+  background-color: rgba(239, 246, 249, 0.6);  /* translucent */
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px); /* Safari */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: background-color .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
+  will-change: background-color, box-shadow, backdrop-filter;
 }
 
+.navbar.menu-open {
+  background-color: rgba(239, 246, 249, 0.95);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Optional: increase opacity on hover for desktop polish */
+@media (min-width: 992px) {
+  .navbar.scrolled:hover {
+    background-color: rgba(239, 246, 249, 0.75);
+  }
+}
 @keyframes fadeSlideDown {
   from {
     transform: translateY(-20px);
