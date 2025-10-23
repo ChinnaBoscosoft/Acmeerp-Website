@@ -46,9 +46,7 @@ const Navbar = () => {
 
  useEffect(() => {
   const handleScroll = () => {
-    const heroHeight = document.getElementById('hero')?.offsetHeight || 0;
-    const threshold = Math.max(heroHeight - 80, 0);
-    setScrolled(window.scrollY > threshold);
+    setScrolled(window.scrollY > 0);
   };
   handleScroll();
   window.addEventListener('scroll', handleScroll);
