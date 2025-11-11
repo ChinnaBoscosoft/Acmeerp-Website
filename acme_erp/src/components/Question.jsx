@@ -49,7 +49,7 @@ const Question = () => {
       <div className="row align-items-center">
         {/* Left Image */}
         <div className="col-md-6 text-center">
-          <img src={chartImage} alt="Charts" className="img-fluid faq-img" />
+          <img src={chartImage} alt="ERP demo for non-profits" className="img-fluid faq-img" />
         </div>  
 
         {/* Right FAQ */}

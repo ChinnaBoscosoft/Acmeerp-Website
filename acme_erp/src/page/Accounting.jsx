@@ -4,9 +4,9 @@ const Accounting = () => {
   return (
     <div className="container py-5 accounting-page">
       <div className="bg-white shadow-sm p-4 rounded">
-        <h3 className="accounting-title">
+        <h2 className="accounting-title">
           Easy Ways to Manage Accounting for Non-profits, NGOs, and Religious Institutions
-        </h3>
+        </h2>
         <p className="accounting-text">
           A Financial Management System (FMS) is software that helps organizations manage their finances effectively.
           It tracks, analyzes, and reports financial information, ensuring every transaction is accurately recorded.

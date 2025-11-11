@@ -79,7 +79,7 @@ export default function Login() {
       <div className="acme-login-wrap">
         <h1 className="acme-login-title">Sign in to continue to Acme.erp Portal</h1>
         <div className="acme-login-card">
-          <img className="acme-login-logo" src={Acme_logo} alt="Acme.erp" />
+          <img className="acme-login-logo" src={Acme_logo} alt="Accounting ERP for NGOs" />
           <form
             className="acme-login-form"
             method="post"

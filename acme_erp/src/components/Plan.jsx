@@ -24,7 +24,7 @@ const Plan = () => {
         <div className="container">
           <div className="text-center mb-5">
             <div style={{ color: '#fff' }} className="welcome-tag">Pricing</div>
-            <h1 className="main-title">Choose Our Plan</h1>
+            <h2 className="main-title">Choose Our Plan</h2>
             <button className="yearly-toggle">
               Yearly
             </button>

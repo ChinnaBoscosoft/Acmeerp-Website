@@ -72,16 +72,16 @@ const About = () => {
             <div className="image-container">
               {isMobile ? (
                 <>
-                  <img className='image1' src={aboutus} alt="About Us section background image" />
-                  <img className='image2 move-right' src={about2} alt="About Us section image 2" />
-                  <img className='image3 move-top' src={about1} alt="About Us section image 3" />
+                  <img className='image1' src={aboutus} alt="erp free software" />
+                  <img className='image2 move-right' src={about2} alt="nonprofit ERP software" />
+                  <img className='image3 move-top' src={about1} alt="free erp" />
                 </>
               ) : (
                 <>
                   <motion.img
                     className='image1'
                     src={aboutus}
-                    alt="About Us section background image"
+                    alt="ERP for not-for-profit organisations"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -90,7 +90,7 @@ const About = () => {
                   <motion.img
                     className='image2 move-right'
                     src={about2}
-                    alt="About Us section image 2"
+                    alt="free accounting software for pc"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -99,7 +99,7 @@ const About = () => {
                   <motion.img
                     className='image3 move-top'
                     src={about1}
-                    alt="About Us section image 3"
+                    alt="accounting software for ngo"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
