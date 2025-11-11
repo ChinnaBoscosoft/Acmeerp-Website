@@ -45,7 +45,7 @@ const fadeInUp = {
 // }
 const Home = () => {
   return (
-    <>
+    <main>
       <ScrollTrackerCircle />
       <div id="hero">
         <motion.div {...fadeInUp}>
@@ -92,7 +92,7 @@ const Home = () => {
           <BlogPost />
         </motion.div>
       </div>
-    </>
+    </main>
   );
 };
 

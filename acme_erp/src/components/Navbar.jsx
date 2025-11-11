@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <button className="navbar-toggler border-0 p-0" onClick={toggleMenu}>
+        <button className="navbar-toggler border-0 p-0" onClick={toggleMenu} aria-label="Toggle navigation">
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
 

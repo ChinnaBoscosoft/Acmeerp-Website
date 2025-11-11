@@ -72,15 +72,16 @@ const About = () => {
             <div className="image-container">
               {isMobile ? (
                 <>
-                  <img className='image1' src={aboutus} />
-                  <img className='image2 move-right' src={about2} alt="Image 2" />
-                  <img className='image3 move-top' src={about1} alt="Image 3" />
+                  <img className='image1' src={aboutus} alt="About Us section background image" />
+                  <img className='image2 move-right' src={about2} alt="About Us section image 2" />
+                  <img className='image3 move-top' src={about1} alt="About Us section image 3" />
                 </>
               ) : (
                 <>
                   <motion.img
                     className='image1'
                     src={aboutus}
+                    alt="About Us section background image"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -89,7 +90,7 @@ const About = () => {
                   <motion.img
                     className='image2 move-right'
                     src={about2}
-                    alt="Image 2"
+                    alt="About Us section image 2"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -98,7 +99,7 @@ const About = () => {
                   <motion.img
                     className='image3 move-top'
                     src={about1}
-                    alt="Image 3"
+                    alt="About Us section image 3"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
@@ -113,11 +114,11 @@ const About = () => {
           <div className="content-side">
             <div className="content-section">
               <h6 className='welcome-tag'>About Acme.erp</h6>
-              <h2 className='about-title'>
+              <h3 className='about-title'>
                 Empowering Smarter<br />
                 Decisions for Faith-Based &<br />
                 Nonprofit Organizations
-              </h2>
+              </h3>
 
               <p className="subtitle">
                 Acme.erp is an ERP Solution uniquely designed for Religious and Not-for-Profit Organisations
@@ -172,14 +173,14 @@ const About = () => {
           <div className="suite-section">
             <div className="suite-container">
               <div className="suite-item">
-                <h2>Branch Office Suite</h2>
+                <h4>Branch Office Suite</h4>
                 <p>
                   Branch Office Suite is a Windows application from a single or multiple terminals. The system can be configured for a single or multiple users.
                   Branch office Application consists of seven Modules including Financial Accounting, Statutory Compliance, Asset Management, Payroll Processing, Networking (Donor Management).
                 </p>
               </div>
               <div className="suite-item">
-                <h2>Head Office Suite</h2>
+                <h4>Head Office Suite</h4>
                 <p>
                   Head Office Suite is a web-based application for generating financial reports from all Branch Offices at different levels.
                   The data from the individual Branch Offices are updated to the Head Office on demand basis or asynchronously (on scheduled intervals).
@@ -199,14 +200,14 @@ const About = () => {
           >
             <div className="suite-container">
               <motion.div className="suite-item" variants={itemLeftToRight}>
-                <h2>Branch Office Suite</h2>
+                <h4>Branch Office Suite</h4>
                 <p>
                   Branch Office Suite is a Windows application from a single or multiple terminals. The system can be configured for a single or multiple users.
                   Branch office Application consists of seven Modules including Financial Accounting, Statutory Compliance, Asset Management, Payroll Processing, Networking (Donor Management).
                 </p>
               </motion.div>
               <motion.div className="suite-item" variants={itemRightToLeft}>
-                <h2>Head Office Suite</h2>
+                <h4>Head Office Suite</h4>
                 <p>
                   Head Office Suite is a web-based application for generating financial reports from all Branch Offices at different levels.
                   The data from the individual Branch Offices are updated to the Head Office on demand basis or asynchronously (on scheduled intervals).
@@ -226,16 +227,16 @@ const About = () => {
 
        <div>
         <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</p> </div>
-        <div className="marquee-container">
-          <div className="marquee">
-            {[...organizations, ...organizations, ...organizations].map((org, index) => (
-              <div className="marquee-item" key={`org-${index}`}>
-                <img src={org.image} alt={org.name} className="org-logo" />
-                <span>{org.name}</span>
+              <div className="marquee-container">
+                <div className="marquee">
+                  {[...organizations, ...organizations, ...organizations].map((org, index) => (
+                    <div className="marquee-item" key={`org-${index}`}>
+                      <img src={org.image} alt={`${org.name} logo`} className="org-logo" />
+                      <span>{org.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

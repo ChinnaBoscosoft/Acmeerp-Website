@@ -71,7 +71,7 @@ const BlogPost = () => {
     <div className="blog-section container py-4">
       <div className="section-text d-flex justify-content-center align-items-center">
         <p className="mb-1 welcome-tag">Recent blog post</p>
-        <h2 className="section-subtitle m-0">View Our Latest Blog Insights</h2>
+        <h3 className="section-subtitle m-0">View Our Latest Blog Insights</h3>
       </div>
       <div className="section-header d-flex justify-content-between align-items-center flex-wrap mb-4">
 
@@ -91,14 +91,14 @@ const BlogPost = () => {
             <div className="col-md-4 mb-4" key={index}>
               <div className="blog-card">
                 <div className="image-placeholder">
-                  <img src={post.image} alt="Blog" />
+                  <img src={post.image} alt={post.title} />
                 </div>
                 <div className="category-tag">{post.category}</div>
                 <div className="blog-date">
                   <FaCalendar style={{ color: "#004868" }} /> {post.date}
                 </div>
                 <Link to={post.link || '#'} className="blog-title text-decoration-none">
-                  <h4 className="blog-title">{post.title}</h4>
+                  <h5 className="blog-title">{post.title}</h5>
                 </Link>
                 <Link to={post.link || '#'} className="read-more">
                   Read Details <span>&gt;</span>

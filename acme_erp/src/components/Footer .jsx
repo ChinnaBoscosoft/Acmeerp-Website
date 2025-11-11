@@ -177,6 +177,7 @@ const Footer = () => {
                 initial="hidden"
                 animate="visible"
                 custom={index}
+                aria-label={`Visit our ${social.Icon.name.replace('Fa', '').toLowerCase()} page`}
               >
                 <social.Icon size={20} color={social.color} />
               </motion.a>
