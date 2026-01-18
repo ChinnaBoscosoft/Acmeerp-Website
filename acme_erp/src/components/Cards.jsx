@@ -8,32 +8,32 @@ import Service3 from '../assets/img/icon/service_1_3.svg';
 
 const cardData = [
   {
-    icon: <img src={Service1} className="icon-svg" alt="donor & asset management ERP" />,
+    icon: <img src={Service1} loading="lazy" className="icon-svg" alt="donor & asset management ERP" width="80" height="80" />,
     title: 'User-Friendly by Design',
     text: `No accounting degree? No problem. Acme.erp is built for everyday users with basic computer skills. Get started quickly and become confident in managing your finances—and without the complexity.`,
   },
   {
-    icon: <img src={Service2} className="icon-svg" alt="scalable ERP for NGOsbranch office suite" />,
+    icon: <img src={Service2} loading="lazy" className="icon-svg" alt="scalable ERP for NGOsbranch office suite" width="80" height="80" />,
     title: 'Instant and Insightful Reporting',
     text: `Generate real-time reports with just a few clicks. Track income and expenses and fund allocations effortlessly—so you can make informed decisions and stay accountable to your stakeholders.`,
   },
   {
-    icon: <img src={Service3} className="icon-svg" alt="ERP for nonprofits" />,
+    icon: <img src={Service3} loading="lazy" className="icon-svg" alt="ERP for nonprofits" width="80" height="80" />,
     title: 'Save Time and Focus on Impact',
     text: `Say goodbye to hours lost in spreadsheets. Acme.erp streamlines your financial tasks, freeing up valuable time for what truly matters—serving your community and fulfilling your mission.`,
   },
   {
-    icon: <img src={Service1} className="icon-svg" alt="nonprofit compliance accounting software" />,
+    icon: <img src={Service1} loading="lazy" className="icon-svg" alt="nonprofit compliance accounting software" width="80" height="80" />,
     title: 'Enterprise-Grade Security',
     text: `Your data is safe with us. Acme.erp uses encrypted passwords and unique user IDs to ensure that only authorized personnel can access sensitive financial information.`,
   },
   {
-    icon: <img src={Service2} className="icon-svg" alt="NGO ERP solution" />,
+    icon: <img src={Service2} loading="lazy" className="icon-svg" alt="NGO ERP solution" width="80" height="80" />,
     title: 'Affordable and Scalable Pricing',
     text: `Get powerful features without the hefty price tag. Acme.erp offers one of the lowest Total Cost of Ownership (TCO) and highest ROI in the sector—making it ideal for organizations of any size and including colleges and small institutions.`,
   },
   {
-    icon: <img src={Service3} className="icon-svg" alt="Cloud ERP for NGOs" />,
+    icon: <img src={Service3} loading="lazy" className="icon-svg" alt="Cloud ERP for NGOs" width="80" height="80" />,
     title: '24/7 Expert Support',
     text: `We’re with you every step of the way. Our dedicated support team is available around the clock to resolve issues and answer questions and ensure your operations run smoothly.`,
   },

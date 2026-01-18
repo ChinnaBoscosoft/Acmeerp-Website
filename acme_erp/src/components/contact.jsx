@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import '../css/contact.css';
+
 // import { useLocation, useNavigate } from 'react-router-dom';
 
 
@@ -13,7 +15,7 @@ const getSubmittedEmails = () => {
   const stored = localStorage.getItem('submittedEmails');
   return stored ? JSON.parse(stored) : [];
 };
-  
+
 const cleanupOldEmails = () => {
   const now = Date.now();
   const validEmails = getSubmittedEmails().filter(
@@ -35,6 +37,8 @@ const saveSubmittedEmail = (email) => {
 };
 
 const Contact = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const [formData, setFormData] = useState({
     name: '',
     organization: '',
@@ -45,7 +49,6 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
 
   const validateName = (name) => name.trim() !== '';
   const validateOrganization = (org) => org.trim() !== '';
@@ -69,7 +72,7 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
 
@@ -89,45 +92,55 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        to_email: 'acmeerp@boscosofttech.com',
-        cc_email: 'Alex@boscosofttech.com',
-        bcc_email: 'joeni@boscosofttech.com,chinna@boscosofttech.com,bharathwaj050@gmail.com',
-        name: formData.name,
-        organization: formData.organization,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message
-      },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-      .then(() => {
-        toast.success(' Thank you! Your message has been sent.', {
-          position: "top-center",
-          autoClose: 3000
-        });
-        saveSubmittedEmail(formData.email);
-        setFormData({
-          name: '',
-          organization: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-        setErrors({});
-      })
-      .catch(() => {
-        toast.error(' Oops! Something went wrong. Please try again.', {
-          position: "top-center",
-          autoClose: 4000
-        });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    if (!executeRecaptcha) {
+      toast.error('Recaptcha not ready yet. Please try again in a moment.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const token = await executeRecaptcha('contact_form_submit');
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          to_email: 'acmeerp@boscosofttech.com',
+          cc_email: 'Alex@boscosofttech.com',
+          bcc_email: 'joeni@boscosofttech.com,chinna@boscosofttech.com,bharathwaj050@gmail.com',
+          name: formData.name,
+          organization: formData.organization,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          'g-recaptcha-response': token
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success(' Thank you! Your message has been sent.', {
+        position: "top-center",
+        autoClose: 3000
       });
+      saveSubmittedEmail(formData.email);
+      setFormData({
+        name: '',
+        organization: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      setErrors({});
+
+    } catch (error) {
+      console.error(error);
+      toast.error(' Oops! Something went wrong. Please try again.', {
+        position: "top-center",
+        autoClose: 4000
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -151,7 +164,7 @@ const Contact = () => {
           <span className="floating-shape shape-3"></span>
         </div>
         <div className="col-lg-8 mx-auto" id="contactForm">
-          <div  >  
+          <div  >
             {/* className="trial-section position-relative" */}
             <h2 className="trial-title">Join now for a free trial</h2>
             <form onSubmit={handleSubmit} noValidate>
@@ -237,6 +250,8 @@ const Contact = () => {
                 </div>
               </div>
 
+
+
               <button type="submit" className="btn btn-send" disabled={isSubmitting}>
                 <i className="fas fa-paper-plane me-2"></i>
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -288,7 +303,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Map */}
           <div className="map-container mt-5">
             <iframe

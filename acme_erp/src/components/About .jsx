@@ -72,9 +72,9 @@ const About = () => {
             <div className="image-container">
               {isMobile ? (
                 <>
-                  <img className='image1' src={aboutus} alt="erp free software" />
-                  <img className='image2 move-right' src={about2} alt="nonprofit ERP software" />
-                  <img className='image3 move-top' src={about1} alt="free erp" />
+                  <img className='image1' src={aboutus} alt="erp free software" loading="lazy" width="550" height="386" />
+                  <img className='image2 move-right' src={about2} alt="nonprofit ERP software" loading="lazy" width="550" height="386" />
+                  <img className='image3 move-top' src={about1} alt="free erp" loading="lazy" width="550" height="386" />
                 </>
               ) : (
                 <>
@@ -82,6 +82,9 @@ const About = () => {
                     className='image1'
                     src={aboutus}
                     alt="ERP for not-for-profit organisations"
+                    loading="lazy"
+                    width="550"
+                    height="386"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
@@ -91,6 +94,9 @@ const About = () => {
                     className='image2 move-right'
                     src={about2}
                     alt="free accounting software for pc"
+                    loading="lazy"
+                    width="550"
+                    height="386"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -100,6 +106,9 @@ const About = () => {
                     className='image3 move-top'
                     src={about1}
                     alt="accounting software for ngo"
+                    loading="lazy"
+                    width="550"
+                    height="386"
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
@@ -113,12 +122,12 @@ const About = () => {
           {/* Right side - Content */}
           <div className="content-side">
             <div className="content-section">
-              <h6 className='welcome-tag'>About Acme.erp</h6>
-              <h3 className='about-title'>
+              <p className='welcome-tag h6'>About Acme.erp</p>
+              <h2 className='about-title h3'>
                 Empowering Smarter<br />
                 Decisions for Faith-Based &<br />
                 Nonprofit Organizations
-              </h3>
+              </h2>
 
               <p className="subtitle">
                 Acme.erp is an ERP Solution uniquely designed for Religious and Not-for-Profit Organisations
@@ -223,20 +232,20 @@ const About = () => {
       {/* Partner Organizations Marquee */}
       <div className="marquee-section">
         {/* <h2 className="marquee-title">Our Customers</h2> */}
-       <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customers</p>
+        <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customers</p>
 
-       <div>
-        <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</p> </div>
-              <div className="marquee-container">
-                <div className="marquee">
-                  {[...organizations, ...organizations, ...organizations].map((org, index) => (
-                    <div className="marquee-item" key={`org-${index}`}>
-                      <img src={org.image} alt={`${org.name} logo`} className="org-logo" />
-                      <span>{org.name}</span>
-                    </div>
-                  ))}
-                </div>
+        <div>
+          <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</p> </div>
+        <div className="marquee-container">
+          <div className="marquee">
+            {[...organizations, ...organizations, ...organizations].map((org, index) => (
+              <div className="marquee-item" key={`org-${index}`}>
+                <img src={org.image} alt={`${org.name} logo`} className="org-logo" loading="lazy" width="150" height="75" />
+                <span>{org.name}</span>
               </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
