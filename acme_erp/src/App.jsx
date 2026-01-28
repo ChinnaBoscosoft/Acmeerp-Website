@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -23,6 +23,19 @@ import Chatbot from './components/Chatbot.jsx';
 import MapDashboard from './components/MapDashboard.jsx';
 import AntiInspect from './components/AntiInspect.jsx';
 import { Outlet } from 'react-router-dom';
+import {
+  HeroSkeleton,
+  DataSkeleton,
+  CardsSkeleton,
+  AboutSkeleton,
+  ReviewSkeleton,
+  MapSkeleton,
+  FunctionalSkeleton,
+  PlanSkeleton,
+  QuestionSkeleton,
+  StreamlinesSkeleton,
+  BlogPostSkeleton,
+} from './components/Skeleton.jsx';
 
 // Lazy load pages for performance
 const Accounting = lazy(() => import('./page/Accounting.jsx'));
@@ -46,53 +59,140 @@ const fadeInUp = {
 //   return <Navigate to={`/login${location.search || ""}`} replace />;
 // }
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedSections, setLoadedSections] = useState({
+    hero: false,
+    data: false,
+    cards: false,
+    about: false,
+    review: false,
+    map: false,
+    functional: false,
+    plan: false,
+    question: false,
+    streamlines: false,
+    blogpost: false,
+  });
+
+  useEffect(() => {
+    // Simulate loading with staggered delays for each section
+    const loadTimers = {
+      hero: setTimeout(() => setLoadedSections(prev => ({ ...prev, hero: true })), 300),
+      data: setTimeout(() => setLoadedSections(prev => ({ ...prev, data: true })), 500),
+      cards: setTimeout(() => setLoadedSections(prev => ({ ...prev, cards: true })), 700),
+      about: setTimeout(() => setLoadedSections(prev => ({ ...prev, about: true })), 900),
+      review: setTimeout(() => setLoadedSections(prev => ({ ...prev, review: true })), 1100),
+      map: setTimeout(() => setLoadedSections(prev => ({ ...prev, map: true })), 1300),
+      functional: setTimeout(() => setLoadedSections(prev => ({ ...prev, functional: true })), 1500),
+      plan: setTimeout(() => setLoadedSections(prev => ({ ...prev, plan: true })), 1700),
+      question: setTimeout(() => setLoadedSections(prev => ({ ...prev, question: true })), 1900),
+      streamlines: setTimeout(() => setLoadedSections(prev => ({ ...prev, streamlines: true })), 2100),
+      blogpost: setTimeout(() => setLoadedSections(prev => ({ ...prev, blogpost: true })), 2300),
+    };
+
+    // Set overall loading to false after all sections are loaded
+    const overallTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => {
+      // Cleanup timers
+      Object.values(loadTimers).forEach(timer => clearTimeout(timer));
+      clearTimeout(overallTimer);
+    };
+  }, []);
+
   return (
     <main>
       <ScrollTrackerCircle />
       <div id="hero">
-        <motion.div {...fadeInUp}>
-          <Hero />
-        </motion.div>
+        {loadedSections.hero ? (
+          <motion.div {...fadeInUp}>
+            <Hero />
+          </motion.div>
+        ) : (
+          <HeroSkeleton />
+        )}
       </div>
       <div id="data">
-        <motion.div {...fadeInUp}>
-          <Data />
-        </motion.div>
+        {loadedSections.data ? (
+          <motion.div {...fadeInUp}>
+            <Data />
+          </motion.div>
+        ) : (
+          <DataSkeleton />
+        )}
       </div>
       <div id="cards">
-        <motion.div {...fadeInUp}>
-          <Cards />
-        </motion.div>
+        {loadedSections.cards ? (
+          <motion.div {...fadeInUp}>
+            <Cards />
+          </motion.div>
+        ) : (
+          <CardsSkeleton />
+        )}
       </div>
       <div id="about">
-        <About />
+        {loadedSections.about ? (
+          <About />
+        ) : (
+          <AboutSkeleton />
+        )}
       </div>
       <div id="review">
-        <motion.div {...fadeInUp}>
-          <Review />
-        </motion.div>
+        {loadedSections.review ? (
+          <motion.div {...fadeInUp}>
+            <Review />
+          </motion.div>
+        ) : (
+          <ReviewSkeleton />
+        )}
       </div>
       <div id="map">
-        <motion.div {...fadeInUp}>
-          <MapDashboard />
-        </motion.div>
+        {loadedSections.map ? (
+          <motion.div {...fadeInUp}>
+            <MapDashboard />
+          </motion.div>
+        ) : (
+          <MapSkeleton />
+        )}
       </div>
       <div id="Functional">
-        <Functional />
+        {loadedSections.functional ? (
+          <Functional />
+        ) : (
+          <FunctionalSkeleton />
+        )}
       </div>
       <div id="plan">
-        <Plan />
+        {loadedSections.plan ? (
+          <Plan />
+        ) : (
+          <PlanSkeleton />
+        )}
       </div>
       <div id="question">
-        <Question />
+        {loadedSections.question ? (
+          <Question />
+        ) : (
+          <QuestionSkeleton />
+        )}
       </div>
       <div id="streamlines">
-        <Streamlines />
+        {loadedSections.streamlines ? (
+          <Streamlines />
+        ) : (
+          <StreamlinesSkeleton />
+        )}
       </div>
       <div id="blogpost">
-        <motion.div {...fadeInUp}>
-          <BlogPost />
-        </motion.div>
+        {loadedSections.blogpost ? (
+          <motion.div {...fadeInUp}>
+            <BlogPost />
+          </motion.div>
+        ) : (
+          <BlogPostSkeleton />
+        )}
       </div>
     </main>
   );
