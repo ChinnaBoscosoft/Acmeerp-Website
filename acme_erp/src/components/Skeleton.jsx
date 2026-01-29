@@ -15,6 +15,76 @@ export const Skeleton = ({ width, height, borderRadius = '8px', className = '' }
   );
 };
 
+// Header Skeleton
+export const HeaderSkeleton = () => {
+  return (
+    <header className="header-top text-white py-2">
+      <div className="container-fluid">
+        <div className="row align-items-center">
+          <div className="col-md-8">
+            <div className="d-flex flex-wrap align-items-center contact-info">
+              <div className="d-flex align-items-center me-4 mb-1">
+                <Skeleton height="20px" width="20px" borderRadius="50%" className="me-2" />
+                <Skeleton height="16px" width="160px" />
+              </div>
+              <div className="d-flex align-items-center mb-1">
+                <Skeleton height="20px" width="20px" borderRadius="50%" className="me-2" />
+                <Skeleton height="16px" width="220px" />
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="d-flex align-items-center justify-content-md-end justify-content-start">
+              <Skeleton height="16px" width="110px" className="me-3" />
+              <div className="social-icons d-flex">
+                {[1, 2, 3, 4, 5, 6].map((item) => (
+                  <Skeleton
+                    key={item}
+                    height="28px"
+                    width="28px"
+                    borderRadius="50%"
+                    className="me-2"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+// Navbar Skeleton
+export const NavbarSkeleton = () => {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div className="container-fluid px-3 px-md-4">
+        <div className="navbar-brand d-flex align-items-center">
+          <div className="logo-container">
+            <Skeleton height="40px" width="40px" borderRadius="50%" />
+          </div>
+        </div>
+        <div className="navbar-toggler border-0 p-0">
+          <Skeleton height="24px" width="32px" borderRadius="4px" />
+        </div>
+        <div className="navbar-collapse show">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            {[1, 2, 3, 4, 5].map((item) => (
+              <li key={item} className="nav-item mx-2 my-1 my-lg-0">
+                <Skeleton height="20px" width="70px" borderRadius="12px" />
+              </li>
+            ))}
+          </ul>
+          <div className="navbar-nav">
+            <Skeleton height="36px" width="100px" borderRadius="18px" />
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
 // Hero Section Skeleton
 export const HeroSkeleton = () => {
   return (

@@ -272,7 +272,7 @@ const Footer = () => {
         variants={itemVariants}
       >
         <motion.div initial={{ opacity: 0.8 }} whileHover={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-          Copyright © 2025{' '}
+          Copyright © 2026{' '}
           <motion.a
             href="https://boscosofttech.com/"
             style={{ color: '#06B8DF', textDecoration: 'none' }}

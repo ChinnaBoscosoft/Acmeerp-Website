@@ -25,6 +25,8 @@ import AntiInspect from './components/AntiInspect.jsx';
 import { Outlet } from 'react-router-dom';
 import {
   HeroSkeleton,
+  HeaderSkeleton,
+  NavbarSkeleton,
   DataSkeleton,
   CardsSkeleton,
   AboutSkeleton,
@@ -199,18 +201,27 @@ const Home = () => {
 };
 
 // MainLayout component for all main pages
-const MainLayout = () => (
-  <>
-    <AntiInspect />
-    <Chatbot />
-    <CustomCursor />
-    <ScrollToTop />
-    <Header />
-    <Navbar />
-    <Outlet />
-    <Footer />
-  </>
-);
+const MainLayout = () => {
+  const [isHeaderNavLoading, setIsHeaderNavLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsHeaderNavLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {/* <AntiInspect /> */}
+      <Chatbot />
+      <CustomCursor />
+      <ScrollToTop />
+      {isHeaderNavLoading ? <HeaderSkeleton /> : <Header />}
+      {isHeaderNavLoading ? <NavbarSkeleton /> : <Navbar />}
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
 const App = () => (
   <Router>
