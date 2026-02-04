@@ -139,8 +139,8 @@ const MainLayout = () => {
 };
 
 const App = () => (
-  <Router basename="/acptest">
-   {/* <Router> */}
+  // <Router basename="/acptest">
+ <Router> 
     <Suspense fallback={
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="spinner-border text-primary" role="status">
