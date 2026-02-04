@@ -308,7 +308,7 @@ const TermsConditions = () => {
                 {/* Footer Note */}
                 <div className="text-center mt-4 pt-3 border-top">
                   <p className="text-muted mb-0">
-                    <small>Last updated: <span style={styles.highlightText}>June 2025</span> | © 2025 Boscosoft. All rights reserved.</small>
+                    <small>Last updated: <span style={styles.highlightText}>June 2026</span> | © 2026 Boscosoft. All rights reserved.</small>
                   </p>
                 </div>
               </div>

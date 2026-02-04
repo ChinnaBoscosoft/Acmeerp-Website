@@ -166,7 +166,7 @@ const Review = () => {
                                             borderColor: index === currentIndex ? review.color : 'transparent',
                                         }}
                                     >
-                                        <img src={review.icon} alt="Accounting icon" />
+                                        <img src={review.icon} alt="Accounting icon" width="60" height="60" loading="lazy" />
                                     </div>
                                 ))}
                             </div>

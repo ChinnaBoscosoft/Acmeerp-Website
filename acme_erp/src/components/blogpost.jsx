@@ -91,7 +91,7 @@ const BlogPost = () => {
             <div className="col-md-4 mb-4" key={index}>
               <div className="blog-card">
                 <div className="image-placeholder">
-                  <img src={post.image} alt={post.title} />
+                  <img src={post.image} alt={post.title} width="400" height="250" loading="lazy" decoding="async" />
                 </div>
                 <div className="category-tag">{post.category}</div>
                 <div className="blog-date">

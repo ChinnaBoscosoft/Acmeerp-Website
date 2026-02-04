@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className="container-fluid px-3 px-md-4">
         <div className="navbar-brand d-flex align-items-center">
           <div className="logo-container" onClick={() => handleNavClick('hero')} style={{ cursor: "pointer" }}>
-            <img src={Acme_logo} alt="ACME Logo" className="logo-svg" />
+            <img src={Acme_logo} alt="ACME Logo" className="logo-svg" width="150" height="40" fetchPriority="high" />
           </div>
         </div>
 

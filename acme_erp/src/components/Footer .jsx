@@ -154,6 +154,9 @@ const Footer = () => {
                 src={companylogo}
                 alt="Boscosoft Logo"
                 className="company-logo-img"
+                width="120"
+                height="40"
+                loading="lazy"
               />
             </a>
           </motion.div>

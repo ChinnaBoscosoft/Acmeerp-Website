@@ -79,12 +79,12 @@ export default function Login() {
       <div className="acme-login-wrap">
         <h1 className="acme-login-title">Sign in to continue to Acme.erp Portal</h1>
         <div className="acme-login-card">
-          <img className="acme-login-logo" src={Acme_logo} alt="Accounting ERP for NGOs" />
+          <img className="acme-login-logo" src={Acme_logo} alt="Accounting ERP for NGOs" width="200" height="60" />
           <form
             className="acme-login-form"
             method="post"
-            action="https://acmeerp.org/Account/portal/Default.aspx"
-            //action="http://localhost/acptest/Account/portal/Default.aspx"
+            //action="https://acmeerp.org/Account/portal/Default.aspx"
+            action="http://3.110.87.166/acptest/Account/portal/Default.aspx"
             autoComplete="on"
           >
             <input

@@ -116,7 +116,7 @@ function Chatbot() {
         <div className="chatbot-window">
           <div className="chatbot-header">
             <div className="chatbot-header-title">
-              <img src={botAvatar} alt="Acme Bot" className="chatbot-avatar" />
+              <img src={botAvatar} alt="Acme Bot" className="chatbot-avatar" width="40" height="40" loading="lazy" />
               <span>Acme AI Assistant</span>
             </div>
             <button className="X-button" onClick={() => setOpen(false)}>
