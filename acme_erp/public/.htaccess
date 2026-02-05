@@ -1,5 +1,25 @@
+# Enable Brotli Compression (if available)
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Enable Gzip Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml application/xml application/rss+xml application/atom+xml font/ttf font/otf font/woff font/woff2
+  
+  # Don't compress images and other binary files
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|ico)$ no-gzip dont-vary
+  
+  # Handle proxies
+  <IfModule mod_headers.c>
+    Header append Vary User-Agent env=!dont-vary
+  </IfModule>
+</IfModule>
+
+# Browser Caching with Cache-Control
 <IfModule mod_expires.c>
   ExpiresActive On
+  ExpiresDefault "access plus 1 month"
 
   # Images
   ExpiresByType image/jpeg "access plus 1 year"
@@ -8,30 +28,84 @@
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
 
   # CSS, JavaScript
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
 
   # Fonts
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType application/font-woff "access plus 1 year"
   ExpiresByType application/font-woff2 "access plus 1 year"
   ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+
+  # Media files
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType audio/mp3 "access plus 1 year"
+
+  # Documents
+  ExpiresByType application/pdf "access plus 1 month"
+  
+  # HTML (shorter cache for dynamic content)
+  ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
 
+# Cache-Control Headers
 <IfModule mod_headers.c>
   # Long cache for hashed static assets
-  <FilesMatch "\.(?:js|css|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot)$">
+  <FilesMatch "\\.(?:js|css|png|jpg|jpeg|gif|svg|webp|avif|woff|woff2|ttf|eot|ico)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
+    Header unset ETag
+    FileETag None
   </FilesMatch>
 
   # No cache for HTML so users get fresh versions
-  <FilesMatch "\.(?:html|htm)$">
-    Header set Cache-Control "no-cache, must-revalidate"
+  <FilesMatch "\\.(?:html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
   </FilesMatch>
+
+  # Security Headers
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Permissions Policy (formerly Feature-Policy)
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  
+  # Remove Server signature
+  Header unset Server
+  Header unset X-Powered-By
 </IfModule>
 
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+# Force HTTPS (if SSL is enabled)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^\.(?:htaccess|htpasswd|env|git)">
+  Require all denied
+</FilesMatch>
+
+# Enable ETags for better caching (except for static assets)
+<IfModule mod_headers.c>
+  <FilesMatch "\\.(?:html|htm|php)$">
+    FileETag MTime Size
+  </FilesMatch>
 </IfModule>
