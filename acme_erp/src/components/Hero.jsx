@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaPlay } from 'react-icons/fa';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { motion } from 'framer-motion';
+// import hero from '../assets/img/hero/acount1d.png';
 import hero from '../assets/img/hero/acount1.png';
 import { useNavigate } from 'react-router-dom';
 import '../css/Hero.css';
