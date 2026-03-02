@@ -105,9 +105,9 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          to_email: 'acmeerp@boscosofttech.com',
-          cc_email: 'Alex@boscosofttech.com',
-          bcc_email: 'joeni@boscosofttech.com,chinna@boscosofttech.com,bharathwaj050@gmail.com',
+          to_email: 'joeni@boscosofttech.com',
+          cc_email: 'punitha@dbcyelagiri.edu.in',
+          // bcc_email: 'joeni@boscosofttech.com,bharathwaj050@gmail.com',
           name: formData.name,
           organization: formData.organization,
           email: formData.email,

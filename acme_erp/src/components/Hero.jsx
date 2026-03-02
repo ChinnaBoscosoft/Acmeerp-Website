@@ -27,7 +27,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                Simplify Accounting for Purpose-Driven Organizations
+                Simplify Accounting Software for Purpose-Driven Organizations
               </motion.div>
 
               <motion.h1
@@ -45,9 +45,8 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                Acme.erp simplifies accounting for NGOs, non-profits, and religious institutions. Stay organized, save time, and focus on your mission with confidence.
+               Acme.erp simplifies accounting software for nonprofits, NGOs, and religious institutions. Stay organized, save time, and focus on your mission with confidence. As India’s leading nonprofit accounting software, Acme.erp is trusted by 1,800+ organizations across 13 Indian states and 9 countries worldwide.
               </motion.p>
-
               <motion.div
                 className="hero-buttons align-items-center d-flex flex-wrap gap-3"
                 initial={{ opacity: 0, scale: 0.95 }}

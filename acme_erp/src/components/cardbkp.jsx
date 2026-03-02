@@ -72,7 +72,7 @@ const Cards = () => {
         <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Choose Acme.erp</p>
         <h2 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for <br />
         Purpose-Driven </span>Organizations</h2>        
-        <p class="benifit-subtitle">Acme.erp is more than just software—it’s a partner in your mission. <br />Whether you're running an NGO, a non-profit, or a faith-based institution, here’s how Acme.erp empowers your team:</p>
+        <p class="benifit-subtitle">Acme.erp is more than just accounting software — it’s a partner in your mission. Whether you’re running an NGO, a not for profit organization, or a faith-based institution, here’s how Acme.erp empowers your team with the best financial management software for nonprofits in India.</p>
       </div>
       <div className="cards-scroll-wrapper" ref={scrollRef}>
         {cardData.map((card, idx) => (

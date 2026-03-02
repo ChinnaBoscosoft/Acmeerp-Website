@@ -130,7 +130,7 @@ const About = () => {
               </h2>
 
               <p className="subtitle">
-                Acme.erp is an ERP Solution uniquely designed for Religious and Not-for-Profit Organisations
+                Acme.erp is an ERP solution uniquely designed for religious and not for profit organisations. As India’s most trusted ERP for religious organizations, it integrates a client-server Windows application with cloud-based features for comprehensive nonprofit accounting software management and administration across various levels and sizes of organizations.
               </p>
 
               {isMobile ? (
@@ -138,13 +138,13 @@ const About = () => {
                   <div className="feature-item">
                     <div className='IoCopy'><IoCopy /></div>
                     <p className="feature-text">
-                      Acme.erp is a client-server windows application integrated with a cloud-based application for administration and management of religious institutes and NGOs of any size, at multiple levels.
+                      Acme.erp is a client-server Windows application integrated with a cloud accounting application for administration and management of religious institutes and NGOs of any size, at multiple levels.
                     </p>
                   </div>
                   <div className="feature-item">
                     <div className='IoCopy'><IoCopy /></div>
                     <p className="feature-text">
-                      It is developed and packaged as an Enterprise Resource Planning solution. Acme.erp is deployed as Head Office & Branch Office Suite. It is hosted in cloud to be accessible by all affected parties.
+                      It is developed and packaged as an ERP software solution. Acme.erp is deployed as Head Office & Branch Office Suite, hosted in the cloud to be accessible by all affected parties — making it a true online accounting software for nonprofits.
                     </p>
                   </div>
                 </div>
@@ -184,17 +184,13 @@ const About = () => {
               <div className="suite-item">
                 <h4>Branch Office Suite</h4>
                 <p>
-                  Branch Office Suite is a Windows application from a single or multiple terminals. The system can be configured for a single or multiple users.
-                  Branch office Application consists of seven Modules including Financial Accounting, Statutory Compliance, Asset Management, Payroll Processing, Networking (Donor Management).
+                  The Branch Office Suite is a Windows application from single or multiple terminals. The system can be configured for single or multiple users. It consists of seven modules including financial management, Statutory compliance software, asset management, payroll software, and Networking (donor management) — all part of our comprehensive accounting software for NGO.
                 </p>
               </div>
               <div className="suite-item">
                 <h4>Head Office Suite</h4>
                 <p>
-                  Head Office Suite is a web-based application for generating financial reports from all Branch Offices at different levels.
-                  The data from the individual Branch Offices are updated to the Head Office on demand basis or asynchronously (on scheduled intervals).
-                  It provides easy access to the financial statements of any Branch Office, drilling down to the level of single transaction.
-                  Consolidated reports combining various branches on multiple criteria can be generated.
+                  The Head Office Suite is a web-based application for generating financial reporting from all Branch Offices at different levels. As part of our nonprofit financial management software, it provides easy access to the financial statements of any Branch Office, drilling down to the level of single transaction. Consolidated reports combining various branches on multiple criteria can be generated — a key feature of our accounting systems for nonprofits.
                 </p>
               </div>
             </div>
@@ -235,7 +231,7 @@ const About = () => {
         <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customers</p>
 
         <div>
-          <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.</p> </div>
+          <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.<br /> Acme.erp’s nonprofit accounting software is trusted by faith-based institutions and accounting software for non profits users across India and internationally.</p> </div>
         <div className="marquee-container">
           <div className="marquee">
             {[...organizations, ...organizations, ...organizations].map((org, index) => (

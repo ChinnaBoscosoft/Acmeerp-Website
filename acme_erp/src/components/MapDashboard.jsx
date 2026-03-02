@@ -1499,7 +1499,7 @@ const MapDashboard = () => {
         <div className="client-deprecation-box">
           <h2 className="info-head">Our Reach & Presence</h2>
           <p className="info-deprection">
-            With a strong presence in <strong>{activeRegions.length}</strong> {activeMap === "india" ? "Indian states" : "countries"}, we have established a trusted footprint across the region, empowering over <strong>{totalClients}</strong> branch offices with our proven solutions.
+            With a strong presence in <strong>{activeRegions.length}</strong> {activeMap === "india" ? "Indian states" : "countries"}, we have established a trusted footprint across the region, empowering over <strong>{totalClients}</strong>+ branch offices with our proven nonprofit accounting software solutions.
           </p>
           <p className="client-highlight">
             {displayRegion

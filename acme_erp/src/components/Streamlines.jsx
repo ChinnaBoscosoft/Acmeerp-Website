@@ -3,18 +3,18 @@ import { motion, useInView } from 'framer-motion';
 import '../css/Streamlines.css';
 
 const featuresLeft = [
-  "Comprehensive Financial Management System",
-  "Payroll Administration",
-  "Inventory Control and Management",
-  "Banking Operations Integration",
-  "Financial Planning and Budget Management"
+  "Comprehensive financial management software for nonprofits",
+  "Payroll software Administration for NGOs and religious institutions",
+  "Inventory Control and asset management",
+  "Banking Operations Integration with cloud accounting",
+  "Financial Planning and Budgeting software"
 ];
 
 const featuresRight = [
-  "Statutory Compliance and TDS Management",
+  "Compliance software and TDS Management",
   "Asset Management and Tracking",
-  "Remote Access Capabilities with Multiple User Logins",
-  "Data Consolidation and Report Generation",
+  "Remote Access Capabilities with Multiple User Logins via cloud accounting",
+  "Data Consolidation and financial reporting Generation",
   "Integrated Web Portal for Enhanced Accessibility"
 ];
 
@@ -40,7 +40,7 @@ const Streamlines = () => {
     >
       <p style={{ color: '#fff' }} className="welcome-tag">Everything You Need, All in One System</p>
       <h2 className="fw-bold mb-5">
-        Acme.erp streamlines your daily operations<br />with essential tools
+        Acme.erp streamlines your daily operations <br />with essential tools making it the most comprehensive nonprofit<br /> accounting software in India.
       </h2>
 
       <div className="container">

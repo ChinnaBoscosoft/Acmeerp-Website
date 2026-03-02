@@ -25,6 +25,7 @@ const Plan = () => {
           <div className="text-center mb-5">
             <div style={{ color: '#fff' }} className="welcome-tag">Pricing</div>
             <h2 className="main-title">Choose Our Plan</h2>
+            <p className="plan-subtitle">Acme.erp offers flexible pricing for every nonprofit accounting software need — from free starter plans to full-featured professional suites.</p>
             <button className="yearly-toggle">
               Yearly
             </button>
@@ -49,11 +50,11 @@ const Plan = () => {
                 <div className="plan-head">
                   {/* <FaLeaf className="card-icon" /> */}
                   <h3 className="plan-title mt-3">Basic Plan</h3>
-                  <p className="plan-subtitle">Perfect plan to get started</p>
+                  <p className="plan-subtitle">Perfect plan to get started with free accounting software for nonprofits.</p>
                 </div>
                 <div className="price">₹0</div>
                 <p className="price-description">
-                  Essential features to help NGOs and institutions get started with accounting and expense tracking.
+                  Essential features to help NGOs and institutions get started with accounting software and expense tracking
                 </p>
                 <ul className="feature-list">
                   <li className="feature-item">
@@ -77,6 +78,9 @@ const Plan = () => {
                     Free Online Support*
                   </li>
                 </ul>
+                <p className="price-description">
+                  This plan is ideal for those seeking free nonprofit accounting software with no upfront cost.
+                </p>
                 <Link
                   to="/contact"
                   state={{ from: 'plan' }}
@@ -106,11 +110,11 @@ const Plan = () => {
                 {/* <FaGem className="card-icon" /> */}
                 <div className="plan-head">
                   <h3 className="plan-title mt-3">Acmeplus Customer</h3>
-                  <p className="plan-subtitle">Best suited for NGOs and Non-Profit Organizations</p>
+                  <p className="plan-subtitle">Best suited for NGOs and not for profit organizations.</p>
                 </div>
                 <div className="price">₹15,000</div>
                 <p className="price-description">
-                  Advanced tools for growing NGOs and non-profits to manage finances, donors, and reporting.
+                   Advanced accounting software for nonprofits tools for growing NGOs
                 </p>
                 <ul className="feature-list">
                   <li className="feature-item">
@@ -134,6 +138,9 @@ const Plan = () => {
                     Free Online Support*
                   </li>
                 </ul>
+                <p className="price-description">
+                   Fund accounting software for nonprofits with full donor management and financial reporting
+                </p>
                 <Link
                   to="/contact"
                   state={{ from: 'plan' }}
@@ -160,7 +167,7 @@ const Plan = () => {
                 </div>
                 <div className="price">₹18,000</div>
                 <p className="price-description">
-                  Complete ERP for NGOs and institutions to manage accounts, donations, and expenses with ease.
+                  Complete accounting system for NGOs and institutions
                 </p>
                 <ul className="feature-list">
                   <li className="feature-item">
@@ -184,6 +191,9 @@ const Plan = () => {
                     Free Online Support*
                   </li>
                 </ul>
+                 <p className="price-description">
+                  Manage grant accounting, donations, and budgeting software with ease.Payroll software for nonprofit organizations | Full accounting systems for nonprofits
+                </p>
                 <Link
                   to="/contact"
                   state={{ from: 'plan' }}
