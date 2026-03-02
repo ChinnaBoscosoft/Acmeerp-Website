@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/NotFound.css';
 
 const NotFound = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -89,7 +91,7 @@ const NotFound = () => {
 
 
           <button
-            onClick={() => window.location.href = '/'}
+            onClick={() => navigate('/login')}
             className="btn btn-secondary"
           >
             <svg className="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
