@@ -1,14 +1,52 @@
 import React from 'react';
-import '../css/Finance.css'; 
+import '../css/Finance.css';
+import SEO from './SEO.jsx';
 
 const Finance2 = () => {
+  const finance2Schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Transform Your Finances with Acme ERP: A Simple Path to Success",
+    "description": "Transform your finances with Acme ERP accounting software for nonprofits. Manage donations, expenses, and funds with a simple cloud solution.",
+    "image": "https://www.acmeerp.org/images/blog3.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "Acme ERP"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Acme ERP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.acmeerp.org/logo.png"
+      }
+    },
+    "datePublished": "2026-04-10",
+    "dateModified": "2026-04-10",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.acmeerp.org/acme-erp-nonprofit-accounting-software"
+    }
+  };
+
   return (
     <div className="container py-5 finance-page">
+      <SEO
+        title="Acme ERP Nonprofit Accounting Software Guide"
+        description="Transform your finances with Acme ERP accounting software for nonprofits. Manage funds, donations, and reports with a simple cloud solution."
+        keywords="accounting software for nonprofits, cloud accounting for NGOs, online accounting software for nonprofits, NGO accounting software India"
+        canonicalUrl="https://acmeerp.org/acme-erp-nonprofit-accounting-software"
+        ogImage="https://acmeerp.org/assets/og-image.jpg"
+        schemaMarkup={finance2Schema}
+      />
       <h2 className="fw-bold mb-4">
         Transform Your Finances with Acme.erp: A Simple Path to Success.
       </h2>
       <p>
         Managing your finances can be a challenge, but Acme.erp makes it simple and effective. This powerful ERP software for nonprofits helps NGOs, religious institutions, and accounting software for non profits users keep track of their money easily.
+      </p>
+      <p>
+        Explore <a href="/importance-of-financial-management-for-nonprofits-ngos" className="text-decoration-none">accounting software for nonprofits</a> and <a href="/easy-accounting-tips-for-nonprofits-ngos" className="text-decoration-none">nonprofit accounting software guide</a> with Acme ERP. When you are ready, <a href="/contact-nonprofit-accounting-software" className="text-decoration-none">request a free demo</a> to see the platform in action.
       </p>
 
       <h4 className="mt-4 fw-bold">What is Acme.erp?</h4>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import Salesians from '../assets/img/client/Salesians_logo.jpg';
-import charity from '../assets/img/client/charity.jpg';
-import annai from '../assets/img/client/annai.jpg';
-import congregation from '../assets/img/client/congregation-of sister.jpg';
-import Montfort from '../assets/img/client/Montfort.jpg';
+import Salesians from '../assets/img/client/salesians-organization-logo.png';
+import charity from '../assets/img/client/charity-organization-logo.png';
+import annai from '../assets/img/client/annai-organization-logo.png';
+import congregation from '../assets/img/client/congregation-of-sisters-logo.png';
+import Montfort from '../assets/img/client/montfort-organization-logo.png';
 import '../css/Review.css';
 
 const reviewVariants = {

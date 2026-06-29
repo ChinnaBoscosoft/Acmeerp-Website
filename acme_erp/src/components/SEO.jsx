@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 /**
  * SEO Component
@@ -10,10 +9,11 @@ const SEO = ({
     title = 'Acme.erp - Institute ERP for Not-for-Profit Organisations',
     description = 'Comprehensive ERP solution for religious and non-profit organizations. Streamline financial management, accounting, and operations with cloud-based software.',
     keywords = 'accounting software, ERP software, non-profit ERP, financial management',
-    ogImage = 'https://acmeerp.org/og-image.jpg',
+    ogImage = 'https://acmeerp.org/assets/og-image.jpg',
     ogType = 'website',
     twitterCard = 'summary_large_image',
     canonicalUrl = null,
+    schemaMarkup = null,
     noindex = false,
 }) => {
     const location = useLocation();
@@ -21,10 +21,8 @@ const SEO = ({
     const currentUrl = canonicalUrl || `${baseUrl}${location.pathname}`;
 
     useEffect(() => {
-        // Update document title
         document.title = title;
 
-        // Update or create meta tags
         const updateMetaTag = (name, content, isProperty = false) => {
             const attribute = isProperty ? 'property' : 'name';
             let element = document.querySelector(`meta[${attribute}="${name}"]`);
@@ -38,12 +36,22 @@ const SEO = ({
             element.setAttribute('content', content);
         };
 
-        // Primary meta tags
+        const updateJsonLd = (schema) => {
+            if (!schema) return;
+            let script = document.querySelector('script[type="application/ld+json"][data-react-seo]');
+            if (!script) {
+                script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.setAttribute('data-react-seo', 'true');
+                document.head.appendChild(script);
+            }
+            script.textContent = JSON.stringify(schema);
+        };
+
         updateMetaTag('description', description);
         updateMetaTag('keywords', keywords);
-        updateMetaTag('robots', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+        updateMetaTag('robots', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');
 
-        // Open Graph tags
         updateMetaTag('og:title', title, true);
         updateMetaTag('og:description', description, true);
         updateMetaTag('og:image', ogImage, true);
@@ -51,13 +59,11 @@ const SEO = ({
         updateMetaTag('og:type', ogType, true);
         updateMetaTag('og:site_name', 'Acme ERP', true);
 
-        // Twitter Card tags
         updateMetaTag('twitter:card', twitterCard);
         updateMetaTag('twitter:title', title);
         updateMetaTag('twitter:description', description);
         updateMetaTag('twitter:image', ogImage);
 
-        // Update canonical URL
         let canonical = document.querySelector('link[rel="canonical"]');
         if (!canonical) {
             canonical = document.createElement('link');
@@ -66,7 +72,8 @@ const SEO = ({
         }
         canonical.setAttribute('href', currentUrl);
 
-        // Send page view to Google Analytics
+        updateJsonLd(schemaMarkup);
+
         if (typeof window !== 'undefined' && window.gtag) {
             window.gtag('config', 'G-FXDZ6ZE3NY', {
                 page_path: location.pathname,
@@ -74,24 +81,12 @@ const SEO = ({
             });
         }
 
-        // Send page view to Microsoft Clarity
         if (typeof window !== 'undefined' && window.clarity) {
             window.clarity('set', 'page', location.pathname);
         }
-    }, [title, description, keywords, ogImage, ogType, twitterCard, currentUrl, location.pathname, noindex]);
+    }, [title, description, keywords, ogImage, ogType, twitterCard, currentUrl, location.pathname, noindex, schemaMarkup]);
 
-    return null; // This component doesn't render anything
-};
-
-SEO.propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-    keywords: PropTypes.string,
-    ogImage: PropTypes.string,
-    ogType: PropTypes.string,
-    twitterCard: PropTypes.string,
-    canonicalUrl: PropTypes.string,
-    noindex: PropTypes.bool,
+    return null;
 };
 
 export default SEO;

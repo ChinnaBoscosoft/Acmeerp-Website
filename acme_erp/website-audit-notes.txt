@@ -1,0 +1,127 @@
+Website Audit Notes
+===================
+
+Images with alt attributes and actual asset files:
+--------------------------------------------------
+src/components/Chatbot.jsx | ../assets/img/acme_logo.svg | alt="Acme Bot"
+src/components/Review.jsx | ../assets/img/client/Salesians_logo.jpg | alt="Accounting icon" (dynamic review icon)
+src/components/Cards.jsx | ../assets/img/icon/service_1_1.svg | alt="donor & asset management ERP"
+src/components/Cards.jsx | ../assets/img/icon/service_1_2.svg | alt="scalable ERP for NGOsbranch office suite"
+src/components/Cards.jsx | ../assets/img/icon/service_1_3.svg | alt="ERP for nonprofits"
+src/components/Cards.jsx | ../assets/img/icon/service_1_1.svg | alt="nonprofit compliance accounting software"
+src/components/Cards.jsx | ../assets/img/icon/service_1_2.svg | alt="NGO ERP solution"
+src/components/Cards.jsx | ../assets/img/icon/service_1_3.svg | alt="Cloud ERP for NGOs"
+src/components/cardbkp.jsx | ../assets/img/icon/service_1_1.svg | alt="Nonprofit ERP software icon"
+src/components/cardbkp.jsx | ../assets/img/icon/service_1_2.svg | alt="accounting software icon"
+src/components/cardbkp.jsx | ../assets/img/icon/service_1_3.svg | alt="affordable ERP for religious institutes"
+src/components/cardbkp.jsx | ../assets/img/icon/service_1_1.svg | alt="donor & asset management ERP icon"
+src/components/cardbkp.jsx | ../assets/img/icon/service_1_2.svg | alt="head office icon"
+src/components/cardbkp.jsx | ../assets/img/icon/service_1_3.svg | alt="branch office icon"
+src/components/About .jsx | ../assets/img/bg/aboutus.jpg | alt="erp free software" / alt="ERP for not-for-profit organisations"
+src/components/About .jsx | ../assets/img/normal/about_13_3.jpg | alt="nonprofit ERP software"
+src/components/About .jsx | ../assets/img/normal/about_13_2.jpg | alt="free erp"
+src/components/About .jsx | ../assets/img/client/friars.jpg | alt="Friars logo"
+src/components/About .jsx | ../assets/img/client/jac.jpg | alt="JAC logo"
+src/components/About .jsx | ../assets/img/client/Archdiocese.jpg | alt="Archdiocese logo"
+src/components/About .jsx | ../assets/img/client/chengelpet.jpg | alt="Chengelpet logo"
+src/components/About .jsx | ../assets/img/client/claretian.jpg | alt="Claretian Missionaries logo"
+src/components/About .jsx | ../assets/img/client/congregation-of sister.jpg | alt="Congregation of Sisters of St. Anne logo"
+src/components/Navbar.jsx | ../assets/acme_logo.svg | alt="ACME Logo"
+src/components/Login.jsx | ../assets/icon.png | alt="Accounting ERP for NGOs"
+src/components/Hero.jsx | ../assets/img/hero/acount1.png | alt="Accounting Illustration"
+src/components/Question.jsx | ../assets/img/bg/faqer.jpg | alt="ERP demo for non-profits"
+src/components/Footer .jsx | ../assets/img/0_Boscsoft.png | alt="Boscosoft Logo"
+src/components/blogpost.jsx | ../assets/img/blog/accounting.jpg | alt="The Importance of Financial Management Systems for Nonprofits..."
+src/components/blogpost.jsx | ../assets/img/blog/finance.jpg | alt="Easy Ways to Manage Accounting for Non-profits, NGOs, and Religious Institutions"
+src/components/blogpost.jsx | ../assets/img/blog/finance01.jpg | alt="Transform Your Finances with Acme.erp: A Simple Path to Success"
+src/components/OptimizedImage.jsx | dynamic | alt is passed by prop `alt={alt}`
+
+Internal links (relative/root paths and React Router internal routes):
+--------------------------------------
+src/page/Finance.jsx | href="/accounting"
+src/page/Finance.jsx | href="/contact"
+src/page/Accounting.jsx | href="/finance"
+src/page/Accounting.jsx | href="/contact"
+src/components/Plan.jsx | to="/contact"
+src/components/Navbar.jsx | to="/contact"
+src/components/Hero.jsx | to="/contact"
+src/components/404.jsx | to="/"
+src/components/Footer .jsx | to="/Termscondition"
+src/components/Footer .jsx | to="/Privacy-Policy"
+
+Terms page internal anchor link IDs (dynamic in-page links):
+  #notice
+  #use-site-services
+  #general-terms
+  #use-site
+  #testimonials
+  #links
+  #intellectual-property
+  #confidentiality
+  #applicability
+  #user-info
+  #governing-law
+  #contact
+
+Headings (h1, h2, h3) with title text:
+----------------------
+src/page/Accounting.jsx | h1 | "Easy Ways to Manage Accounting for Non-profits, NGOs, and Religious Institutions"
+src/page/Accounting.jsx | h2 | "Managing accounting effectively is crucial for nonprofits, NGOs, and religious institutions. Here’s what you need to know about easy ways to handle your accounting:"
+src/page/Accounting.jsx | h3 | "Use Simple Accounting Software"
+src/page/Accounting.jsx | h3 | "Keep Track of Donations and Grants"
+src/page/Accounting.jsx | h3 | "Create a Budget with Nonprofit Budgeting Software"
+src/page/Accounting.jsx | h3 | "Regularly Update Financial Records"
+src/page/Accounting.jsx | h3 | "Use Payroll Software for Nonprofit Organizations"
+src/page/Accounting.jsx | h3 | "Is Church Accounting Different?"
+src/page/Accounting.jsx | h3 | "Generate Financial Reports Regularly"
+src/page/Accounting.jsx | h3 | "Conclusion"
+src/page/Finance.jsx | h1 | "The Importance of Financial Management Systems for Nonprofits, NGOs, and Religious Institutions"
+src/page/Finance.jsx | h2 | "What is a Financial Management System?"
+src/page/Finance.jsx | h2 | "Why is an FMS Important?"
+src/page/Finance.jsx | h3 | "Transparency and Accountability"
+src/page/Finance.jsx | h3 | "Compliance with Regulations"
+src/page/Finance.jsx | h3 | "Effective Budget Management"
+src/page/Finance.jsx | h3 | "Enhanced Financial Reporting"
+src/page/Finance.jsx | h3 | "Improved Decision-Making"
+src/page/Finance.jsx | h3 | "Streamlined Processes"
+src/page/Finance.jsx | h3 | "Donor and Fundraising Management"
+src/page/Finance.jsx | h2 | "Conclusion"
+src/page/privacy.jsx | h1 | "Privacy Policy"
+src/page/privacy.jsx | h2 | "Public Information"
+src/page/privacy.jsx | h2 | "Cookies"
+src/page/privacy.jsx | h2 | "Links from this website"
+src/page/privacy.jsx | h2 | "Website Analytics"
+src/page/privacy.jsx | h2 | "Communications"
+src/page/Tearmsconditions.jsx | h1 | "📄 Terms & Conditions"
+src/page/Tearmsconditions.jsx | h3 | "🌐 Use of The Site and our Services"
+src/page/Tearmsconditions.jsx | h3 | "📄 General Terms"
+src/page/Tearmsconditions.jsx | h3 | "💻 Use of The Site"
+src/page/Tearmsconditions.jsx | h3 | "💬 Testimonials Disclaimer"
+src/page/Tearmsconditions.jsx | h3 | "🔗 Links to other websites"
+src/page/Tearmsconditions.jsx | h3 | "©️ Intellectual Property"
+src/page/Tearmsconditions.jsx | h3 | "🛡️ Confidentiality"
+src/page/Tearmsconditions.jsx | h3 | "⚖️ Applicability of Materials"
+src/page/Tearmsconditions.jsx | h3 | "👤 User Information"
+src/page/Tearmsconditions.jsx | h3 | "⚖️ Governing Law"
+src/page/Tearmsconditions.jsx | h4 | "📧 Contact Us"
+src/components/404.jsx | h1 | "404"
+src/components/404.jsx | h2 | "Page Not Found"
+src/components/Login.jsx | h1 | "Sign in to continue to Acme.erp Portal"
+src/components/Plan.jsx | h2 | "Choose Our Plan"
+src/components/Plan.jsx | h3 | "Basic Plan"
+src/components/Plan.jsx | h3 | "Acmeplus Customer"
+src/components/Plan.jsx | h3 | "New Customer"
+src/components/Functional .jsx | h2 | "Acme.erp Modules"
+src/components/Functional .jsx | h3 | "{title} (dynamic feature titles)"
+src/components/MapDashboard.jsx | h2 | "Our Reach & Presence"
+src/components/Question.jsx | h2 | "Make Acme.erp Your Partner for Purpose-Driven Success"
+src/components/Cards.jsx | h3 | "Purpose-Built Accounting for Purpose-Driven Organizations"
+src/components/cardbkp.jsx | h2 | "Purpose-Built Accounting for Purpose-Driven Organizations"
+src/components/footer .jsx | h3 | "About Company"
+src/components/footer .jsx | h3 | "Quick Links"
+src/components/footer .jsx | h3 | "Other Products & Services"
+src/components/footer .jsx | h3 | "Address"
+src/components/contact.jsx | h2 | "Join now for a free trial"
+src/components/contact.jsx | h3 | "Our Office Address"
+src/components/contact.jsx | h3 | "Call Us Anytime"
+src/components/contact.jsx | h3 | "Send An Email"

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import '../css/About.css';
-import image1 from '../assets/img/normal/about_13_2.jpg';
-import { IoCopy } from "react-icons/io5";
-import aboutus from "../assets/img/bg/aboutus.jpg";
-import about2 from "../assets/img/normal/about_13_3.jpg";
-import about1 from "../assets/img/normal/about_13_2.jpg";
+import aboutus from "../assets/img/bg/nonprofit-accounting-software-about-us.png";
+import about2 from "../assets/img/normal/nonprofit-accounting-dashboard.png";
+import about1 from "../assets/img/normal/ngo-financial-management-system.png";
 import { motion } from "framer-motion";
 
-import org1 from "../assets/img/client/friars.jpg";
-import org2 from "../assets/img/client/jac.jpg";
-import org3 from "../assets/img/client/Archdiocese.jpg";
-import org4 from "../assets/img/client/chengelpet.jpg";
-import org5 from "../assets/img/client/claretian.jpg";
-import org6 from "../assets/img/client/congregation-of sister.jpg";
+import org1 from "../assets/img/client/friars-organization-logo.png";
+import org2 from "../assets/img/client/jac-organization-logo.png";
+import org3 from "../assets/img/client/archdiocese-logo.png";
+import org4 from "../assets/img/client/chengelpet-organization-logo.png";
+import org5 from "../assets/img/client/claretian-organization-logo.png";
+import org6 from "../assets/img/client/congregation-of-sisters-logo.png";
+
+const FeatureBullet = () => <span aria-hidden="true">[]</span>;
 
 const useWindowWidth = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -67,21 +67,14 @@ const About = () => {
     <div className="about-section">
       <div className="container">
         <div className="content-wrapper">
-          {/* Left side - Image */}
           <div className="image-side">
             <div className="image-container">
-              {isMobile ? (
-                <>
-                  <img className='image1' src={aboutus} alt="erp free software" loading="lazy" width="550" height="386" />
-                  <img className='image2 move-right' src={about2} alt="nonprofit ERP software" loading="lazy" width="550" height="386" />
-                  <img className='image3 move-top' src={about1} alt="free erp" loading="lazy" width="550" height="386" />
-                </>
-              ) : (
+              {isMobile ? null : (
                 <>
                   <motion.img
                     className='image1'
                     src={aboutus}
-                    alt="ERP for not-for-profit organisations"
+                    alt="nonprofit accounting software team helping organizations manage finances"
                     loading="lazy"
                     width="550"
                     height="386"
@@ -93,7 +86,7 @@ const About = () => {
                   <motion.img
                     className='image2 move-right'
                     src={about2}
-                    alt="free accounting software for pc"
+                    alt="nonprofit accounting dashboard showing reports and analytics"
                     loading="lazy"
                     width="550"
                     height="386"
@@ -105,7 +98,7 @@ const About = () => {
                   <motion.img
                     className='image3 move-top'
                     src={about1}
-                    alt="accounting software for ngo"
+                    alt="NGO financial management system interface overview"
                     loading="lazy"
                     width="550"
                     height="386"
@@ -119,32 +112,37 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right side - Content */}
           <div className="content-side">
             <div className="content-section">
-              <p className='welcome-tag h6'>About Acme.erp</p>
+              <h3 className='welcome-tag h6'>About Acme.erp</h3>
               <h2 className='about-title h3'>
-                Empowering Smarter<br />
-                Decisions for Faith-Based &<br />
-                Nonprofit Organizations
+              Smarter Financial<br />
+              Management for Nonprofits <br />
+              and Faith-Based Organizations
               </h2>
 
               <p className="subtitle">
-                Acme.erp is an ERP solution uniquely designed for religious and not for profit organisations. As India’s most trusted ERP for religious organizations, it integrates a client-server Windows application with cloud-based features for comprehensive nonprofit accounting software management and administration across various levels and sizes of organizations.
+                Acme.erp is an ERP solution uniquely designed for
+                religious and not for profit organisations. As India's
+                most trusted ERP for religious organizations, it integrates
+                a client-server Windows application with cloud-based
+                features for comprehensive nonprofit accounting software
+                management and administration across various
+                levels and sizes of organizations.
               </p>
 
               {isMobile ? (
                 <div className="features">
                   <div className="feature-item">
-                    <div className='IoCopy'><IoCopy /></div>
+                    <div className='IoCopy'><FeatureBullet /></div>
                     <p className="feature-text">
-                      Acme.erp is a client-server Windows application integrated with a cloud accounting application for administration and management of religious institutes and NGOs of any size, at multiple levels.
+                      Acme.erp is a client-server Windows application integrated with cloud technology, designed to simplify administration and financial operations for religious institutions and NGOs of any size across multiple levels, making it an efficient accounting software for nonprofits.
                     </p>
                   </div>
                   <div className="feature-item">
-                    <div className='IoCopy'><IoCopy /></div>
+                    <div className='IoCopy'><FeatureBullet /></div>
                     <p className="feature-text">
-                      It is developed and packaged as an ERP software solution. Acme.erp is deployed as Head Office & Branch Office Suite, hosted in the cloud to be accessible by all affected parties — making it a true online accounting software for nonprofits.
+                      It is developed as a complete ERP solution for nonprofit organizations and deployed as a Head Office and Branch Office Suite. With its cloud-enabled system, Acme ERP provides secure and easy access for all authorized users, making it a reliable cloud-based accounting software for NGOs.
                     </p>
                   </div>
                 </div>
@@ -157,14 +155,14 @@ const About = () => {
                   viewport={{ once: true, amount: 0.3 }}
                 >
                   <motion.div className="feature-item" variants={itemVariants}>
-                    <div className='IoCopy'><IoCopy /></div>
+                    <div className='IoCopy'><FeatureBullet /></div>
                     <p className="feature-text">
                       Acme.erp is a client-server windows application integrated with a cloud-based application for administration and management of religious institutes and NGOs of any size, at multiple levels.
                     </p>
                   </motion.div>
 
                   <motion.div className="feature-item" variants={itemVariants}>
-                    <div className='IoCopy'><IoCopy /></div>
+                    <div className='IoCopy'><FeatureBullet /></div>
                     <p className="feature-text">
                       It is developed and packaged as an Enterprise Resource Planning solution. Acme.erp is deployed as Head Office & Branch Office Suite. It is hosted in cloud to be accessible by all affected parties.
                     </p>
@@ -177,20 +175,18 @@ const About = () => {
           </div>
         </div>
 
-        {/* Branch and Head Office Suite Section */}
         {isMobile ? (
           <div className="suite-section">
             <div className="suite-container">
               <div className="suite-item">
                 <h4>Branch Office Suite</h4>
                 <p>
-                  The Branch Office Suite is a Windows application from single or multiple terminals. The system can be configured for single or multiple users. It consists of seven modules including financial management, Statutory compliance software, asset management, payroll software, and Networking (donor management) — all part of our comprehensive accounting software for NGO.
+                  The Branch Office Suite is a Windows-based application that works on single or multiple systems and supports both individual and multi-user setups. It includes key modules such as financial accounting, compliance, asset management, payroll, and donor management, helping organizations handle their daily operations smoothly and efficiently using reliable accounting software for NGOs.
                 </p>
               </div>
               <div className="suite-item">
                 <h4>Head Office Suite</h4>
-                <p>
-                  The Head Office Suite is a web-based application for generating financial reporting from all Branch Offices at different levels. As part of our nonprofit financial management software, it provides easy access to the financial statements of any Branch Office, drilling down to the level of single transaction. Consolidated reports combining various branches on multiple criteria can be generated — a key feature of our accounting systems for nonprofits.
+                <p>The Head Office Suite is a web-based application designed to generate financial reports from multiple branch offices at different levels. Data from each branch can be updated on demand or at scheduled intervals, ensuring accurate and timely reporting. It provides easy access to financial statements, allowing users to drill down to individual transactions for better visibility. You can also generate consolidated reports across multiple branches, helping organizations manage operations more effectively with a reliable nonprofit financial management system.
                 </p>
               </div>
             </div>
@@ -207,17 +203,13 @@ const About = () => {
               <motion.div className="suite-item" variants={itemLeftToRight}>
                 <h4>Branch Office Suite</h4>
                 <p>
-                  Branch Office Suite is a Windows application from a single or multiple terminals. The system can be configured for a single or multiple users.
-                  Branch office Application consists of seven Modules including Financial Accounting, Statutory Compliance, Asset Management, Payroll Processing, Networking (Donor Management).
+                  The Branch Office Suite is a Windows-based application that works on single or multiple systems and supports both individual and multi-user setups. It includes key modules such as financial accounting, compliance, asset management, payroll, and donor management, helping organizations handle their daily operations smoothly and efficiently using reliable accounting software for NGOs.
                 </p>
               </motion.div>
               <motion.div className="suite-item" variants={itemRightToLeft}>
                 <h4>Head Office Suite</h4>
                 <p>
-                  Head Office Suite is a web-based application for generating financial reports from all Branch Offices at different levels.
-                  The data from the individual Branch Offices are updated to the Head Office on demand basis or asynchronously (on scheduled intervals).
-                  It provides easy access to the financial statements of any Branch Office, drilling down to the level of single transaction.
-                  Consolidated reports combining various branches on multiple criteria can be generated.
+                  The Head Office Suite is a web-based application designed to generate financial reports from multiple branch offices at different levels. Data from each branch can be updated on demand or at scheduled intervals, ensuring accurate and timely reporting. It provides easy access to financial statements, allowing users to drill down to individual transactions for better visibility. You can also generate consolidated reports across multiple branches, helping organizations manage operations more effectively with a reliable nonprofit financial management system.
                 </p>
               </motion.div>
             </div>
@@ -225,18 +217,25 @@ const About = () => {
         )}
       </div>
 
-      {/* Partner Organizations Marquee */}
       <div className="marquee-section">
-        {/* <h2 className="marquee-title">Our Customers</h2> */}
-        <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customers</p>
+        <h3 style={{ color: "#004868" }} className="welcome-tag fw-semibold">Our Customers
+        </h3>
 
         <div>
-          <p className="subtitle"> Our customers are at the heart of everything we do, and we serve them with innovation, trust, and excellence.<br /> Acme.erp’s nonprofit accounting software is trusted by faith-based institutions and accounting software for non profits users across India and internationally.</p> </div>
+          <p className="subtitle">Our customers are at the heart of everything
+            we do. We serve them with innovation, trust, and a commitment to excellence.
+            <br /> Acme.erp's accounting software for nonprofits is trusted by faith-based institutions, NGOs, and organizations across India and beyond, helping them manage their finances with confidence.</p> </div>
         <div className="marquee-container">
           <div className="marquee">
             {[...organizations, ...organizations, ...organizations].map((org, index) => (
               <div className="marquee-item" key={`org-${index}`}>
-                <img src={org.image} alt={`${org.name} logo`} className="org-logo" loading="lazy" width="150" height="75" />
+                <img
+                  src={org.image}
+                  alt={`${org.name} organization logo`}
+                  loading="lazy"
+                  width="120"
+                  height="80"
+                />
                 <span>{org.name}</span>
               </div>
             ))}

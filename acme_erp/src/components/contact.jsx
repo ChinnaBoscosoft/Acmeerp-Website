@@ -3,7 +3,9 @@ import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { Link } from 'react-router-dom';
 import '../css/contact.css';
+import SEO from './SEO.jsx';
 
 // import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -37,6 +39,15 @@ const saveSubmittedEmail = (email) => {
 };
 
 const Contact = () => {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Acme ERP",
+    "url": "https://www.acmeerp.org/",
+    "logo": "https://www.acmeerp.org/logo.png",
+    "description": "Acme ERP provides cloud-based accounting software for nonprofits, NGOs, and charitable organizations."
+  };
+
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [formData, setFormData] = useState({
@@ -146,6 +157,14 @@ const Contact = () => {
   return (
     <>
       <ToastContainer />
+      <SEO
+        title="Request a Free Demo – Acme ERP"
+        description="Contact us for nonprofit accounting software demo and support. Simplify NGO fund management, donation tracking, and financial reporting."
+        keywords="nonprofit accounting software demo, NGO accounting support, charity accounting system, nonprofit finance software"
+        canonicalUrl="https://acmeerp.org/contact-nonprofit-accounting-software"
+        ogImage="https://acmeerp.org/assets/og-image.jpg"
+        schemaMarkup={contactSchema}
+      />
       <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
         rel="stylesheet"
@@ -155,6 +174,11 @@ const Contact = () => {
         rel="stylesheet"
       />
 
+      <section className="container my-4 contact-intro">
+        <p>
+          Need help choosing the right nonprofit accounting software? Learn more about <Link to="/importance-of-financial-management-for-nonprofits-ngos" className="text-decoration-none">accounting software for nonprofits</Link> or read <Link to="/easy-accounting-tips-for-nonprofits-ngos" className="text-decoration-none">nonprofit accounting software guide</Link> before you request a demo.
+        </p>
+      </section>
 
       {/* Contact Form */}
       <div className="row contact-bg">
@@ -322,3 +346,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+

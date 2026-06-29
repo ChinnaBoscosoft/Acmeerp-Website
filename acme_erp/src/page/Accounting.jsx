@@ -1,14 +1,49 @@
 import React from 'react';
 import '../css/Accounting.css';
+import SEO from '../components/SEO.jsx';
 const Accounting = () => {
+  const accountingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Easy Ways to Manage Accounting for Non-profits, NGOs, and Religious Institutions",
+    "description": "Discover simple ways to manage accounting for nonprofits and NGOs, including donation tracking, expense management, and financial reporting.",
+    "image": "https://www.acmeerp.org/images/blog2.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "Acme ERP"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Acme ERP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.acmeerp.org/logo.png"
+      }
+    },
+    "datePublished": "2026-04-05",
+    "dateModified": "2026-04-05",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.acmeerp.org/easy-accounting-tips-for-nonprofits-ngos"
+    }
+  };
+
   return (
     <div className="container py-5 accounting-page">
+      <SEO
+        title="Easy Accounting Tips for Nonprofits & NGOs"
+        description="Discover simple ways to manage accounting for nonprofits and NGOs. Track donations, expenses, and finances using the right tools."
+        keywords="simple accounting software for nonprofit organization, nonprofit bookkeeping software, donation and expense tracking software, NGO accounting software"
+        canonicalUrl="https://acmeerp.org/easy-accounting-tips-for-nonprofits-ngos"
+        ogImage="https://acmeerp.org/assets/og-image.jpg"
+        schemaMarkup={accountingSchema}
+      />
       <div className="bg-white shadow-sm p-4 rounded">
         <h1 className="accounting-title">
           Easy Ways to Manage Accounting for Non-profits, NGOs, and Religious Institutions
         </h1>
         <p className="accounting-text">
-          Managing <a href="/finance" className="text-decoration-none">Accounting software for non profits</a> effectively is crucial for nonprofits, NGOs, and religious institutions. Here’s what you need to know about easy ways to handle your not for profit accounting software needs.
+          Managing <a href="/importance-of-financial-management-for-nonprofits-ngos" className="text-decoration-none">accounting software for nonprofits</a> effectively is crucial for nonprofits, NGOs, and religious institutions. Here’s what you need to know about easy ways to handle your not for profit accounting software needs.
         </p>
 
         <h2 className="mt-4 mb-3 fw-bold h4">
@@ -52,7 +87,7 @@ const Accounting = () => {
 
           <h3>Conclusion</h3>
           <p>
-            By following these <a href="/contact" className="text-decoration-none">simple steps</a>and using the right accounting software for nonprofits, NGOs, and religious institutions can manage their accounting more easily.
+            By following these <a href="/contact-nonprofit-accounting-software" className="text-decoration-none">request a free demo</a> and using the right accounting software for nonprofits, NGOs, and religious institutions can manage their accounting more easily.
             Acme.erp is the most trusted NGO financial management software in India — supporting your mission, every step of the way.
           </p>
         </div>

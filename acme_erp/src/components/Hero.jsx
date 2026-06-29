@@ -1,114 +1,77 @@
-import React, { useState } from 'react';
-import { FaPlay } from 'react-icons/fa';
-import { FaArrowLeftLong } from "react-icons/fa6";
-import { motion } from 'framer-motion';
-// import hero from '../assets/img/hero/acount1d.png';
-import hero from '../assets/img/hero/acount1.png';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import hero from '../assets/img/hero/nonprofit-accounting-software-dashboard.png';
 import '../css/Hero.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <section className="hero-section">
       <div className="container-fluid">
         <div className="row px-5 align-items-center min-vh-100 py-5">
-          {/* Left Content */}
           <div className="col-lg-7 col-md-12 pe-lg-5">
-            <motion.div
-              className="hero-content"
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <motion.div
-                className="welcome-tag mb-3"
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                Simplify Accounting Software for Purpose-Driven Organizations
-              </motion.div>
+            <div className="hero-content">
+              <h1 className="welcome-tag mb-3">
+                Accounting Software for Nonprofits & NGOs - Simplify Financial Management
+              </h1>
 
-              <motion.h1
-                className="hero-title mb-4"
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                Built for <span style={{ color: "#004867" }}>impact</span>
+              <h2 className="hero-title mb-4">
+                Built for <span style={{ color: '#004867' }}>impact</span>
                 <br />
-                Designed for <span style={{ color: "#004867" }}>clarity</span>
-              </motion.h1>
+                Designed for <span style={{ color: '#004867' }}>clarity</span>
+              </h2>
 
-              <motion.p
-                className="hero-description mb-5"
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-               Acme.erp simplifies accounting software for nonprofits, NGOs, and religious institutions. Stay organized, save time, and focus on your mission with confidence. As India’s leading nonprofit accounting software, Acme.erp is trusted by 1,800+ organizations across 13 Indian states and 9 countries worldwide.
-              </motion.p>
-              <motion.div
-                className="hero-buttons align-items-center d-flex flex-wrap gap-3"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              >
-                <motion.div whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }}>
-                  <Link
-                    to="/contact"
-                    className="btn btn-primary btn-trial flex items-center gap-2"
-                  >
-                    <span>Free Trial</span>
-                    <FaArrowLeftLong className="arrow-btn-herosec text-lg" />
-                  </Link>
-                </motion.div>
-              </motion.div>
-            </motion.div>
+              <p className="hero-description">
+                Acme.erp is a complete financial management solution designed for nonprofits, NGOs, and religious institutions. It helps you track donations, manage expenses, handle compliance, and generate accurate reports all in one place.
+              </p>
+              <p className="hero-description">
+                Whether you manage a small charity or a large multi-branch organization, Acme.erp simplifies complex financial processes and improves transparency. With cloud-enabled access and user-friendly tools, your team can stay organized, save time, and focus more on your mission instead of manual work.
+              </p>
+              <p className="hero-description mb-5">
+                Trusted by 1,800+ organizations across India and globally, Acme.erp is built to support growing nonprofit operations with reliability and ease.
+              </p>
+              <div className="hero-buttons align-items-center d-flex flex-wrap gap-3">
+                <Link
+                  to="/contact-nonprofit-accounting-software"
+                  className="btn btn-primary btn-trial flex items-center gap-2"
+                >
+                  <span>Free Trial</span>
+                  <span className="arrow-btn-herosec text-lg" aria-hidden="true">{'->'}</span>
+                </Link>
+              </div>
+            </div>
           </div>
 
-          {/* Right Illustration */}
           <div className="col-lg-5">
             <div className="d-flex justify-content-center">
               <img
                 src={hero}
-                alt="Accounting Illustration"
+                alt="nonprofit accounting software dashboard showing donation and expense tracking"
                 className="hero-image"
                 width="626"
                 height="626"
                 fetchPriority="high"
+                loading="eager"
                 decoding="async"
+                sizes="(max-width: 767px) 234px, (max-width: 1199px) 320px, 626px"
               />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative Background Elements */}
       <div className="hero-bg-elements">
-        <motion.div className="floating-circle circle-1" animate={{ y: [0, -20, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} />
-        <motion.div className="floating-circle circle-2" animate={{ y: [0, 20, 0] }} transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }} />
+        <div className="floating-circle circle-1"></div>
+        <div className="floating-circle circle-2"></div>
         <div className="circle-3"></div>
         <div className="square-1"></div>
-        <motion.div className="ring-2" animate={{ rotate: [0, 360] }} transition={{ repeat: Infinity, duration: 12, ease: "linear" }} />
-        <motion.div className="ring-1" animate={{ rotate: [0, -360] }} transition={{ repeat: Infinity, duration: 18, ease: "linear" }} />
+        <div className="ring-2"></div>
+        <div className="ring-1"></div>
         <div className="bg-wave"></div>
         <div className="bg-gradient-circle"></div>
       </div>
-
-      {/* Modal */}
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <button className="close-button" onClick={() => setShowModal(false)}>✖</button>
-            <div className="video-placeholder">
-              <p>Demo video</p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
 
 export default Hero;
+

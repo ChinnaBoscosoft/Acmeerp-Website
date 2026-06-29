@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Question.css';
-import chartImage from '../assets/img/bg/faqer.jpg';
+import chartImage from '../assets/img/bg/faq-background-nonprofit.png';
 import { FaPlus } from "react-icons/fa";
 import { RiSubtractFill } from "react-icons/ri";
 

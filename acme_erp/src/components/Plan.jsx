@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLeaf, FaGem, FaRocket, FaCheck } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import bg from "../assets/img/bg/price_bg_1.jpg";
+import bg from "../assets/img/bg/pricing-background.png";
 import { RiCloseCircleFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -82,7 +82,7 @@ const Plan = () => {
                   This plan is ideal for those seeking free nonprofit accounting software with no upfront cost.
                 </p>
                 <Link
-                  to="/contact"
+                  to="/contact-nonprofit-accounting-software"
                   state={{ from: 'plan' }}
                   className="btn btn-primary btn-get-plan"
                   style={{ marginTop: 20 }}
@@ -142,7 +142,7 @@ const Plan = () => {
                    Fund accounting software for nonprofits with full donor management and financial reporting
                 </p>
                 <Link
-                  to="/contact"
+                  to="/contact-nonprofit-accounting-software"
                   state={{ from: 'plan' }}
                   className="btn btn-primary btn-get-plan"
                 >
@@ -195,7 +195,7 @@ const Plan = () => {
                   Manage grant accounting, donations, and budgeting software with ease.Payroll software for nonprofit organizations | Full accounting systems for nonprofits
                 </p>
                 <Link
-                  to="/contact"
+                  to="/contact-nonprofit-accounting-software"
                   state={{ from: 'plan' }}
                   className="btn btn-primary btn-get-plan"
                   style={{ marginTop: 20 }}

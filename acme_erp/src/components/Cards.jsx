@@ -2,40 +2,48 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import '../css/Cards.css';
 
-import Service1 from '../assets/img/icon/service_1_1.svg';
-import Service2 from '../assets/img/icon/service_1_2.svg';
-import Service3 from '../assets/img/icon/service_1_3.svg';
+import Service1 from '../assets/img/icon/nonprofit-accounting-service-icon.svg';
+import Service2 from '../assets/img/icon/donation-tracking-icon.svg';
+import Service3 from '../assets/img/icon/financial-reporting-icon.svg';
 
 const cardData = [
   {
-    icon: <img src={Service1} loading="lazy" className="icon-svg" alt="donor & asset management ERP" width="80" height="80" />,
+    icon: <img src={Service1} loading="lazy" className="icon-svg" alt="nonprofit accounting software icon" width="80" height="80" />,
     title: 'User-Friendly by Design',
-    text: `No accounting degree? No problem. Acme.erp’s nonprofit accounting software is built for everyday users with basic computer skills. Get started quickly and become confident in managing your finances — without the complexity of traditional accounting software.`,
+    text: `No accounting degree? No problem. Acme.erp’s accounting software for nonprofits is designed for everyday users. Get started quickly and manage your finances with ease—without the complexity of traditional systems.`,
   },
   {
-    icon: <img src={Service2} loading="lazy" className="icon-svg" alt="scalable ERP for NGOsbranch office suite" width="80" height="80" />,
+    icon: <img src={Service2} loading="lazy" className="icon-svg" alt="financial reporting software for nonprofits icon" width="80" height="80" />,
     title: 'Instant and Insightful Reporting',
-    text: `Generate real-time financial reporting with just a few clicks. Track income, expenses, and fund management allocations effortlessly through our nonprofit financial management software — so you can make informed decisions and stay accountable to your stakeholders.`,
+    text: `Generate real-time reports in just a few clicks. Track income, 
+    expenses, and fund allocation easily with our nonprofit financial management software, helping you make informed decisions with confidence.`,
   },
   {
-    icon: <img src={Service3} loading="lazy" className="icon-svg" alt="ERP for nonprofits" width="80" height="80" />,
+    icon: <img src={Service3} loading="lazy" className="icon-svg" alt="time-saving accounting software for nonprofits icon" width="80" height="80" />,
     title: 'Save Time and Focus on Impact',
-    text: `Say goodbye to hours lost in spreadsheets. Acme.erp’s accounting software for nonprofits streamlines your financial tasks, freeing up valuable time for what truly matters — serving your community and fulfilling your mission.`,
+    text: `Spend less time on spreadsheets and more on your mission. Acme.erp’s accounting 
+    software for nonprofits simplifies financial tasks so you can focus on serving your community.`,
   },
   {
-    icon: <img src={Service1} loading="lazy" className="icon-svg" alt="nonprofit compliance accounting software" width="80" height="80" />,
+    icon: <img src={Service1} loading="lazy" className="icon-svg" alt="secure nonprofit accounting software icon" width="80" height="80" />,
     title: 'Enterprise-Grade Security',
-    text: `Your data is safe with us. Acme.erp’s accounting system uses encrypted passwords and unique user IDs to ensure that only authorized personnel can access sensitive financial management information.`,
+    text: `Keep your financial data secure. Acme.erp uses advanced 
+    encryption and secure access controls to protect sensitive information in your 
+    nonprofit accounting system.`,
   },
   {
-    icon: <img src={Service2} loading="lazy" className="icon-svg" alt="NGO ERP solution" width="80" height="80" />,
+    icon: <img src={Service2} loading="lazy" className="icon-svg" alt="affordable nonprofit accounting software icon" width="80" height="80" />,
     title: 'Affordable and Scalable Pricing',
-    text: `Get powerful accounting software for non profits features without the hefty price tag. Acme.erp offers one of the lowest Total Cost of Ownership (TCO) and highest ROI in the sector — making it the ideal free nonprofit accounting software starting option for organizations of any size, including colleges and small institutions.`,
+    text: `Access powerful features at a cost that fits your budget.
+    Our low-cost accounting software for nonprofits is designed to scale with 
+    your organization, making it ideal for small and growing NGOs.`,
   },
   {
-    icon: <img src={Service3} loading="lazy" className="icon-svg" alt="Cloud ERP for NGOs" width="80" height="80" />,
+    icon: <img src={Service3} loading="lazy" className="icon-svg" alt="cloud-based NGO accounting software support icon" width="80" height="80" />,
     title: '24/7 Expert Support',
-    text: `We’re with you every step of the way. Our dedicated support team is available around the clock to resolve issues, answer questions, and ensure your NGO financial management software operations run smoothly.`,
+    text: `Get support whenever you need it. Our team is available 24/7 
+    to ensure your cloud-based accounting software for NGOs 
+    runs smoothly without interruptions.`,
   },
 ];
 
@@ -79,10 +87,11 @@ const Cards = () => {
   return (
     <div className="container py-5 cards-container relative">
       <div className="text-center mb-5">
-        <p style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Choose Acme.erp</p>
-        <h3 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for <br />
-          Purpose-Driven </span>Organizations</h3>
-        <p className="benifit-subtitle">Acme.erp is more than just accounting software — it’s a partner in your mission. Whether you’re running an NGO, a not for profit organization, or a faith-based institution, here’s how Acme.erp empowers your team with the best financial management software for nonprofits in India.</p>
+        <h2 style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Acme.erp is the Right Choice for Nonprofits </h2>
+        <h3 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for NGOs and <br />
+        Mission-Driven</span> Organizations</h3>
+        <p className="benifit-subtitle">Acme.erp is more than just software, it’s a reliable accounting software for nonprofits. Whether you run an NGO, charity, or faith-based organization, it helps you manage donations, track expenses, and handle funds with ease. With its cloud-based financial management system, your team can stay organized, transparent, and focused on your mission. 
+</p>
       </div>
 
       {/* Arrow Right */}

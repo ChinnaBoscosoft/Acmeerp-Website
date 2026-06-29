@@ -91,7 +91,7 @@ const NotFound = () => {
 
 
           <button
-            onClick={() => navigate('/login')}
+            onClick={() => navigate('/')}
             className="btn btn-secondary"
           >
             <svg className="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
