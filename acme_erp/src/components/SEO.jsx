@@ -1,10 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-/**
- * SEO Component
- * Dynamically updates meta tags for each page
- */
 const SEO = ({
     title = 'Acme.erp - Institute ERP for Not-for-Profit Organisations',
     description = 'Comprehensive ERP solution for religious and non-profit organizations. Streamline financial management, accounting, and operations with cloud-based software.',

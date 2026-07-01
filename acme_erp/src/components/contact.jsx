@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import { Link } from 'react-router-dom';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import '../css/contact.css';
 import SEO from './SEO.jsx';
 
-// import { useLocation, useNavigate } from 'react-router-dom';
-
-
 const EMAIL_TIMEOUT_MS = 60 * 60 * 1000;
-
 
 const getSubmittedEmails = () => {
   const stored = localStorage.getItem('submittedEmails');
@@ -38,14 +33,14 @@ const saveSubmittedEmail = (email) => {
   localStorage.setItem('submittedEmails', JSON.stringify(emails));
 };
 
-const Contact = () => {
+const ContactForm = () => {
   const contactSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Acme ERP",
-    "url": "https://www.acmeerp.org/",
-    "logo": "https://www.acmeerp.org/logo.png",
-    "description": "Acme ERP provides cloud-based accounting software for nonprofits, NGOs, and charitable organizations."
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Acme ERP',
+    url: 'https://www.acmeerp.org/',
+    logo: 'https://www.acmeerp.org/logo.png',
+    description: 'Acme ERP provides cloud-based accounting software for nonprofits, NGOs, and charitable organizations.'
   };
 
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -94,8 +89,8 @@ const Contact = () => {
     }
 
     if (isEmailAlreadySubmitted(formData.email)) {
-      toast.warn(' This email has already submitted a message. Please wait. The ACME team will call you shortly..', {
-        position: "top-center",
+      toast.warn('This email has already submitted a message. Please wait. The ACME team will call you shortly.', {
+        position: 'top-center',
         autoClose: 4000
       });
       return;
@@ -118,7 +113,6 @@ const Contact = () => {
         {
           to_email: 'joeni@boscosofttech.com',
           cc_email: 'punitha@dbcyelagiri.edu.in',
-          // bcc_email: 'joeni@boscosofttech.com,bharathwaj050@gmail.com',
           name: formData.name,
           organization: formData.organization,
           email: formData.email,
@@ -129,8 +123,8 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      toast.success(' Thank you! Your message has been sent.', {
-        position: "top-center",
+      toast.success('Thank you! Your message has been sent.', {
+        position: 'top-center',
         autoClose: 3000
       });
       saveSubmittedEmail(formData.email);
@@ -142,11 +136,10 @@ const Contact = () => {
         message: ''
       });
       setErrors({});
-
     } catch (error) {
       console.error(error);
-      toast.error(' Oops! Something went wrong. Please try again.', {
-        position: "top-center",
+      toast.error('Oops! Something went wrong. Please try again.', {
+        position: 'top-center',
         autoClose: 4000
       });
     } finally {
@@ -158,7 +151,7 @@ const Contact = () => {
     <>
       <ToastContainer />
       <SEO
-        title="Request a Free Demo – Acme ERP"
+        title="Request a Free Demo - Acme ERP"
         description="Contact us for nonprofit accounting software demo and support. Simplify NGO fund management, donation tracking, and financial reporting."
         keywords="nonprofit accounting software demo, NGO accounting support, charity accounting system, nonprofit finance software"
         canonicalUrl="https://acmeerp.org/contact-nonprofit-accounting-software"
@@ -176,11 +169,10 @@ const Contact = () => {
 
       <section className="container my-4 contact-intro">
         <p>
-          Need help choosing the right nonprofit accounting software? Learn more about <Link to="/importance-of-financial-management-for-nonprofits-ngos" className="text-decoration-none">accounting software for nonprofits</Link> or read <Link to="/easy-accounting-tips-for-nonprofits-ngos" className="text-decoration-none">nonprofit accounting software guide</Link> before you request a demo.
+          Need help choosing the right nonprofit accounting software? Learn more about <a href="/importance-of-financial-management-for-nonprofits-ngos" className="text-decoration-none">accounting software for nonprofits</a> or read <a href="/easy-accounting-tips-for-nonprofits-ngos" className="text-decoration-none">nonprofit accounting software guide</a> before you request a demo.
         </p>
       </section>
 
-      {/* Contact Form */}
       <div className="row contact-bg">
         <div className="floating-elements">
           <span className="floating-shape shape-1"></span>
@@ -188,8 +180,7 @@ const Contact = () => {
           <span className="floating-shape shape-3"></span>
         </div>
         <div className="col-lg-8 mx-auto" id="contactForm">
-          <div  >
-            {/* className="trial-section position-relative" */}
+          <div>
             <h2 className="trial-title">Join now for a free trial</h2>
             <form onSubmit={handleSubmit} noValidate>
               <div className="row">
@@ -274,8 +265,6 @@ const Contact = () => {
                 </div>
               </div>
 
-
-
               <button type="submit" className="btn btn-send" disabled={isSubmitting}>
                 <i className="fas fa-paper-plane me-2"></i>
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -284,7 +273,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
 
       <div className="container-fluid py-5" style={{ minHeight: '100vh' }}>
         <div className="container">
@@ -328,7 +316,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Map */}
           <div className="map-container mt-5">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.165905176398!2d78.6327365!3d12.5861156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3badaaea950786f3%3A0x5f3b489cca9a30a2!2sBosco%20Soft%20Technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1720502076000!5m2!1sen!2sin&maptype=satellite"
@@ -345,6 +332,10 @@ const Contact = () => {
   );
 };
 
+const Contact = () => (
+  <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.VITE_RECAPTCHA_KEY}>
+    <ContactForm />
+  </GoogleReCaptchaProvider>
+);
+
 export default Contact;
-
-

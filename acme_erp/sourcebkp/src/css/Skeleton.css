@@ -1,0 +1,69 @@
+/* Skeleton Loading Styles */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  display: inline-block;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #b0d4e9 25%,
+      #a0d3eb 50%,
+      #a3e4e4 75%
+    );
+    background-size: 200% 100%;
+  }
+}
+
+/* Skeleton spacing utilities */
+.skeleton.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.skeleton.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.skeleton.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.skeleton.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.skeleton.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure skeleton cards maintain structure */
+.skeleton .card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skeleton .card {
+    border-color: #b8b6b6;
+  }
+}

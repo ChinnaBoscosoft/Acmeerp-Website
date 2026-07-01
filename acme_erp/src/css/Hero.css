@@ -87,6 +87,8 @@
   width: 100%;
   max-width: 480px;
   height: auto;
+  background: transparent;
+  mix-blend-mode: multiply;
 }
 
 /* Floating Background Elements */
@@ -421,4 +423,46 @@
 .arrow-btn-herosec{
     transform: rotate(180deg);
     margin-left: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circle-1, .circle-2, .ring-1, .ring-2, .bg-gradient-circle {
+    animation: none !important;
+  }
+
+  .btn-trial, .btn-demo {
+    transition: none !important;
+  }
+}
+
+.hero-section {
+  isolation: isolate;
+}
+
+.hero-image {
+  display: block;
+}
+
+.hero-bg-elements {
+  inset: 0;
+  contain: layout paint;
+}
+
+.circle-1,
+.circle-2,
+.ring-1,
+.ring-2,
+.bg-gradient-circle {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.hero-row {
+  min-height: calc(100vh - 120px);
+}
+
+@media (max-width: 767.98px) {
+  .hero-row {
+    min-height: auto;
+  }
 }

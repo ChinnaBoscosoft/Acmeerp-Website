@@ -1,13 +1,19 @@
 import React from 'react';
-import hero from '../assets/img/hero/nonprofit-accounting-software-dashboard.png';
+import heroSmall from '../assets/img/hero/nonprofit-accounting-software-dashboard-234.jpg';
+import heroMobile from '../assets/img/hero/nonprofit-accounting-software-dashboard-330.jpg';
+import heroTablet from '../assets/img/hero/nonprofit-accounting-software-dashboard-480.jpg';
+import heroLarge from '../assets/img/hero/nonprofit-accounting-software-dashboard-560.jpg';
 import '../css/Hero.css';
 import { Link } from 'react-router-dom';
+import { ArrowLeftIcon } from './InlineIcons.jsx';
 
 const Hero = () => {
+  const showDecor = typeof window === 'undefined' ? true : window.innerWidth > 767;
+
   return (
     <section className="hero-section">
       <div className="container-fluid">
-        <div className="row px-5 align-items-center min-vh-100 py-5">
+        <div className="row px-5 align-items-center hero-row py-5">
           <div className="col-lg-7 col-md-12 pe-lg-5">
             <div className="hero-content">
               <h1 className="welcome-tag mb-3">
@@ -30,13 +36,15 @@ const Hero = () => {
                 Trusted by 1,800+ organizations across India and globally, Acme.erp is built to support growing nonprofit operations with reliability and ease.
               </p>
               <div className="hero-buttons align-items-center d-flex flex-wrap gap-3">
-                <Link
-                  to="/contact-nonprofit-accounting-software"
-                  className="btn btn-primary btn-trial flex items-center gap-2"
-                >
-                  <span>Free Trial</span>
-                  <span className="arrow-btn-herosec text-lg" aria-hidden="true">{'->'}</span>
-                </Link>
+                <div>
+                  <Link
+                    to="/contact-nonprofit-accounting-software"
+                    className="btn btn-primary btn-trial flex items-center gap-2"
+                  >
+                    <span>Free Trial</span>
+                    <ArrowLeftIcon className="arrow-btn-herosec text-lg" size={18} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -44,31 +52,33 @@ const Hero = () => {
           <div className="col-lg-5">
             <div className="d-flex justify-content-center">
               <img
-                src={hero}
+                src={heroSmall}
+                srcSet={`${heroSmall} 234w, ${heroMobile} 330w, ${heroTablet} 480w, ${heroLarge} 560w`}
+                sizes="(max-width: 575px) 278px, (max-width: 767px) 330px, (max-width: 1199px) 420px, 480px"
                 alt="nonprofit accounting software dashboard showing donation and expense tracking"
                 className="hero-image"
-                width="626"
-                height="626"
+                width="560"
+                height="560"
                 fetchPriority="high"
-                loading="eager"
                 decoding="async"
-                sizes="(max-width: 767px) 234px, (max-width: 1199px) 320px, 626px"
               />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="hero-bg-elements">
-        <div className="floating-circle circle-1"></div>
-        <div className="floating-circle circle-2"></div>
-        <div className="circle-3"></div>
-        <div className="square-1"></div>
-        <div className="ring-2"></div>
-        <div className="ring-1"></div>
-        <div className="bg-wave"></div>
-        <div className="bg-gradient-circle"></div>
-      </div>
+      {showDecor ? (
+        <div className="hero-bg-elements" aria-hidden="true">
+          <div className="floating-circle circle-1" />
+          <div className="floating-circle circle-2" />
+          <div className="circle-3"></div>
+          <div className="square-1"></div>
+          <div className="ring-2"></div>
+          <div className="ring-1"></div>
+          <div className="bg-wave"></div>
+          <div className="bg-gradient-circle"></div>
+        </div>
+      ) : null}
     </section>
   );
 };

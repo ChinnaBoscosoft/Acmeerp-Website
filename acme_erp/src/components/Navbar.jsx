@@ -1,84 +1,99 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Navbar.css';
 import Acme_logo from '../assets/img/acme-erp-logo.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { UserIcon, MenuIcon, CloseIcon } from './InlineIcons.jsx';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleMenuClose = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleNavClick = (sectionId) => {
     setIsMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => scrollToSection(sectionId), 200);
+    } else {
+      scrollToSection(sectionId);
+    }
   };
 
   useEffect(() => {
-    let frameId = null;
-
-    const updateScrolled = () => {
-      frameId = null;
-      const nextScrolled = window.scrollY > 0;
-      setScrolled((current) => (current === nextScrolled ? current : nextScrolled));
-    };
-
     const handleScroll = () => {
-      if (frameId !== null) {
-        return;
-      }
-
-      frameId = window.requestAnimationFrame(updateScrolled);
+      const nextScrolled = window.scrollY > 0;
+      setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
     };
 
-    updateScrolled();
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (frameId !== null) {
-        window.cancelAnimationFrame(frameId);
-      }
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <nav className={`navbar navbar-expand-lg navbar-light shadow-sm ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container-fluid px-3 px-md-4">
         <div className="navbar-brand d-flex align-items-center">
-          <Link className="logo-container" to="/#hero" onClick={handleMenuClose} style={{ cursor: 'pointer' }}>
+          <div className="logo-container" onClick={() => handleNavClick('hero')} style={{ cursor: 'pointer' }}>
             <img src={Acme_logo} alt="ACME Logo" className="logo-svg" width="150" height="40" fetchPriority="high" />
-          </Link>
+          </div>
         </div>
 
         <button className="navbar-toggler border-0 p-0" onClick={toggleMenu} aria-label="Toggle navigation" type="button">
-          <span aria-hidden="true">{isMenuOpen ? 'x' : 'menu'}</span>
+          {isMenuOpen ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
         </button>
 
         <div className={`navbar-collapse ${isMenuOpen ? 'show' : 'collapse'}`}>
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item"><Link className="nav-link btn btn-link" to="/#hero" onClick={handleMenuClose}>Home</Link></li>
-            <li className="nav-item"><Link className="nav-link btn btn-link" to="/#about" onClick={handleMenuClose}>About Us</Link></li>
-            <li className="nav-item"><Link className="nav-link btn btn-link" to="/#Functional" onClick={handleMenuClose}>Modules</Link></li>
-            <li className="nav-item"><Link className="nav-link btn btn-link" to="/#review" onClick={handleMenuClose}>Customers</Link></li>
-            <li className="nav-item"><Link to="/contact-nonprofit-accounting-software" className="nav-link btn btn-link" onClick={handleMenuClose}>Contact</Link></li>
-            <li className="nav-item"><Link className="nav-link btn btn-link" to="/#blogpost" onClick={handleMenuClose}>Blog</Link></li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => handleNavClick('hero')}>Home</button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => handleNavClick('about')}>About Us</button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => handleNavClick('Functional')}>Modules</button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => handleNavClick('review')}>Customers</button>
+            </li>
+            <li className="nav-item">
+              <Link to="/contact-nonprofit-accounting-software" className="nav-link btn btn-link">Contact</Link>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => handleNavClick('blogpost')}>Blog</button>
+            </li>
           </ul>
           <div className="navbar-nav">
             <button
               className={`login-button ${isHovered ? 'hovered' : ''}`}
-              onClick={() => {
-                handleMenuClose();
-                navigate('/login');
-              }}
+              onClick={() => navigate('/login')}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               type="button"
             >
-              <span className="login-icon" aria-hidden="true">go</span>
+              <UserIcon className="login-icon" size={16} />
               Login
             </button>
           </div>

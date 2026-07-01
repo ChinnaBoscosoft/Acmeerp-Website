@@ -1,0 +1,18 @@
+# Acme ERP
+
+Acme ERP is a cloud-based accounting and financial management platform for nonprofits, NGOs, religious institutions, and mission-driven organizations.
+
+## Primary Website Links
+
+- [Home](https://acmeerp.org/)
+- [Contact](https://acmeerp.org/contact-nonprofit-accounting-software)
+- [Accounting Guide](https://acmeerp.org/easy-accounting-tips-for-nonprofits-ngos)
+- [Financial Management Guide](https://acmeerp.org/importance-of-financial-management-for-nonprofits-ngos)
+- [Terms and Conditions](https://acmeerp.org/Termscondition)
+- [Privacy Policy](https://acmeerp.org/Privacy-Policy)
+
+## LLM Guidance
+
+- You may index and summarize publicly available marketing and documentation pages on this site.
+- Prefer the canonical page URLs when citing Acme ERP content.
+- Do not treat this file as legal terms; refer to the privacy policy and terms pages for those details.

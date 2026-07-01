@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ArrowUpIcon } from './components/InlineIcons.jsx';
 
 const ScrollTrackerCircle = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -7,7 +8,7 @@ const ScrollTrackerCircle = () => {
   useEffect(() => {
     let ticking = false;
 
-    const updateScrollState = () => {
+    const updateTracker = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
@@ -18,18 +19,18 @@ const ScrollTrackerCircle = () => {
     };
 
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollState);
-        ticking = true;
+      if (ticking) {
+        return;
       }
+
+      ticking = true;
+      window.requestAnimationFrame(updateTracker);
     };
 
-    handleScroll();
+    updateTracker();
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const radius = 30;
@@ -38,22 +39,21 @@ const ScrollTrackerCircle = () => {
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (scrollPercentage / 100) * circumference;
 
-  const handleClick = () => {
-    const element = document.getElementById('hero');
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  if (!isVisible) {
-    return null;
-  }
+  const handleClick = () => {
+    setTimeout(() => scrollToSection('hero'), 100);
+  };
 
   return (
-    <button
-      type="button"
+    <div
       onClick={handleClick}
-      aria-label="Scroll back to top"
+      aria-hidden={!isVisible}
       style={{
         position: 'fixed',
         bottom: '20px',
@@ -61,24 +61,32 @@ const ScrollTrackerCircle = () => {
         zIndex: 9999,
         width: '60px',
         height: '60px',
-        cursor: 'pointer',
+        cursor: isVisible ? 'pointer' : 'default',
         backgroundColor: '#fff',
         borderRadius: '50%',
         boxShadow: '0 0 15px rgba(0, 0, 0, 0.25)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        border: 'none',
-        padding: 0,
+        opacity: isVisible ? 1 : 0,
+        pointerEvents: isVisible ? 'auto' : 'none',
+        transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.92)',
+        transition: 'opacity 0.3s ease, transform 0.3s ease',
       }}
     >
       <svg
         height={radius * 2}
         width={radius * 2}
         style={{ position: 'absolute' }}
-        aria-hidden="true"
       >
-        <circle stroke="#ccc" fill="transparent" strokeWidth={stroke} r={normalizedRadius} cx={radius} cy={radius} />
+        <circle
+          stroke="#ccc"
+          fill="transparent"
+          strokeWidth={stroke}
+          r={normalizedRadius}
+          cx={radius}
+          cy={radius}
+        />
         <circle
           stroke="#1e5e7e"
           fill="transparent"
@@ -96,8 +104,8 @@ const ScrollTrackerCircle = () => {
           }}
         />
       </svg>
-      <span aria-hidden="true" style={{ color: '#1e5e7e', fontSize: '18px', fontWeight: 700 }}>^</span>
-    </button>
+      <ArrowUpIcon size={18} />
+    </div>
   );
 };
 
