@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
-import { FaYoutube, FaWhatsapp, FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaYoutube, FaWhatsapp, FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import '../css/Footer.css';
 import companylogo from '../assets/img/boscsoft-logo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -163,7 +164,7 @@ const Footer = () => {
           <div className="footer-social-icons" style={{ display: 'flex', gap: '10px' }}>
             {[
               { Icon: FaFacebookF, color: '#1877F2', link: 'https://www.facebook.com/acme.erp.boscsoft/' },
-              { Icon: FaTwitter, color: '#1DA1F2', link: 'https://x.com/i/flow/login?redirect_after_login=%2FBoscosoft1' },
+              { Icon: FaXTwitter, color: '#000000', link: 'https://x.com/i/flow/login?redirect_after_login=%2FBoscosoft1' },
               { Icon: FaLinkedinIn, color: '#0A66C2', link: 'https://www.linkedin.com/showcase/acme-erp-accounting-management-software' },
               { Icon: FaInstagram, color: '#E4405F', link: 'https://www.instagram.com/acme.erp/' },
               { Icon: FaYoutube, color: '#FF0000', link: 'https://www.youtube.com/@boscosofttechnologies2022' },

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import "../css/Login.css";
-import login_bg from "../assets/img/bg/login-background-3.png";
+import login_logo from "../assets/icon.png";
 
 const MESSAGE_MAP = {
   "1": "Session Expired. Please Login again.",
@@ -65,20 +65,13 @@ export default function Login() {
   }, [location]);
 
   return (
-    <div
-      className="acme-login-page"
-      // style={{
-      //   backgroundImage: `url(${login_bg})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat",
-      //   minHeight: "100vh",
-      // }}
-    >
+    <div className="acme-login-page">
       <div className="acme-login-wrap">
         <h1 className="acme-login-title">Sign in to continue to Acme.erp Portal</h1>
         <div className="acme-login-card">
-          {/* <img className="acme-login-logo" src={Acme_logo} alt="Accounting ERP for NGOs" width="200" height="60" /> */}
+          <div className="acme-login-logo-wrap">
+            <img className="acme-login-logo" src={login_logo} alt="Acme ERP" />
+          </div>
           <form
             className="acme-login-form"
             method="post"
