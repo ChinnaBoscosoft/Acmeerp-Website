@@ -3,17 +3,17 @@ import '../css/blogpost.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaCalendar } from "react-icons/fa";
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
-import image1 from '../assets/img/blog/accounting-software-for-nonprofits-guide.png';
-import image2 from '../assets/img/blog/fund-accounting-software-nonprofits.png';
-import image3 from '../assets/img/blog/ngo-accounting-software-benefits.png';
-import image4 from '../assets/img/bg/nonprofit-accounting-software-about-us.png';
+import image1 from '../assets/img/blog/accounting-software-for-nonprofits-guide.webp';
+import image2 from '../assets/img/blog/fund-accounting-software-nonprofits.webp';
+import image3 from '../assets/img/blog/ngo-accounting-software-benefits.webp';
+import image4 from '../assets/img/bg/nonprofit-accounting-software-about-us.webp';
 
 const blogPosts = [
   {
     image: image2,
     alt: 'Nonprofit financial management dashboard illustration',
     date: '19, 2024',
-    title: 'Importance of Financial Management for Nonprofits & NGOs',
+    title: 'The Complete Guide to Financial Management Systems  | Acme',
     category: 'FINANCE',
     link: '/importance-of-financial-management-for-nonprofits-ngos'
   },
@@ -21,7 +21,7 @@ const blogPosts = [
     image: image1,
     alt: 'Accounting report showing donation and expense tracking',
     date: '15, 2024',
-    title: 'Easy Accounting Tips for Nonprofits & NGOs',
+    title: 'Easy Accounting Tips for NGOs, Nonprofits & Religious Institutions',
     category: 'ACCOUNTING',
     link: '/easy-accounting-tips-for-nonprofits-ngos'
   },
@@ -29,7 +29,7 @@ const blogPosts = [
     image: image3,
     alt: 'Simple nonprofit accounting software interface concept',
     date: '16, 2024',
-    title: 'Acme ERP Nonprofit Accounting Software Guide',
+    title: 'Transform Your Finance with Acme.erp | Accounting Software | Blog',
     category: 'FINANCE',
     link: '/acme-erp-nonprofit-accounting-software'
   },
@@ -94,7 +94,18 @@ const BlogPost = () => {
             <div className="col-md-4 mb-4" key={index}>
               <div className="blog-card">
                 <div className="image-placeholder">
-                  <img src={post.image} alt={post.alt || post.title} width="400" height="250" loading="lazy" decoding="async" />
+                  <div className="image-placeholder">
+  <Link to={post.link || '#'} aria-label={post.title}>
+    <img
+      src={post.image}
+      alt={post.alt || post.title}
+      width="400"
+      height="250"
+      loading="lazy"
+      decoding="async"
+    />
+  </Link>
+</div>
                 </div>
                 <div className="category-tag">{post.category}</div>
                 <div className="blog-date">

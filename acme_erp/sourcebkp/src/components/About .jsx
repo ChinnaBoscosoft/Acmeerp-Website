@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/About.css';
-import aboutus from "../assets/img/bg/nonprofit-accounting-software-about-us.png";
+import aboutus from "../assets/img/bg/nonprofit-accounting-software-about-us.webp";
 import about2 from "../assets/img/normal/nonprofit-accounting-dashboard.png";
 import about1 from "../assets/img/normal/ngo-financial-management-system.png";
 import { motion } from "framer-motion";

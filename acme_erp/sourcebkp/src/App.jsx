@@ -118,8 +118,8 @@ const Home = () => {
   return (
     <main>
       <SEO
-        title="Accounting Software for Nonprofits - Acme.erp | Cloud Accounting"
-        description="Accounting software for nonprofits to manage donations, expenses, and funds with ease. Simple, cloud-based NGO financial management solution."
+        title="Best Accounting Software for NGO | Acme.erp | Get a Free Demo"
+        description="Discover the best accounting software for NGOs with Acme.erp. Manage accounting, donations, funds, payroll, and financial reporting efficiently."
         keywords="accounting software for nonprofits, nonprofit accounting software, NGO accounting software, fund accounting software, nonprofit financial management"
         canonicalUrl="https://acmeerp.org/"
         ogImage="https://acmeerp.org/assets/og-image.jpg"

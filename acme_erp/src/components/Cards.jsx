@@ -10,7 +10,7 @@ const cardData = [
   {
     icon: <img src={Service1} loading="lazy" className="icon-svg" alt="nonprofit accounting software icon" width="80" height="80" />,
     title: 'User-Friendly by Design',
-    text: `No accounting degree? No problem. Acme.erp’s accounting software for nonprofits is designed for everyday users. Get started quickly and manage your finances with ease—without the complexity of traditional systems.`,
+    text: `No accounting degree? No problem. Acme.erp's accounting software for NGOs is designed for everyday users. Get started quickly and manage your financial management with ease—without the complexity of traditional systems.`,
   },
   {
     icon: <img src={Service2} loading="lazy" className="icon-svg" alt="financial reporting software for nonprofits icon" width="80" height="80" />,
@@ -21,29 +21,22 @@ const cardData = [
   {
     icon: <img src={Service3} loading="lazy" className="icon-svg" alt="time-saving accounting software for nonprofits icon" width="80" height="80" />,
     title: 'Save Time and Focus on Impact',
-    text: `Spend less time on spreadsheets and more on your mission. Acme.erp’s accounting 
-    software for nonprofits simplifies financial tasks so you can focus on serving your community.`,
+    text: `Spend less time on spreadsheets and more on your mission. Acme.erp's accounting software for nonprofits simplifies financial tasks so you can focus on serving your community.`,
   },
   {
     icon: <img src={Service1} loading="lazy" className="icon-svg" alt="secure nonprofit accounting software icon" width="80" height="80" />,
     title: 'Enterprise-Grade Security',
-    text: `Keep your financial data secure. Acme.erp uses advanced 
-    encryption and secure access controls to protect sensitive information in your 
-    nonprofit accounting system.`,
+    text: `Keep your financial data secure. Acme.erp uses advanced encryption and secure access controls to protect sensitive information in your accounting software for nonprofits.`,
   },
   {
     icon: <img src={Service2} loading="lazy" className="icon-svg" alt="affordable nonprofit accounting software icon" width="80" height="80" />,
     title: 'Affordable and Scalable Pricing',
-    text: `Access powerful features at a cost that fits your budget.
-    Our low-cost accounting software for nonprofits is designed to scale with 
-    your organization, making it ideal for small and growing NGOs.`,
+    text: `Access powerful features at a cost that fits your budget. Our accounting software for NGOs is designed to scale with your organization, making it ideal for small and growing NGOs.`,
   },
   {
     icon: <img src={Service3} loading="lazy" className="icon-svg" alt="cloud-based NGO accounting software support icon" width="80" height="80" />,
     title: '24/7 Expert Support',
-    text: `Get support whenever you need it. Our team is available 24/7 
-    to ensure your cloud-based accounting software for NGOs 
-    runs smoothly without interruptions.`,
+    text: `Get support whenever you need it. Our team is available 24/7 to ensure your cloud-based accounting software for NGOs runs smoothly without interruptions.`,
   },
 ];
 
@@ -90,8 +83,9 @@ const Cards = () => {
         <h2 style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Acme.erp is the Right Choice for Nonprofits </h2>
         <h3 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for NGOs and <br />
         Mission-Driven</span> Organizations</h3>
-        <p className="benifit-subtitle">Acme.erp is more than just software, it’s a reliable accounting software for nonprofits. Whether you run an NGO, charity, or faith-based organization, it helps you manage donations, track expenses, and handle funds with ease. With its cloud-based financial management system, your team can stay organized, transparent, and focused on your mission. 
-</p>
+        <p className="benifit-subtitle">
+          Acme.erp is more than just software—it's reliable accounting software for NGOs and nonprofits. Whether you run an NGO, charity, or faith-based organization, it helps you manage donations, track expenses, and handle funds with ease. Its cloud-based financial management system keeps your team organized, improves transparency, and lets you focus on your mission.
+        </p>
       </div>
 
       {/* Arrow Right */}

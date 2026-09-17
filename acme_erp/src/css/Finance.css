@@ -1,13 +1,1006 @@
-.finance-page p {
-  line-height: 1.7;
-  font-size: 1.05rem;
+/* =====================================================
+   FINANCE BLOG PAGE
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
 }
 
-.finance-page h2, 
-.finance-page h4 {
-  color: #003049;
+.finance-blog {
+    background: #ffffff;
+    padding: 50px 0 80px;
 }
 
-.finance-page h5 {
-  color: #004868;
+.finance-blog .container {
+    max-width: 1280px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.finance-hero {
+    padding: 40px 0 60px;
+    animation: fadeUp 0.7s ease;
+}
+
+.blog-tag {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 18px;
+
+    background: #edf5ff;
+    color: #0d6efd;
+
+    border-radius: 50px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   TITLE CARD
+===================================================== */
+
+.finance-title-card {
+    background: #ffffff;
+
+    border: 1px solid #e5edf5;
+
+    border-radius: 20px;
+
+    padding: 40px 45px;
+
+    margin-bottom: 35px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.finance-title {
+    font-size: 46px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #183153;
+
+    margin: 0 0 25px;
+}
+
+
+/* Title inside title card */
+
+.finance-title-card .finance-title {
+    font-size: 46px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #183153;
+
+    margin: 22px 0 25px;
+}
+
+
+/* =====================================================
+   HERO INTRO
+===================================================== */
+
+.finance-intro {
+    font-size: 18px;
+
+    color: #5d6778;
+
+    line-height: 1.9;
+
+    margin: 0 0 30px;
+}
+
+
+/* =====================================================
+   BLOG META
+===================================================== */
+
+.blog-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #667085;
+
+    font-size: 15px;
+}
+
+.meta-item i {
+    color: #0d6efd;
+}
+
+.meta-divider {
+    width: 1px;
+
+    height: 20px;
+
+    background: #d7dde8;
+}
+
+
+/* Meta inside title card */
+
+.finance-title-card .blog-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #6c757d;
+
+    font-size: 15px;
+}
+
+.finance-title-card .meta-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.finance-title-card .meta-divider {
+    width: 1px;
+
+    height: 20px;
+
+    background: #d5dce3;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-image-card {
+    background: #f5f9ff;
+
+    border-radius: 22px;
+
+    padding: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.hero-image-card img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 14px;
+
+    object-fit: cover;
+
+    transition: transform 0.45s ease;
+}
+
+.hero-image-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =====================================================
+   TABLE OF CONTENTS
+===================================================== */
+
+.table-of-content {
+    background: #f8fbff;
+
+    border: 1px solid #e7eef8;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    margin: 20px 0 70px;
+
+    animation: fadeUp 0.8s ease;
+}
+
+.table-of-content h3 {
+    font-size: 26px;
+
+    font-weight: 700;
+
+    color: #183153;
+
+    margin-bottom: 28px;
+}
+
+.table-of-content ol {
+    margin: 0;
+
+    padding-left: 22px;
+}
+
+.table-of-content li {
+    margin-bottom: 16px;
+
+    transition: 0.3s;
+}
+
+.table-of-content li:last-child {
+    margin-bottom: 0;
+}
+
+.table-of-content li:hover {
+    transform: translateX(6px);
+}
+
+.table-of-content a {
+    text-decoration: none;
+
+    color: #183153;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.table-of-content a:hover {
+    color: #0d6efd;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.finance-breadcrumb {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+    font-size: 14px;
+
+    color: #6c757d;
+}
+
+.finance-breadcrumb a {
+    text-decoration: none;
+
+    color: #183153;
+
+    transition: color 0.2s ease;
+}
+
+.finance-breadcrumb a:hover {
+    color: #0d6efd;
+}
+
+.finance-breadcrumb span {
+    color: #9aa4af;
+}
+
+
+/* =====================================================
+   BLOG SECTIONS
+===================================================== */
+
+.finance-section {
+    margin-bottom: 70px;
+}
+
+.finance-section h2 {
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #183153;
+
+    line-height: 1.3;
+
+    margin-bottom: 28px;
+
+    position: relative;
+
+    padding-bottom: 14px;
+}
+
+.finance-section h2::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 70px;
+
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: #0d6efd;
+}
+
+.finance-section h3 {
+    font-size: 24px;
+
+    font-weight: 600;
+
+    color: #183153;
+
+    margin-bottom: 15px;
+}
+
+.finance-section p {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #5b6675;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   LISTS
+===================================================== */
+
+.finance-section ul {
+    margin-top: 20px;
+
+    padding-left: 0;
+}
+
+.finance-section li {
+    list-style: none;
+
+    position: relative;
+
+    padding-left: 34px;
+
+    margin-bottom: 16px;
+
+    line-height: 1.8;
+
+    color: #5b6675;
+}
+
+.finance-section li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 2px;
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #eaf4ff;
+
+    color: #0d6efd;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.finance-section a {
+    color: #0d6efd;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.finance-section a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   FINANCE CARDS
+===================================================== */
+
+.finance-card {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #edf1f6;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    transition: 0.35s;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.finance-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 4px;
+
+    height: 0;
+
+    background: #0d6efd;
+
+    transition: 0.35s;
+}
+
+.finance-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+}
+
+.finance-card:hover::before {
+    height: 100%;
+}
+
+.finance-card h3 {
+    color: #0d6efd;
+
+    margin-bottom: 16px;
+}
+
+.finance-card p {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   FEATURE BOXES
+===================================================== */
+
+.feature-box {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 72px;
+
+    background: #f8fbff;
+
+    border-left: 4px solid #0d6efd;
+
+    border-radius: 14px;
+
+    padding: 18px 22px;
+
+    font-weight: 600;
+
+    color: #183153;
+
+    transition: 0.35s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+
+    background: #eef5ff;
+
+    box-shadow: 0 12px 25px rgba(13, 110, 253, 0.12);
+}
+
+
+/* =====================================================
+   WHY ACME
+===================================================== */
+
+.why-acme {
+    background: #183153;
+
+    color: #ffffff;
+
+    padding: 43px;
+
+    border-radius: 22px;
+}
+
+.why-acme h2 {
+    color: #ffffff;
+}
+
+.why-acme h2::after {
+    background: #ffffff;
+}
+
+.why-acme p {
+    color: #e5edf5;
+}
+
+
+/* =====================================================
+   CTA SECTION
+   Background Image
+===================================================== */
+
+.cta-section {
+    position: relative;
+
+    margin-top: 70px;
+
+    min-height: 380px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(242, 248, 255, 0.88),
+            rgba(242, 248, 255, 0.88)
+        ),
+        url("../assets/img/blog/cta-bg.avif");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* CTA CONTENT */
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* CTA HEADING */
+
+.cta-content h2 {
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+
+    color: #183153;
+
+    margin: 0 auto 20px;
+}
+
+
+/* CTA DESCRIPTION */
+
+.cta-content p {
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #5f6c7b;
+}
+
+
+/* CTA BUTTON */
+
+.cta-btn {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    padding: 14px 38px;
+
+    border-radius: 50px;
+
+    background: #146b8c;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+
+    background: #105a77;
+
+    box-shadow: 0 12px 28px rgba(13, 110, 253, 0.25);
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+img {
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/* =====================================================
+   RESPONSIVE - 1200px
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .finance-title {
+        font-size: 42px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - 992px
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .finance-blog {
+        padding-top: 35px;
+    }
+
+    .finance-title {
+        font-size: 36px;
+    }
+
+    .finance-intro {
+        font-size: 17px;
+    }
+
+    .finance-section h2 {
+        font-size: 30px;
+    }
+
+    .finance-section h3 {
+        font-size: 22px;
+    }
+
+    .why-acme {
+        padding: 35px;
+    }
+
+    .cta-section {
+        padding: 50px 35px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .finance-blog .container {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+    .finance-hero {
+        padding-top: 25px;
+
+        margin-bottom: 30px;
+    }
+
+    .finance-title {
+        font-size: 30px;
+    }
+
+    .finance-title-card .finance-title {
+        font-size: 30px;
+    }
+
+    .finance-intro {
+        font-size: 16px;
+    }
+
+    .blog-meta {
+        gap: 12px;
+    }
+
+    .meta-divider {
+        display: none;
+    }
+
+    .table-of-content {
+        padding: 25px;
+    }
+
+    .table-of-content h3 {
+        font-size: 22px;
+    }
+
+    .finance-section {
+        margin-bottom: 50px;
+    }
+
+    .finance-section h2 {
+        font-size: 26px;
+    }
+
+    .finance-section h3 {
+        font-size: 20px;
+    }
+
+    .finance-card {
+        padding: 22px;
+    }
+
+    .feature-box {
+        min-height: auto;
+
+        padding: 16px 18px;
+    }
+
+    .why-acme {
+        padding: 28px;
+    }
+
+    .cta-section {
+        padding: 45px 25px;
+
+        min-height: 350px;
+    }
+
+    .cta-content h2 {
+        font-size: 28px;
+    }
+
+    .cta-content p {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - 425px
+===================================================== */
+
+@media (max-width: 425px) {
+
+    .finance-title-card {
+        padding: 16px;
+
+        margin-bottom: 25px;
+    }
+
+    .blog-tag {
+        font-size: 13px;
+
+        padding: 7px 14px;
+    }
+
+    .finance-title {
+        font-size: 26px;
+
+        line-height: 1.3;
+    }
+
+    .finance-title-card .finance-title {
+        font-size: 28px;
+
+        line-height: 1.25;
+
+        margin: 18px 0 20px;
+    }
+
+    .finance-intro {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .blog-meta {
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    .table-of-content {
+        padding: 20px;
+    }
+
+    .table-of-content ol {
+        padding-left: 18px;
+    }
+
+    .finance-card {
+        padding: 18px;
+    }
+
+    .feature-box {
+        font-size: 15px;
+    }
+
+    .cta-section {
+        margin-top: 50px;
+
+        padding: 40px 20px;
+
+        min-height: 320px;
+    }
+
+    .cta-content h2 {
+        font-size: 25px;
+    }
+
+    .cta-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   RELATED BLOG POSTS
+===================================================== */
+
+.related-blogs {
+    margin-top: 15px;
+
+    padding-top: 50px;
+}
+
+.related-blogs-heading {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.related-blogs-heading span {
+    display: inline-block;
+
+    background: #e9f3ff;
+
+    color: #0875c1;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.related-blogs-heading h2 {
+    margin: 0;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    color: #17213d;
+}
+
+
+/* Keep existing Home-page card design */
+
+.related-blogs .blog-card {
+    height: 100%;
+}
+
+
+/* =====================================================
+   RELATED BLOGS - RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .related-blogs {
+        margin-top: 50px;
+
+        padding-top: 35px;
+    }
+
+    .related-blogs-heading h2 {
+        font-size: 30px;
+    }
+
 }

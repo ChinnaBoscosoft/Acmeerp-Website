@@ -35,14 +35,40 @@ const saveSubmittedEmail = (email) => {
 
 const ContactForm = () => {
   const contactSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Acme ERP',
-    url: 'https://www.acmeerp.org/',
-    logo: 'https://www.acmeerp.org/logo.png',
-    description: 'Acme ERP provides cloud-based accounting software for nonprofits, NGOs, and charitable organizations.'
-  };
-
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "name": "Contact Acme ERP",
+      "url": "https://acmeerp.org/contact-nonprofit-accounting-software",
+      "description": "Contact Acme ERP to request a free demo and learn more about nonprofit accounting software, NGO fund management, donation tracking, and financial reporting.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Acme ERP",
+        "url": "https://acmeerp.org/",
+        "logo": "https://acmeerp.org/logo.png",
+        "description": "Acme ERP provides cloud-based accounting software for nonprofits, NGOs, and charitable organizations."
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acmeerp.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://acmeerp.org/contact-nonprofit-accounting-software"
+        }
+      ]
+    }
+  ]
+};
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [formData, setFormData] = useState({

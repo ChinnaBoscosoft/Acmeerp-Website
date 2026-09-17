@@ -32,8 +32,8 @@ const Finance2 = () => {
   return (
     <div className="container py-5 finance-page">
       <SEO
-        title="Acme ERP Nonprofit Accounting Software Guide"
-        description="Transform your finances with Acme ERP accounting software for nonprofits. Manage funds, donations, and reports with a simple cloud solution."
+        title="Transform Your Finance with Acme.erp | Accounting Software | Blog"
+        description="Discover how Acme.ERP accounting software helps NGOs simplify financial management, track donations, track expenses, and generat financial reports."
         keywords="accounting software for nonprofits, cloud accounting for NGOs, online accounting software for nonprofits, NGO accounting software India"
         canonicalUrl="https://acmeerp.org/acme-erp-nonprofit-accounting-software"
         ogImage="https://acmeerp.org/assets/og-image.jpg"

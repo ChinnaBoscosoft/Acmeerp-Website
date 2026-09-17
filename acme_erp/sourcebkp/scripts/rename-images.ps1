@@ -13,8 +13,8 @@ Rename-Item "$imgDir/hero/acount6.png" "donation-tracking-software-dashboard.png
 Rename-Item "$imgDir/hero/hero_slider.png" "nonprofit-accounting-software-hero-banner.png"
 
 # BG dir
-Rename-Item "$imgDir/bg/aboutus.jpg" "nonprofit-accounting-software-about-us.png" 
-Rename-Item "$imgDir/bg/faqer.jpg" "faq-background-nonprofit.png"
+Rename-Item "$imgDir/bg/aboutus.jpg" "nonprofit-accounting-software-about-us.webp" 
+Rename-Item "$imgDir/bg/faqer.jpg" "faq-background-nonprofit.webp"
 Rename-Item "$imgDir/bg/price_bg_1.jpg" "pricing-background.png"
 Rename-Item "$imgDir/bg/contact_bg_1.png" "contact-page-background.png"
 Rename-Item "$imgDir/bg/feature.png" "feature-background.png"
@@ -47,10 +47,10 @@ Rename-Item "$imgDir/client/sav.jpg" "sav-organization-logo.png"
 Rename-Item "$imgDir/client/shj.jpg" "shj-organization-logo.png"
 
 # Blog dir
-Rename-Item "$imgDir/blog/accounting.jpg" "accounting-software-for-nonprofits-guide.png"
-Rename-Item "$imgDir/blog/finance.jpg" "nonprofit-financial-management-tips.png"
-Rename-Item "$imgDir/blog/finance01.jpg" "ngo-accounting-software-benefits.png"
-Rename-Item "$imgDir/blog/financial.png" "fund-accounting-software-nonprofits.png"
+Rename-Item "$imgDir/blog/accounting.jpg" "accounting-software-for-nonprofits-guide.webp"
+Rename-Item "$imgDir/blog/finance.jpg" "nonprofit-financial-management-tips.webp"
+Rename-Item "$imgDir/blog/finance01.jpg" "ngo-accounting-software-benefits.webp"
+Rename-Item "$imgDir/blog/financial.png" "fund-accounting-software-nonprofits.webp"
 
 # Icon dir
 Rename-Item "$imgDir/icon/service_1_1.svg" "nonprofit-accounting-service-icon.svg"

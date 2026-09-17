@@ -21,20 +21,20 @@ const Hero = () => {
               </h1>
 
               <h2 className="hero-title mb-4">
-                Built for <span style={{ color: '#004867' }}>impact</span>
+                Built for <span style={{ color: '#0f6387' }}>impact</span>
                 <br />
-                Designed for <span style={{ color: '#004867' }}>clarity</span>
+                Designed for <span style={{ color: '#0f6387' }}>clarity</span>
               </h2>
 
               <p className="hero-description">
-                Acme.erp is a complete financial management solution designed for nonprofits, NGOs, and religious institutions. It helps you track donations, manage expenses, handle compliance, and generate accurate reports all in one place.
-              </p>
+                Acme.erp is a complete accounting software solution designed for nonprofits, NGOs, and religious institutions. It helps you track donations, manage expenses, handle compliance, and generate accurate financial reports in one place.
+                </p>
               <p className="hero-description">
-                Whether you manage a small charity or a large multi-branch organization, Acme.erp simplifies complex financial processes and improves transparency. With cloud-enabled access and user-friendly tools, your team can stay organized, save time, and focus more on your mission instead of manual work.
-              </p>
+                Whether you manage a small charity or a large multi-branch organization, Acme.erp simplifies financial management and improves transparency. With cloud-based access and user-friendly accounting software, your team can stay organized, save time, and focus more on your mission instead of manual work.
+                </p>
               <p className="hero-description mb-5">
-                Trusted by 1,800+ organizations across India and globally, Acme.erp is built to support growing nonprofit operations with reliability and ease.
-              </p>
+                Trusted by 1,800+ organizations across India and globally, Acme.erp is reliable accounting software for NGOs, built to support growing nonprofit operations with efficiency and ease.
+                </p>
               <div className="hero-buttons align-items-center d-flex flex-wrap gap-3">
                 <div>
                   <Link

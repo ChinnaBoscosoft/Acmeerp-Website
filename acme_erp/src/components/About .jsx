@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/About.css';
 import { IoCopy } from "react-icons/io5";
-import aboutus from "../assets/img/bg/nonprofit-accounting-software-about-us.png";
+import aboutus from "../assets/img/bg/nonprofit-accounting-software-about-us.webp";
 import about2 from "../assets/img/normal/nonprofit-accounting-dashboard.png";
 import about1 from "../assets/img/normal/ngo-financial-management-system.png";
 import { motion } from "framer-motion";
@@ -78,7 +78,7 @@ const About = () => {
                   <motion.img
                     className='image1'
                     src={aboutus}
-                    alt="nonprofit accounting software team helping organizations manage finances"
+                    alt="nonprofit accounting software team helping organizations manage finances, accounting software"
                     loading="lazy"
                     width="550"
                     height="386"
@@ -90,7 +90,7 @@ const About = () => {
                   <motion.img
                     className='image2 move-right'
                     src={about2}
-                    alt="nonprofit accounting dashboard showing reports and analytics"
+                    alt="nonprofit accounting dashboard showing reports and analytics, Accounting software for NGO"
                     loading="lazy"
                     width="550"
                     height="386"
@@ -102,7 +102,7 @@ const About = () => {
                   <motion.img
                     className='image3 move-top'
                     src={about1}
-                    alt="NGO financial management system interface overview"
+                    alt="NGO financial management system interface overview, Accounting software"
                     loading="lazy"
                     width="550"
                     height="386"
@@ -127,13 +127,7 @@ const About = () => {
               </h2>
 
               <p className="subtitle">
-                Acme.erp is an ERP solution uniquely designed for 
-                religious and not for profit organisations. As India’s 
-                most trusted ERP for religious organizations, it integrates 
-                a client-server Windows application with cloud-based 
-                features for comprehensive nonprofit accounting software
-                management and administration across various 
-                levels and sizes of organizations.
+                Acme.erp is an ERP accounting software solution uniquely designed for religious and nonprofit organizations. As India's trusted accounting software for NGOs, it integrates a client-server Windows application with cloud-based features for comprehensive financial management and administration across organizations of all sizes.
               </p>
 
               {isMobile ? (
@@ -141,14 +135,14 @@ const About = () => {
                   <div className="feature-item">
                     <div className='IoCopy'><IoCopy /></div>
                     <p className="feature-text">
-                      Acme.erp is a client-server Windows application integrated with cloud technology, designed to simplify administration and financial operations for religious institutions and NGOs of any size across multiple levels, making it an efficient accounting software for nonprofits.
-                    </p>
+                      Acme.erp is a client-server Windows application integrated with a cloud-based platform for the administration and financial management of religious institutions and NGOs of any size across multiple levels.
+                     </p>
                   </div>
                   <div className="feature-item">
                     <div className='IoCopy'><IoCopy /></div>
                     <p className="feature-text">
-                      It is developed as a complete ERP solution for nonprofit organizations and deployed as a Head Office and Branch Office Suite. With its cloud-enabled system, Acme ERP provides secure and easy access for all authorized users, making it a reliable cloud-based accounting software for NGOs. 
-                    </p>
+                      Developed as a complete ERP accounting software solution, Acme.erp is deployed as a head office & branch office suite. It is cloud-hosted, enabling secure access and collaboration for all authorized users.
+                  </p>
                   </div>
                 </div>
               ) : (
@@ -209,13 +203,13 @@ const About = () => {
               <motion.div className="suite-item" variants={itemLeftToRight}>
                 <h4>Branch Office Suite</h4>
                 <p>
-                  The Branch Office Suite is a Windows-based application that works on single or multiple systems and supports both individual and multi-user setups. It includes key modules such as financial accounting, compliance, asset management, payroll, and donor management, helping organizations handle their daily operations smoothly and efficiently using reliable accounting software for NGOs. 
+                 The Branch Office Suite is a Windows-based application that works on single or multiple systems and supports both individual and multi-user setups. It includes key modules such as financial accounting, compliance, asset management, payroll, and donor management, helping organizations streamline daily operations with reliable accounting software for NGOs.
           </p>
               </motion.div>
               <motion.div className="suite-item" variants={itemRightToLeft}>
                 <h4>Head Office Suite</h4>
                 <p>
-                  The Head Office Suite is a web-based application designed to generate financial reports from multiple branch offices at different levels. Data from each branch can be updated on demand or at scheduled intervals, ensuring accurate and timely reporting.It provides easy access to financial statements, allowing users to drill down to individual transactions for better visibility. You can also generate consolidated reports across multiple branches, helping organizations manage operations more effectively with a reliable nonprofit financial management system.
+                  The Head Office Suite is a web-based application designed to generate financial accounting reports from multiple branch offices at different levels. Data from each branch can be updated on demand or at scheduled intervals, ensuring accurate and timely reporting. It provides easy access to financial statements, allowing users to drill down to individual transactions for better visibility. You can also generate consolidated reports across multiple branches, helping organizations manage operations efficiently with reliable accounting software for NGOs.
                 </p>
               </motion.div>
             </div>
@@ -230,9 +224,8 @@ const About = () => {
         </h3>
 
         <div>
-          <p className="subtitle">Our customers are at the heart of everything 
-            we do. We serve them with innovation, trust, and a commitment to excellence.
-            <br /> Acme.erp’s accounting software for nonprofits is trusted by faith-based institutions, NGOs, and organizations across India and beyond, helping them manage their finances with confidence.</p> </div>
+          <p className="subtitle">Our customers are at the heart of everything we do. We serve them with innovation, trust, and a commitment to excellence.
+            <br/>  Acme.erp's accounting software for NGOs is trusted by faith-based institutions, nonprofits, and organizations across India and beyond, helping them simplify financial management with confidence.</p> </div>
         <div className="marquee-container">
           <div className="marquee">
             {[...organizations, ...organizations, ...organizations].map((org, index) => (

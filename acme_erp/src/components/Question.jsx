@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Question.css';
-import chartImage from '../assets/img/bg/faq-background-nonprofit.png';
+import chartImage from '../assets/img/bg/faq-background-nonprofit.webp';
 import { FaPlus } from "react-icons/fa";
 import { RiSubtractFill } from "react-icons/ri";
 
@@ -28,19 +28,19 @@ const Question = () => {
   const faqData = [
     {
       question: "What is Acme.erp and what makes it the best accounting software for nonprofits?",
-      answer: "Acme.erp is an ERP solution tailored for religious and not for profit accounting software needs. It integrates a client-server Windows application with cloud accounting features for comprehensive management and administration. What makes it the best accounting software for nonprofits is its purpose-built design: unlike generic accounting tools, Acme.erp understands the unique compliance, fund management, donor management, and financial reporting needs of NGOs, faith-based organizations, and non-profits."
+      answer: "Acme.erp is an ERP solution tailored for religious and nonprofit accounting software needs. It integrates a client-server Windows application with cloud accounting features for comprehensive management and administration. What makes it the best accounting software for nonprofits is its purpose-built design: unlike generic accounting tools, Acme.erp understands the unique compliance, fund management, donor management, and financial reporting needs of NGOs, faith-based organizations, and non-profits."
     },
     {
       question: "What are the main components of Acme.erp's ERP software for nonprofits?",
-      answer: "Acme.erp comprises two primary components as part of its ERP software for nonprofits architecture. Head Office Suite Web-based online accounting software for nonprofits for generating consolidated financial reporting from all branches. Branch Office Suite Windows application with accounting system modules including bookkeeping software, compliance software, asset management, payroll software for nonprofit organizations, and donor management"
+      answer: "Acme.erp comprises two primary components as part of its ERP software for nonprofits architecture. Head Office Suite Web-based online accounting software for nonprofits for generating consolidated financial reporting from all branches. Branch Office Suite A Windows application with accounting system modules including bookkeeping software, compliance software, asset management, payroll software for nonprofit organizations, and donor management."
     },
     {
       question: "Who can use Acme.erp?",
-      answer: "Acme.erp is designed for users with basic computing skills, particularly targeting those without formal accounting training. It's user-friendly and suitable for members of religious and not-for-profit organizations."
+      answer: "Acme.erp is designed for users with basic computing skills, particularly targeting those without formal accounting training. It's user-friendly and suitable for members of religious and NGO and nonprofit organizations."
     },
     {
       question: "What is the best accounting software for non profits in India?",
-      answer: "Acme.erp is consistently recognized as the best accounting software for non profits in India because of its 25+ years of domain expertise, 1,800+ clients, and purpose-built modules for NGOs and religious institutions. Our nonprofit accounting software covers bookkeeping software, payroll software, donor management, grant accounting, financial reporting, and budgeting software for nonprofits — all in one system."
+      answer: "Acme.erp is consistently recognized as the best accounting software for nonprofits in India because of its 25+ years of domain expertise, 1,800+ clients, and purpose-built modules for NGOs and religious institutions. Our nonprofit accounting software covers bookkeeping software, payroll software, donor management, grant accounting, financial reporting, and budgeting software for nonprofits—all in one system."
     }
   ];
 

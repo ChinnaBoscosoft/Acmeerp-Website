@@ -88,11 +88,22 @@
   Header unset X-Powered-By
 </IfModule>
 
-# Force HTTPS (if SSL is enabled)
+# Force HTTPS and non-www
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Redirect www to non-www HTTPS
+  RewriteCond %{HTTP_HOST} ^www\.acmeerp\.org$ [NC]
+  RewriteRule ^(.*)$ https://acmeerp.org/$1 [R=301,L]
+
+  # Redirect HTTP to HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://acmeerp.org/$1 [R=301,L]
+
+  # Redirect old homepage URLs
+  RewriteRule ^index\.html$ https://acmeerp.org/ [R=301,L]
+  RewriteRule ^Index\.html$ https://acmeerp.org/ [R=301,L]
+  RewriteRule ^default\.aspx$ https://acmeerp.org/ [R=301,L]
 </IfModule>
 
 # Prevent directory browsing

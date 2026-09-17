@@ -31,8 +31,8 @@ const Finance = () => {
   return (
     <div className="container py-5 finance-page">
       <SEO
-        title="Importance of Financial Management for Nonprofits & NGOs"
-        description="Learn why financial management systems are essential for nonprofits, NGOs, and religious institutions to manage funds, donations, and compliance."
+        title="The Complete Guide to Financial Management Systems  | Acme"
+        description="Learn how financial management systems help NGOs and nonprofit organizations manage accounting, donations, compliance, and financial reporting."
         keywords="nonprofit financial management software, NGO fund tracking software, charity accounting software, accounting software for nonprofit organization"
         canonicalUrl="https://acmeerp.org/importance-of-financial-management-for-nonprofits-ngos"
         ogImage="https://acmeerp.org/assets/og-image.jpg"

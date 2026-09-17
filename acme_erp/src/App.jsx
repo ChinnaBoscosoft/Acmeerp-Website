@@ -150,6 +150,19 @@ const LazySection = ({ id, fallbackHeight, children, rootMargin }) => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
+    if (window.location.hash === `#${id}`) {
+      setInView(true);
+
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }, [id]);
+
+  useEffect(() => {
     if (inView || !sectionRef.current) {
       return undefined;
     }
@@ -210,8 +223,8 @@ const Home = () => {
   return (
     <main>
       <SEO
-        title="Accounting Software for Nonprofits - Acme.erp | Cloud Accounting"
-        description="Accounting software for nonprofits to manage donations, expenses, and funds with ease. Simple, cloud-based NGO financial management solution."
+        title="Best Accounting Software for NGO | Acme.erp | Get a Free Demo"
+        description="Discover the best accounting software for NGOs with Acme.erp. Manage accounting, donations, funds, payroll, and financial reporting efficiently."
         keywords="accounting software for nonprofits, nonprofit accounting software, NGO accounting software, fund accounting software, nonprofit financial management"
         canonicalUrl="https://acmeerp.org/"
         ogImage="https://acmeerp.org/assets/og-image.jpg"

@@ -31,8 +31,8 @@ const Accounting = () => {
   return (
     <div className="container py-5 accounting-page">
       <SEO
-        title="Easy Accounting Tips for Nonprofits & NGOs"
-        description="Discover simple ways to manage accounting for nonprofits and NGOs. Track donations, expenses, and finances using the right tools."
+        title="Easy Accounting Tips for NGOs, Nonprofits & Religious Institutions"
+        description="Get practical accounting tips for NGOs and nonprofits. Streamline financial management accounting software."
         keywords="simple accounting software for nonprofit organization, nonprofit bookkeeping software, donation and expense tracking software, NGO accounting software"
         canonicalUrl="https://acmeerp.org/easy-accounting-tips-for-nonprofits-ngos"
         ogImage="https://acmeerp.org/assets/og-image.jpg"

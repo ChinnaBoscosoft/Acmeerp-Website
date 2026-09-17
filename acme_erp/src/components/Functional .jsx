@@ -8,22 +8,20 @@ import {
 } from 'react-icons/fa';
 
 const features = [
-  { id: 1, title: "Book Keeping", description: "Helps maintaining day-to-day account books as part of our comprehensive book keeping software for not for profit organizations. Our book keeping software for nonprofits ensures every transaction is recorded accurately.", icon: FaChartBar },
-  { id: 2, title: "Payroll", description: "Processing of Wages and Monthly Salary made easier with Easy Handling of Attendance and Loans. Our payroll software for nonprofit organizations integrates seamlessly with the financial management module.", icon: FaMoneyBillWave },
-  { id: 3, title: "Asset Tracking", description: "Keep track of value changes in your assets including Insurance, AMC, Depreciation and maintenance through our asset management module — a critical component of any accounting software for nonprofits.", icon: FaClipboardList },
-  { id: 4, title: "Networking", description: "Helps keep in touch constantly with Donors through Email, SMS and Letters. Our integrated donor management system is a cornerstone of Acme.erp’s NGO financial management software.", icon: FaNetworkWired },
-  { id: 5, title: "Monitoring", description: "Helps monitoring Branches/Communities from Head Office on Accounting and other Aspects — powered by our accounting systems for nonprofits infrastructure.", icon: FaMobileAlt },
-  { id: 6, title: "Consolidation", description: "Consolidation of Accounts across the Branches under a Head Office made easier. This is a standout feature of our financial management software for nonprofits, enabling multi-entity financial reporting at scale.", icon: FaGem },
-  { id: 7, title: "Foreign Contribution", description: "Foreign Contribution management is made simpler and the Reports are generated instantly — critical for accounting software for NGO organizations receiving international funding.", icon: FaGlobe },
-
-  { id: 8, title: "Third Party Integration", description: "Integration and Migration of Accounts Data with third-party Applications — making Acme.erp a flexible ERP software for nonprofits platform.", icon: FaLink },
-  { id: 9, title: "Report Generation", description: "Reports needed for Auditing are made available within few keystrokes. Our financial reporting module delivers the transparency needed for nonprofit accounting software compliance.", icon: FaChartLine },
-
-  { id: 10, title: "Communication", description: "Helps in Communicating with Sub-Centers easily and pass on the information — integrated with donor management workflows.", icon: FaComments },
-  { id: 11, title: "Budgeting", description: "Budgeting and Cost Centers are made easier to keep the finance in control and to track in depth. Our budgeting software for nonprofits helps organizations stay on track with every rupee. As a complete fund accounting software for nonprofits, Acme.erp tracks every grant accounting allocation.", icon: FaBriefcase },
-  { id: 12, title: "Alerts", description: "Alerts and reminders for schedules like Data Submission, Correction, Investment Renewal, etc — keeping your nonprofit financial management software proactive.", icon: FaExclamationTriangle },
-  { id: 13, title: "Policy Implementation", description: "Helps Head Offices implement Policies easily across Multiple Branches — ensuring compliance software standards are upheld throughout your organization.", icon: FaRegFileAlt },
-  { id: 14, title: "Customization", description: "We customize modules based on your specific needs — making Acme.erp the most adaptable accounting program for nonprofit organization available in India.", icon: FaCogs }
+  { id: 1, title: "Book Keeping", description: "Helps maintain day-to-day account books with our comprehensive accounting software for NGOs and nonprofit organizations. Every financial transaction is recorded accurately for reliable financial accounting.", icon: FaChartBar },
+  { id: 2, title: "Payroll", description: "Process wages and monthly salaries with easy attendance and loan management. Our payroll module integrates seamlessly with accounting software for NGOs and supports efficient financial management.", icon: FaMoneyBillWave },
+  { id: 3, title: "Asset Tracking", description: "Track asset values, insurance, AMC, depreciation, and maintenance through our asset management module—a key feature of our accounting software for NGOs and nonprofit organizations.", icon: FaClipboardList },
+  { id: 4, title: "Networking", description: "Stay connected with donors through email, SMS, and letters. Our integrated donor management system is an essential part of NGO accounting software and strengthens donor relationships.", icon: FaNetworkWired },
+  { id: 5, title: "Monitoring", description: "Monitor branches and communities from the head office for accounting and operational activities using our centralized accounting systems designed for NGOs.", icon: FaMobileAlt },
+  { id: 6, title: "Consolidation", description: "Consolidate accounts from multiple branches under a single head office with ease. Our financial management software provides accurate consolidated financial reporting across your organization.", icon: FaGem },
+  { id: 7, title: "Foreign Contribution", description: "Manage foreign contributions effortlessly and generate reports instantly. A valuable feature of our accounting software for NGOs supporting organizations receiving international funding.", icon: FaGlobe },
+  { id: 8, title: "Third Party Integration", description: "Integrate and migrate accounting data with third-party applications, making Acme.erp a flexible ERP accounting software solution for NGOs and nonprofit organizations.", icon: FaLink },
+  { id: 9, title: "Report Generation", description: "Generate audit-ready reports within a few keystrokes. Our financial accounting reports provide the transparency required for compliance and informed decision-making.", icon: FaChartLine },
+  { id: 10, title: "Communication", description: "Communicate easily with sub-centers and branches while staying connected through integrated donor management and collaboration tools.", icon: FaComments },
+  { id: 11, title: "Budgeting", description: "Simplify budgeting and cost center management to keep finances under control. Our financial management software supports accurate budgeting and fund accounting for NGOs and nonprofit organizations.", icon: FaBriefcase },
+  { id: 12, title: "Alerts", description: "Receive alerts and reminders for data submission, investment renewals, and important schedules, helping your financial management system stay proactive.", icon: FaExclamationTriangle },
+  { id: 13, title: "Policy Implementation", description: "Implement policies consistently across multiple branches while maintaining compliance through our centralized accounting software for NGOs.", icon: FaRegFileAlt },
+  { id: 14, title: "Customization", description: "Customize modules to meet your organization's unique needs, making Acme.erp a flexible accounting software solution for NGOs, nonprofits, and religious institutions.", icon: FaCogs }
 ];
 
 const iconPulseVariants = {
