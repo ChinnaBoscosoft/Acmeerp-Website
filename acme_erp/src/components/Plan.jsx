@@ -25,7 +25,7 @@ const Plan = () => {
           <div className="text-center mb-5">
             <div style={{ color: '#fff' }} className="welcome-tag">Pricing</div>
             <h2 className="main-title">Choose Our Plan</h2>
-            <p className="plan-subtitle">Acme.erp offers flexible pricing for every nonprofit accounting software need — from free starter plans to full-featured professional suites.</p>
+            <p className="plan-subtitle">Acme.erp offers flexible pricing for every nonprofit accounting software need from free starter plans to full-featured professional suites.</p>
             <button className="yearly-toggle">
               Yearly
             </button>

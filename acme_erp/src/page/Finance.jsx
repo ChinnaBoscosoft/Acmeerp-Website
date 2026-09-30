@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 import { FaCalendar } from "react-icons/fa";
 
-import financeHero from "../assets/img/blog/financial-management-system.avif";
+import financeHero from "../assets/img/blog/financial-management-system.webp";
 
 import image1 from "../assets/img/blog/accounting-software-for-nonprofits-guide.webp";
 import image3 from "../assets/img/blog/ngo-accounting-software-benefits.webp";

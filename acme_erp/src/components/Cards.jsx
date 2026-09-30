@@ -10,7 +10,7 @@ const cardData = [
   {
     icon: <img src={Service1} loading="lazy" className="icon-svg" alt="nonprofit accounting software icon" width="80" height="80" />,
     title: 'User-Friendly by Design',
-    text: `No accounting degree? No problem. Acme.erp's accounting software for NGOs is designed for everyday users. Get started quickly and manage your financial management with ease—without the complexity of traditional systems.`,
+    text: `No accounting degree? No problem. Acme.erp's accounting software for NGOs is designed for everyday users. Get started quickly and manage your financial management with ease without the complexity of traditional systems.`,
   },
   {
     icon: <img src={Service2} loading="lazy" className="icon-svg" alt="financial reporting software for nonprofits icon" width="80" height="80" />,
@@ -81,10 +81,10 @@ const Cards = () => {
     <div className="container py-5 cards-container relative">
       <div className="text-center mb-5">
         <h2 style={{ color: "#004868" }} className="welcome-tag fw-semibold">Why Acme.erp is the Right Choice for Nonprofits </h2>
-        <h3 className="hero-title">Purpose-Built <span style={{ color: "#004867" }}> Accounting for NGOs and <br />
-        Mission-Driven</span> Organizations</h3>
+        <h3 className="hero-title">Purpose Built <span style={{ color: "#004867" }}> Accounting for NGOs and <br />
+        Mission Driven</span> Organizations</h3>
         <p className="benifit-subtitle">
-          Acme.erp is more than just software—it's reliable accounting software for NGOs and nonprofits. Whether you run an NGO, charity, or faith-based organization, it helps you manage donations, track expenses, and handle funds with ease. Its cloud-based financial management system keeps your team organized, improves transparency, and lets you focus on your mission.
+          Acme.erp is more than just software it's reliable accounting software for NGOs and nonprofits. Whether you run an NGO, charity, or faith based organization, it helps you manage donations, track expenses, and handle funds with ease. Its cloud based financial management system keeps your team organized, improves transparency, and lets you focus on your mission.
         </p>
       </div>
 

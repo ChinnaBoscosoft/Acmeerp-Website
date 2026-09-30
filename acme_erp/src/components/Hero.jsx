@@ -30,7 +30,7 @@ const Hero = () => {
                 Acme.erp is a complete accounting software solution designed for nonprofits, NGOs, and religious institutions. It helps you track donations, manage expenses, handle compliance, and generate accurate financial reports in one place.
                 </p>
               <p className="hero-description">
-                Whether you manage a small charity or a large multi-branch organization, Acme.erp simplifies financial management and improves transparency. With cloud-based access and user-friendly accounting software, your team can stay organized, save time, and focus more on your mission instead of manual work.
+                Whether you manage a small charity or a large multi-branch organization, Acme.erp simplifies financial management and improves transparency. With cloud based access and user-friendly accounting software, your team can stay organized, save time, and focus more on your mission instead of manual work.
                 </p>
               <p className="hero-description mb-5">
                 Trusted by 1,800+ organizations across India and globally, Acme.erp is reliable accounting software for NGOs, built to support growing nonprofit operations with efficiency and ease.

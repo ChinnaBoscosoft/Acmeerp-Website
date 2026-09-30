@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { FaCalendar } from "react-icons/fa";
 
 import accountingHero from "../assets/img/blog/accounting-software-for-nonprofits-guide.webp";
-import image1 from "../assets/img/blog/financial-management-system.avif";
+import image1 from "../assets/img/blog/financial-management-system.webp";
 import image2 from "../assets/img/blog/ngo-accounting-software-benefits.webp";
 
 const relatedPosts = [

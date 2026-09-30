@@ -123,11 +123,11 @@ const About = () => {
               <h2 className='about-title h3'>
               Smarter Financial<br />
               Management for Nonprofits <br />
-              and Faith-Based Organizations
+              and Faith Based Organizations
               </h2>
 
               <p className="subtitle">
-                Acme.erp is an ERP accounting software solution uniquely designed for religious and nonprofit organizations. As India's trusted accounting software for NGOs, it integrates a client-server Windows application with cloud-based features for comprehensive financial management and administration across organizations of all sizes.
+                Acme.erp is an ERP accounting software solution uniquely designed for religious and nonprofit organizations. As India's trusted accounting software for NGOs, it integrates a client server Windows application with cloud based features for comprehensive financial management and administration across organizations of all sizes.
               </p>
 
               {isMobile ? (
@@ -225,7 +225,7 @@ const About = () => {
 
         <div>
           <p className="subtitle">Our customers are at the heart of everything we do. We serve them with innovation, trust, and a commitment to excellence.
-            <br/>  Acme.erp's accounting software for NGOs is trusted by faith-based institutions, nonprofits, and organizations across India and beyond, helping them simplify financial management with confidence.</p> </div>
+            <br/>  Acme.erp's accounting software for NGOs is trusted by faith based institutions, nonprofits, and organizations across India and beyond, helping them simplify financial management with confidence.</p> </div>
         <div className="marquee-container">
           <div className="marquee">
             {[...organizations, ...organizations, ...organizations].map((org, index) => (
