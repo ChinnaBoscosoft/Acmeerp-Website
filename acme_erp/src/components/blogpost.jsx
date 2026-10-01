@@ -1,18 +1,35 @@
 import React, { useState } from 'react';
 import '../css/blogpost.css';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaCalendar } from "react-icons/fa";
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import image1 from '../assets/img/blog/accounting-software-for-nonprofits-guide.webp';
+import bestAccountingImage from '../assets/img/blog/Accounting Software.webp';
+import ngoAccountingImage from '../assets/img/blog/Accounting Software for NGOs1.webp';
 import image2 from '../assets/img/blog/fund-accounting-software-nonprofits.webp';
 import image3 from '../assets/img/blog/ngo-accounting-software-benefits.webp';
-import image4 from '../assets/img/bg/nonprofit-accounting-software-about-us.webp';
 
 const blogPosts = [
   {
+    image: ngoAccountingImage,
+    alt: 'Accounting software for NGOs and nonprofit organizations',
+    date: 'Oct 06, 2026',
+    title: 'How Accounting Software for NGOs Differs from Traditional Business Accounting',
+    category: 'ACCOUNTING',
+    link: '/accounting-software-ngo'
+  },
+  {
+    image: bestAccountingImage,
+    alt: 'Accounting software for businesses and organizations',
+    date: 'Sep 25, 2026',
+    title: 'Accounting Software: What Businesses and Organizations Should Look for in 2026',
+    category: 'ACCOUNTING',
+    link: '/best-accounting-software'
+  },
+  {
     image: image2,
     alt: 'Nonprofit financial management dashboard illustration',
-    date: '19, 2024',
+    date: 'Dec 19, 2024',
     title: 'The Complete Guide to Financial Management Systems  | Acme',
     category: 'FINANCE',
     link: '/importance-of-financial-management-for-nonprofits-ngos'
@@ -20,7 +37,7 @@ const blogPosts = [
   {
     image: image1,
     alt: 'Accounting report showing donation and expense tracking',
-    date: '15, 2024',
+    date: 'May 15, 2024',
     title: 'Easy Accounting Tips for NGOs, Nonprofits & Religious Institutions',
     category: 'ACCOUNTING',
     link: '/easy-accounting-tips-for-nonprofits-ngos'
@@ -28,7 +45,7 @@ const blogPosts = [
   {
     image: image3,
     alt: 'Simple nonprofit accounting software interface concept',
-    date: '16, 2024',
+    date: 'jan 16, 2024',
     title: 'Transform Your Finance with Acme.erp | Accounting Software | Blog',
     category: 'FINANCE',
     link: '/acme-erp-nonprofit-accounting-software'
@@ -43,8 +60,6 @@ const blogPosts = [
 
 const BlogPost = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const navigate = useNavigate();
-  const location = useLocation();
   const visiblePosts = blogPosts.slice(startIndex, startIndex + 3);
 
   const handleNext = () => {
@@ -56,17 +71,6 @@ const BlogPost = () => {
   const handlePrev = () => {
     if (startIndex > 0) {
       setStartIndex(startIndex - 1);
-    }
-  };
-
-  const handleViewAll = () => {
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: 'hero' } });
-    } else {
-      const el = document.getElementById('hero');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
     }
   };
 

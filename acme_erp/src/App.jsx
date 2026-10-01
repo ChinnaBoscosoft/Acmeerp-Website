@@ -10,6 +10,8 @@ import SEO from './components/SEO.jsx';
 const ScrollTrackerLazy = lazy(() => import('./ScrollTracker.jsx'));
 const Accounting = lazy(() => import('./page/Accounting.jsx'));
 const Finance = lazy(() => import('./page/Finance.jsx'));
+const BestAccountingSoftware = lazy(() => import('./page/BestAccountingSoftware.jsx'));
+const AccountingSoftwareForNGOs = lazy(() => import('./page/AccountingSoftwareForNGOs.jsx'));
 const Finance2 = lazy(() => import('./components/Finance2.jsx'));
 const Contact = lazy(() => import('./components/contact.jsx'));
 const Tearmsconditions = lazy(() => import('./page/Tearmsconditions.jsx'));
@@ -365,6 +367,8 @@ const App = () => (
           <Route path="/easy-accounting-tips-for-nonprofits-ngos" element={<Accounting />} />
           <Route path="/finance" element={<Finance />} />
           <Route path="/importance-of-financial-management-for-nonprofits-ngos" element={<Finance />} />
+          <Route path="/best-accounting-software" element={<BestAccountingSoftware />} />
+          <Route path="/accounting-software-ngo" element={<AccountingSoftwareForNGOs />} />
           <Route path="/FMS-blog" element={<Finance2 />} />
           <Route path="/acme-erp-nonprofit-accounting-software" element={<Finance2 />} />
           <Route path="/contact" element={<Contact />} />
